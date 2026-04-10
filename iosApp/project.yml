@@ -1,0 +1,37 @@
+name: MedLoquent
+options:
+  bundleIdPrefix: com.medloquent
+configs:
+  Debug: debug
+  Release: release
+settings:
+  base:
+    SWIFT_VERSION: 5.0
+    PRODUCT_NAME: MedLoquent
+targets:
+  MedLoquent:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - MedLoquentApp.swift
+      - MedLoquentRootView.swift
+    info:
+      path: Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.medloquent.ios
+        INFOPLIST_FILE: Info.plist
+        LD_RUNPATH_SEARCH_PATHS:
+          - $(inherited)
+          - @executable_path/Frameworks
+    preBuildScripts:
+      - name: Build shared framework
+        basedOnDependencyAnalysis: false
+        script: |
+          cd "$SRCROOT/.."
+          if [ -x ./gradlew ]; then
+            ./gradlew :shared:app:embedAndSignAppleFrameworkForXcode
+          else
+            gradle :shared:app:embedAndSignAppleFrameworkForXcode
+          fi
