@@ -38,7 +38,7 @@ class JsonFileClinicalRecordStore(
     private val bundleDirectory = "$storageRoot/ehr".toPath()
 
     override suspend fun save(bundle: FhirBundle): StoredEhrDocument {
-        FileSystem.SYSTEM.createDirectories(bundleDirectory)
+        defaultFileSystem().createDirectories(bundleDirectory)
 
         val recordId = bundle.entry
             .firstOrNull { it.resource.resourceType == "Composition" }
@@ -51,7 +51,7 @@ class JsonFileClinicalRecordStore(
             keyAlias = keyAlias,
         )
 
-        FileSystem.SYSTEM.write(bundlePath) {
+        defaultFileSystem().write(bundlePath) {
             writeUtf8(json.encodeToString(envelope))
         }
 
@@ -62,7 +62,7 @@ class JsonFileClinicalRecordStore(
     }
 
     override suspend fun load(record: StoredEhrDocument): FhirBundle {
-        val serializedEnvelope = FileSystem.SYSTEM.read(record.bundlePath.toPath()) {
+        val serializedEnvelope = defaultFileSystem().read(record.bundlePath.toPath()) {
             readUtf8()
         }
         val envelope = json.decodeFromString<ProtectedEnvelope>(serializedEnvelope)

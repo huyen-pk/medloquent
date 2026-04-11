@@ -1,0 +1,30 @@
+build:
+  maxIssues: 0
+
+processors:
+  active: true
+
+config:
+  validation: true
+
+complexity:
+  ComplexMethod:
+    active: true
+    threshold: 7
+
+size:
+  LongMethod:
+    active: true
+    threshold: 100
+  LargeClass:
+    active: true
+    threshold: 800
+
+naming:
+  FunctionNaming:
+    active: true
+    # Require CamelCaps (UpperCamelCase) for function names across the project
+    functionPattern: '^[A-Z][A-Za-z0-9]*$'
+  ClassNaming:
+    active: true
+    classPattern: '^[A-Z][A-Za-z0-9]*$'

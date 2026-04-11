@@ -1,0 +1,24 @@
+# SwiftLint configuration for harness gates
+disabled_rules: # none disabled by default
+  - todo
+
+opt_in_rules:
+  - cyclomatic_complexity
+  - function_body_length
+  - type_body_length
+
+cyclomatic_complexity:
+  warning: 7
+  severity: error
+
+function_body_length:
+  warning: 100
+  severity: error
+
+type_body_length:
+  warning: 800
+  severity: error
+
+identifier_name:
+  min_length: 2
+  # No direct regex support here; harness fallback also checks camelCase names

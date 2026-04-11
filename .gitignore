@@ -6,6 +6,8 @@ Thumbs.db
 desktop.ini
 
 # Editor directories and files
+.agents/
+skills-lock.json
 .vscode/
 .idea/
 *.suo
@@ -66,6 +68,8 @@ htmlcov/
 .tox/
 .nox/
 .cache/
+hf_env/
+.ruff_cache/
 
 # Kotlin / Java / Gradle (IntelliJ / Android)
 # Kotlin and Java build outputs and IDE/Gradle files
@@ -74,10 +78,12 @@ htmlcov/
 *.jar
 *.war
 *.ear
+.kotlin/
 
 # Gradle
 .gradle/
 **/build/
+.gradle-wrapper-dists/
 
 # IntelliJ / Android
 local.properties

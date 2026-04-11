@@ -1,0 +1,7 @@
+chest pain
+shortness of breath
+fever
+cough
+myocardial infarction
+hypertension
+diabetes
