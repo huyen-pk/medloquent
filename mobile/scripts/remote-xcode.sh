@@ -4,8 +4,8 @@ set -euo pipefail
 usage() {
     cat <<'EOF'
 Usage:
-  scripts/remote-xcode.sh open
-  scripts/remote-xcode.sh build
+    mobile/scripts/remote-xcode.sh open
+    mobile/scripts/remote-xcode.sh build
 
 Required environment variables:
   IOS_MAC_HOST
@@ -14,7 +14,7 @@ Required environment variables:
 
 Optional environment variables:
   IOS_MAC_SSH_PORT      default: 22
-  XCODE_PROJECT         default: iosApp/MedLoquent.xcodeproj
+    XCODE_PROJECT         default: mobile/iosApp/MedLoquent.xcodeproj
   XCODE_SCHEME          default: MedLoquent
   XCODE_DESTINATION     default: generic/platform=iOS Simulator
 
@@ -43,7 +43,7 @@ require_env IOS_MAC_PROJECT_ROOT
 
 ssh_port="${IOS_MAC_SSH_PORT:-22}"
 remote_target="${IOS_MAC_USER}@${IOS_MAC_HOST}"
-xcode_project="${XCODE_PROJECT:-iosApp/MedLoquent.xcodeproj}"
+xcode_project="${XCODE_PROJECT:-mobile/iosApp/MedLoquent.xcodeproj}"
 xcode_scheme="${XCODE_SCHEME:-MedLoquent}"
 xcode_destination="${XCODE_DESTINATION:-generic/platform=iOS Simulator}"
 ssh_cmd=(ssh -p "${ssh_port}")
@@ -51,7 +51,7 @@ rsync_cmd=(rsync -az --delete --exclude .git --exclude .gradle --exclude build -
 
 "${rsync_cmd[@]}"
 
-generate_project='if command -v xcodegen >/dev/null 2>&1 && [[ -f iosApp/project.yml ]]; then cd iosApp && xcodegen generate --spec project.yml && cd ..; fi'
+generate_project='if command -v xcodegen >/dev/null 2>&1 && [[ -f mobile/iosApp/project.yml ]]; then cd mobile/iosApp && xcodegen generate --spec project.yml && cd ../..; fi'
 
 case "${action}" in
     open)

@@ -30,8 +30,8 @@ targets:
         basedOnDependencyAnalysis: false
         script: |
           cd "$SRCROOT/.."
-          if [ -x ./gradlew ]; then
-            ./gradlew :shared:app:embedAndSignAppleFrameworkForXcode
+          if [ -f ./gradlew ]; then
+            bash ./gradlew :shared:app:embedAndSignAppleFrameworkForXcode
           else
             gradle :shared:app:embedAndSignAppleFrameworkForXcode
           fi

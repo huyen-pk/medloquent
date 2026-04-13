@@ -8,4 +8,4 @@ MainActivity injects:
 - a normalized manufacturer-model device identifier for federated update provenance
 - an Android share-sheet bridge so generated FHIR bundles can be exported as JSON
 
-The shared workflow lives in shared/app and can be reused by additional Android surfaces such as tablets or ruggedized clinician devices.
+The shared workflow lives in mobile/shared/app and can be reused by additional Android surfaces such as tablets or ruggedized clinician devices.

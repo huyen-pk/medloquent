@@ -2,7 +2,7 @@
 
 Summary
 -------
-- Project: Edge‑first, privacy‑preserving clinical dictation system with on‑device ASR/NLP, FHIR bundle generation, encrypted local storage, and federated learning over constrained links (LoRa). See the canonical reference in [architecture.md](architecture.md) and the project overview in [README.md](README.md).
+- Project: Edge‑first, privacy‑preserving clinical dictation system with on‑device ASR/NLP, FHIR bundle generation, encrypted local storage, and federated learning over constrained links (LoRa). See the canonical reference in [architecture.md](architecture.md) and the project overview in [README.md](../../README.md).
 - Primary platform choices: Kotlin Multiplatform (KMM) for shared logic, ONNX/TFLite for model runtime, FHIR R4 for clinical data interchange, and SQLCipher for encrypted local storage.
 
 Key decisions (state & recommendation)
@@ -16,9 +16,9 @@ Key decisions (state & recommendation)
 Strengths (keep)
 -----------------
 - Privacy‑first default: architecture explicitly designed to keep raw data on device.
-- Clear module boundaries: `:shared` modules (asr, nlp, ehr, fl, lora, storage) align with responsibilities in [settings.gradle.kts](settings.gradle.kts).
+- Clear module boundaries: `:shared` modules (asr, nlp, ehr, fl, lora, storage) align with responsibilities in [settings.gradle.kts](../settings.gradle.kts).
 - Practical tech choices: ONNX/TFLite + SQLCipher are appropriate for offline device constraints.
-- Dev ergonomics: devcontainer + remote macOS bridge in [README.md](README.md) support cross‑platform development.
+- Dev ergonomics: devcontainer + remote macOS bridge in [README.md](../../README.md) support cross‑platform development.
 
 Risks & gaps (priority)
 -----------------------
@@ -56,9 +56,9 @@ Suggested immediate next steps (3–4 day cadence)
 Files & references
 ------------------
 - Architecture reference: [architecture.md](architecture.md)  
-- Project readme & build notes: [README.md](README.md)  
-- Module list: [settings.gradle.kts](settings.gradle.kts)  
-- Root plugin file: [build.gradle.kts](build.gradle.kts)
+- Project readme & build notes: [README.md](../../README.md)  
+- Module list: [settings.gradle.kts](../settings.gradle.kts)  
+- Root plugin file: [build.gradle.kts](../build.gradle.kts)
 
 ---
 

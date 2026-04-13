@@ -53,16 +53,16 @@ Use **Kotlin Multiplatform Mobile (KMM)**:
 ### Modules
 
 ```
-shared/
- ├── asr/
- ├── nlp/
- ├── ehr/
- ├── fl/
- ├── storage/
- └── crypto/
-
-androidApp/
-iosApp/
+mobile/
+ ├── shared/
+ │   ├── asr/
+ │   ├── nlp/
+ │   ├── ehr/
+ │   ├── fl/
+ │   ├── storage/
+ │   └── crypto/
+ ├── androidApp/
+ └── iosApp/
 ```
 
 ### Key libraries

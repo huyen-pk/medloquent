@@ -1,6 +1,6 @@
 # MedLoquent
 
-MedLoquent is a Kotlin Multiplatform mobile application scaffold for fully offline medical dictation, clinical NLP structuring, FHIR bundle generation, encrypted local persistence, federated learning, and LoRa-ready synchronization.
+MedLoquent is a multi-platform project that implements fully offline medical dictation, clinical NLP structuring, FHIR bundle generation, encrypted local persistence, federated learning, and LoRa-ready synchronization. The repository contains components for multiple platforms and toolchains — mobile apps (Kotlin Multiplatform), Python-based pipelines and tooling, and orchestration scripts for CI and developer workflows.
 
 ## Architecture
 
@@ -13,27 +13,24 @@ The implementation follows the reference architecture in mobile/docs/architectur
 
 ## Project structure
 
-- mobile/androidApp: Android launcher application
-- mobile/iosApp: SwiftUI host shell for the generated iOS framework
-- mobile/shared/core: shared clinical and federated learning models
-- mobile/shared/audio: audio capture contract and seeded offline capture implementation
-- mobile/shared/asr: offline ASR orchestration and medical abbreviation normalization
-- mobile/shared/nlp: rule-based clinical entity extraction and note structuring
-- mobile/shared/ehr: FHIR R4 bundle mapper and JSON formatter
-- mobile/shared/crypto: envelope codec abstraction with a demo codec for local development
-- mobile/shared/storage: encrypted bundle persistence abstraction
-- mobile/shared/fl: on-device layer-wise federated update preparation
-- mobile/shared/lora: LoRa packet queue abstraction
-- mobile/shared/app: Compose Multiplatform UI and workflow coordinator
+- /shared/core: shared clinical and federated learning models
+- /shared/audio: audio capture contract and seeded offline capture implementation
+- /shared/asr: offline ASR orchestration and medical abbreviation normalization
+- /shared/nlp: rule-based clinical entity extraction and note structuring
+- /shared/ehr: FHIR R4 bundle mapper and JSON formatter
+- /shared/crypto: envelope codec abstraction with a demo codec for local development
+- /shared/storage: encrypted bundle persistence abstraction
+- /shared/fl: on-device layer-wise federated update preparation
+- /shared/lora: LoRa packet queue abstraction
+- /shared/app: Compose Multiplatform UI and workflow coordinator
 
 ## Build notes
 
-The mobile Gradle wrapper now lives under `mobile/`. The Android build was validated locally on Linux with Android SDK Platform 35 and JDK 21. To build locally:
+This repository hosts multiple platform targets. Mobile-specific build and developer instructions live in `mobile/README.md` — follow that document for Android and iOS build steps, remote macOS bridging, and Gradle wrapper usage. High-level notes:
 
-1. Install JDK 21.
-2. Set `sdk.dir` in `mobile/local.properties` or export `ANDROID_HOME` and `ANDROID_SDK_ROOT` to a working Android SDK installation.
-3. Run the global dispatcher with `bash ./build.sh build`, or invoke mobile Gradle directly with `bash ./mobile/gradlew :androidApp:assembleDebug`.
-4. Generate the shared iOS framework with `bash ./mobile/gradlew :shared:app:assembleXCFramework` and attach it to an Xcode project in `mobile/iosApp`.
+- Mobile builds: the Gradle wrapper lives under `mobile/` and the repo provides a root dispatcher at `./build.sh` that delegates to the mobile wrapper.
+- Python pipelines and tooling: look under `synthetic/` for the synthetic data pipeline and its `requirements.txt` files.
+- CI and devcontainer: see `.github/workflows/` and `.devcontainer/` for the provided build and development environments.
 
 ## Dev container
 

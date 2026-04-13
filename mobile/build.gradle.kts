@@ -63,70 +63,6 @@ subprojects {
     }
 }
 
-// Python: format and check tasks (use project venv ./hf_env when available)
-tasks.register("harnessFormatPython", Exec::class) {
-    group = "verification"
-    description = "Format python sources with black and ruff (if available)."
-    if (skipHarness) {
-        doFirst { logger.lifecycle("Skipping harnessFormatPython because -PskipHarness=true") }
-        commandLine("bash", "-lc", "echo skipped")
-    } else {
-        commandLine(
-            "bash",
-            "-lc",
-            """
-            set -euo pipefail
-            if [ -d ./hf_env/bin ]; then
-              export PATH=\"${'$'}PWD/hf_env/bin:${'$'}PATH\"
-            fi
-            command -v ruff >/dev/null 2>&1 || { echo \"ruff not found\" >&2; exit 1; }
-            command -v black >/dev/null 2>&1 || { echo \"black not found\" >&2; exit 1; }
-            ruff check --fix .
-            black .
-            """.trimIndent()
-        )
-    }
-}
-
-tasks.register("harnessCheckPython", Exec::class) {
-    group = "verification"
-    description = "Run python linters/checkers (ruff, mypy)"
-    if (skipHarness) {
-        doFirst { logger.lifecycle("Skipping harnessCheckPython because -PskipHarness=true") }
-        commandLine("bash", "-lc", "echo skipped")
-    } else {
-        commandLine(
-            "bash",
-            "-lc",
-            """
-            set -euo pipefail
-            if [ -d ./hf_env/bin ]; then
-              export PATH=\"${'$'}PWD/hf_env/bin:${'$'}PATH\"
-            fi
-            command -v ruff >/dev/null 2>&1 || { echo \"ruff not found\" >&2; exit 1; }
-            command -v black >/dev/null 2>&1 || { echo \"black not found\" >&2; exit 1; }
-            command -v flake8 >/dev/null 2>&1 || { echo \"flake8 not found\" >&2; exit 1; }
-            command -v mypy >/dev/null 2>&1 || { echo \"mypy not found\" >&2; exit 1; }
-            ruff check .
-            black --check .
-            flake8 .
-            mypy --config-file mypy.ini .
-            """.trimIndent()
-        )
-    }
-}
-
-// Backwards-compatible harness entry that aggregates python format+check
-tasks.register("harnessPython") {
-    group = "verification"
-    description = "Run python harness formatting and checks."
-    if (skipHarness) {
-        doFirst { logger.lifecycle("Skipping harnessPython because -PskipHarness=true") }
-    } else {
-        dependsOn("harnessFormatPython", "harnessCheckPython")
-    }
-}
-
 // Kotlin/Android: use Spotless and Detekt via Gradle (fall back to running Gradle wrapper)
 tasks.register("harnessFormatKotlin", Exec::class) {
     group = "verification"
@@ -135,7 +71,7 @@ tasks.register("harnessFormatKotlin", Exec::class) {
         doFirst { logger.lifecycle("Skipping harnessFormatKotlin because -PskipHarness=true") }
         commandLine("bash", "-lc", "echo skipped")
     } else {
-        commandLine("bash", "-lc", "set -euo pipefail; ./gradlew spotlessApply")
+        commandLine("bash", "-lc", "set -euo pipefail; bash ./gradlew spotlessApply")
     }
 }
 
@@ -146,7 +82,7 @@ tasks.register("harnessCheckKotlin", Exec::class) {
         doFirst { logger.lifecycle("Skipping harnessCheckKotlin because -PskipHarness=true") }
         commandLine("bash", "-lc", "echo skipped")
     } else {
-        commandLine("bash", "-lc", "set -euo pipefail; ./gradlew spotlessCheck detekt")
+        commandLine("bash", "-lc", "set -euo pipefail; bash ./gradlew spotlessCheck detekt")
     }
 }
 
@@ -222,8 +158,8 @@ tasks.register("harnessIOS") {
 
 tasks.register("harnessCheck") {
     group = "verification"
-    description = "Run all harness gates (python, android, ios)."
-    dependsOn("harnessPython", "harnessAndroid", "harnessIOS")
+    description = "Run mobile harness gates (android and ios)."
+    dependsOn("harnessAndroid", "harnessIOS")
 }
 
 // Ensure assemble/build tasks depend on the harness check so gates run on regular builds.

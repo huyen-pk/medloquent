@@ -1,2 +1,0 @@
-Summary: updated build.sh to force submodule harness-check before submodule builds (opt-out via -PskipHarness or SKIP_HARNESS=1). Synthetic harness-check implemented and verified (ruff + mypy passed).
-Date: 2026-04-13

@@ -24,20 +24,18 @@ jobs:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
-            .gradle-wrapper-dists
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/gradle-wrapper.properties','build.gradle.kts','**/*.gradle.kts') }}
-      - name: Ensure gradlew executable
-        run: chmod +x ./gradlew || true
+            mobile/.gradle-wrapper-dists
+          key: ${{ runner.os }}-gradle-${{ hashFiles('build.sh','mobile/gradle/wrapper/gradle-wrapper.properties','mobile/**/*.gradle.kts','mobile/gradle.properties') }}
+      - name: Ensure build entrypoints are executable
+        run: chmod +x ./build.sh ./mobile/gradlew || true
       - name: Build shared module
-        run: bash ./gradlew :shared:assemble --no-daemon --stacktrace
+        run: bash ./build.sh mobile :shared:assemble --no-daemon --stacktrace
         env:
           CI: true
 
   build-android:
     name: Build :androidApp (assembleDebug)
     runs-on: ubuntu-latest
-    env:
-      ANDROID_SDK_ROOT: ${{ runner.tool_cache }}/android-sdk
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -48,6 +46,7 @@ jobs:
           java-version: '21'
       - name: Install Android SDK command-line tools
         run: |
+          export ANDROID_SDK_ROOT="$RUNNER_TOOL_CACHE/android-sdk"
           mkdir -p $ANDROID_SDK_ROOT/cmdline-tools
           cd $ANDROID_SDK_ROOT
           curl -fsSL https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -o cmdline.zip
@@ -55,20 +54,23 @@ jobs:
           mv cmdline-tools/cmdline-tools $ANDROID_SDK_ROOT/cmdline-tools/latest || true
           yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "platform-tools" "platforms;android-35" "build-tools;35.0.0"
       - name: Accept licenses
-        run: yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --licenses || true
+        run: |
+          export ANDROID_SDK_ROOT="$RUNNER_TOOL_CACHE/android-sdk"
+          yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --licenses || true
       - name: Cache Gradle
         uses: actions/cache@v4
         with:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
-            .gradle-wrapper-dists
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/gradle-wrapper.properties','build.gradle.kts','**/*.gradle.kts') }}
-      - name: Ensure gradlew executable
-        run: chmod +x ./gradlew || true
+            mobile/.gradle-wrapper-dists
+          key: ${{ runner.os }}-gradle-${{ hashFiles('build.sh','mobile/gradle/wrapper/gradle-wrapper.properties','mobile/**/*.gradle.kts','mobile/gradle.properties') }}
+      - name: Ensure build entrypoints are executable
+        run: chmod +x ./build.sh ./mobile/gradlew || true
       - name: Build androidApp assembleDebug
-        run: bash ./gradlew :androidApp:assembleDebug --no-daemon --stacktrace
+        run: |
+          export ANDROID_SDK_ROOT="$RUNNER_TOOL_CACHE/android-sdk"
+          export ANDROID_HOME="$ANDROID_SDK_ROOT"
+          bash ./build.sh mobile :androidApp:assembleDebug --no-daemon --stacktrace
         env:
           CI: true
-          ANDROID_SDK_ROOT: ${{ env.ANDROID_SDK_ROOT }}
-          ANDROID_HOME: ${{ env.ANDROID_SDK_ROOT }}
