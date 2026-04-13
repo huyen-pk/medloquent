@@ -4,7 +4,7 @@ MedLoquent is a Kotlin Multiplatform mobile application scaffold for fully offli
 
 ## Architecture
 
-The implementation follows the reference architecture in architecture.md:
+The implementation follows the reference architecture in mobile/docs/architecture.md:
 
 - Edge-first inference pipeline: seeded audio capture -> offline ASR normalization -> clinical NLP -> FHIR bundle generation
 - FHIR-first storage: bundle generation and local JSON persistence behind a storage abstraction
@@ -13,28 +13,27 @@ The implementation follows the reference architecture in architecture.md:
 
 ## Project structure
 
-- androidApp: Android launcher application
-- iosApp: SwiftUI host shell for the generated iOS framework
-- shared/core: shared clinical and federated learning models
-- shared/audio: audio capture contract and seeded offline capture implementation
-- shared/asr: offline ASR orchestration and medical abbreviation normalization
-- shared/nlp: rule-based clinical entity extraction and note structuring
-- shared/ehr: FHIR R4 bundle mapper and JSON formatter
-- shared/crypto: envelope codec abstraction with a demo codec for local development
-- shared/storage: encrypted bundle persistence abstraction
-- shared/fl: on-device layer-wise federated update preparation
-- shared/lora: LoRa packet queue abstraction
-- shared/app: Compose Multiplatform UI and workflow coordinator
+- mobile/androidApp: Android launcher application
+- mobile/iosApp: SwiftUI host shell for the generated iOS framework
+- mobile/shared/core: shared clinical and federated learning models
+- mobile/shared/audio: audio capture contract and seeded offline capture implementation
+- mobile/shared/asr: offline ASR orchestration and medical abbreviation normalization
+- mobile/shared/nlp: rule-based clinical entity extraction and note structuring
+- mobile/shared/ehr: FHIR R4 bundle mapper and JSON formatter
+- mobile/shared/crypto: envelope codec abstraction with a demo codec for local development
+- mobile/shared/storage: encrypted bundle persistence abstraction
+- mobile/shared/fl: on-device layer-wise federated update preparation
+- mobile/shared/lora: LoRa packet queue abstraction
+- mobile/shared/app: Compose Multiplatform UI and workflow coordinator
 
 ## Build notes
 
-This workspace does not include a Gradle wrapper. The Android build was validated locally on Linux with Gradle 8.10.2, Android SDK Platform 35, and JDK 21. To build locally:
+The mobile Gradle wrapper now lives under `mobile/`. The Android build was validated locally on Linux with Android SDK Platform 35 and JDK 21. To build locally:
 
-1. Install Gradle 8.10 or newer and JDK 21.
-2. Run `gradle wrapper` from the repository root if you want to commit the wrapper.
-3. Set `sdk.dir` in `local.properties` or export `ANDROID_HOME` and `ANDROID_SDK_ROOT` to a working Android SDK installation.
-4. Build Android with `./gradlew :androidApp:assembleDebug` once the wrapper exists.
-5. Generate the shared iOS framework with `./gradlew :shared:app:assembleXCFramework` and attach it to an Xcode project in iosApp.
+1. Install JDK 21.
+2. Set `sdk.dir` in `mobile/local.properties` or export `ANDROID_HOME` and `ANDROID_SDK_ROOT` to a working Android SDK installation.
+3. Run the global dispatcher with `bash ./build.sh build`, or invoke mobile Gradle directly with `bash ./mobile/gradlew :androidApp:assembleDebug`.
+4. Generate the shared iOS framework with `bash ./mobile/gradlew :shared:app:assembleXCFramework` and attach it to an Xcode project in `mobile/iosApp`.
 
 ## Dev container
 
@@ -48,9 +47,9 @@ The repository now includes a VS Code dev container in `.devcontainer/` for Kotl
 
 1. Copy `.devcontainer/remote-mac.env.example` to your shell environment or load the variables manually.
 2. Ensure the remote macOS machine has Xcode installed and SSH access enabled.
-3. Optionally install XcodeGen on the remote Mac if you want `iosApp/project.yml` to generate `iosApp/MedLoquent.xcodeproj` automatically.
-4. From inside the dev container, run `scripts/remote-xcode.sh open` to sync the repo and open the project in Xcode on the remote Mac.
-5. Run `scripts/remote-xcode.sh build` to sync and execute `xcodebuild` remotely.
+3. Optionally install XcodeGen on the remote Mac if you want `mobile/iosApp/project.yml` to generate `mobile/iosApp/MedLoquent.xcodeproj` automatically.
+4. From inside the dev container, run `mobile/scripts/remote-xcode.sh open` to sync the repo and open the project in Xcode on the remote Mac.
+5. Run `mobile/scripts/remote-xcode.sh build` to sync and execute `xcodebuild` remotely.
 
 The remote build script assumes a macOS host because iOS compilation and Xcode are Apple-only toolchains.
 
@@ -88,38 +87,42 @@ Quick setup:
 	pre-commit run --all-files
 	```
 
-The repository wires the harness checks into the Gradle lifecycle: `harnessCheck` runs before `assemble`/`build` so the gates execute during normal builds and CI runs.
+The repository wires Kotlin and iOS harness checks into the mobile Gradle lifecycle. Use the root dispatcher for whole-project orchestration.
 
-To skip the harness gates for a build, pass `-PskipHarness=true` to Gradle, for example:
+To skip the mobile harness gates for a build, pass `-PskipHarness=true`, for example:
 
 ```bash
-./gradlew build -PskipHarness=true
+bash ./build.sh mobile build -PskipHarness=true
 ```
+
+Note: the repository dispatcher now runs each submodule's `harness-check`
+automatically before invoking a submodule `build`. Pass `-PskipHarness=true`
+or set `SKIP_HARNESS=1` in the environment to bypass these forced checks.
 
 ## Pre-build harness gates
 
-This repository uses a pre-build harness: the gates run during Gradle builds (pre-build) instead of as pre-commit hooks. The harness is executed via the `harnessCheck` Gradle task which is wired to run before `assemble`/`build` by default.
+This repository uses a pre-build harness for the mobile stack: the gates run during the mobile Gradle build instead of as pre-commit hooks. The root `build.sh` dispatcher invokes that mobile harness as part of project-level build orchestration.
 
 Run the harness locally:
 
 ```bash
-# run only harness checks
-./gradlew harnessCheck
+# run only project-level harness checks
+bash ./build.sh harness-check
 
-# run full build (harness gates run automatically)
-./gradlew build
+# run full project build
+bash ./build.sh build
 
 # skip harness gates if necessary
-./gradlew build -PskipHarness=true
+bash ./build.sh mobile build -PskipHarness=true
 ```
 
 Notes:
 
 - The pre-commit configuration is retained for a small set of lightweight hooks (trailing whitespace, EOF fixer, YAML checks) and the `commit-msg` hook for Conventional Commits; heavy formatting and linting are performed via Gradle now.
 - Tooling requirements:
-	- Python tools (optional locally): `mypy`, `ruff`, `black`, `flake8`, `flake8-functions`, and `pep8-naming` (install with `python -m pip install --user mypy ruff black flake8 flake8-functions pep8-naming`). The Gradle Python tasks prefer a project virtualenv at `./hf_env` when available.
-	- Kotlin: Spotless (ktlint) and Detekt are configured via Gradle plugins and run with `./gradlew spotlessApply` / `./gradlew detekt`.
-	- iOS: `swiftlint` on macOS (install via `brew install swiftlint`) — otherwise iOS formatting/linting steps are skipped on non-macOS environments.
+	- Python tools (optional locally): `mypy`, `ruff`, `black`, `flake8`, `flake8-functions`, and `pep8-naming` (install with `python -m pip install --user mypy ruff black flake8 flake8-functions pep8-naming`). These checks stay repo-level and are no longer part of the mobile Gradle harness.
+	- Kotlin: Spotless (ktlint) and Detekt are configured via the mobile Gradle plugins and run with `bash ./build.sh mobile spotlessApply` / `bash ./build.sh mobile detekt`.
+	- iOS: `swiftlint` on macOS (install via `brew install swiftlint`) — otherwise iOS formatting/linting steps are skipped on non-macOS environments. The policy file lives at `mobile/.swiftlint.yml`.
 
 Gate constraints enforced by the harness:
 
@@ -133,9 +136,9 @@ Gate constraints enforced by the harness:
 
 How they're implemented:
 
-- Python: `pyproject.toml` configures Black and Ruff for formatting, naming, and complexity, `.flake8` enforces max function length, and Gradle tasks `harnessFormatPython` / `harnessCheckPython` run `black`, `ruff`, `flake8`, and `mypy`.
+- Python: `pyproject.toml` configures Black and Ruff for formatting, naming, and complexity, and `.flake8` enforces max function length for repo-level Python checks.
 - Kotlin: Spotless (ktlint) and Detekt are applied across subprojects via Gradle plugin configuration (`spotlessApply`, `spotlessCheck`, `detekt`).
-- Swift/iOS: `swiftformat` / `swiftlint` are preferred when available on macOS; `.swiftlint.yml` carries the complexity, size, line-length, and naming policies. On Linux the iOS steps remain a no-op when the Apple toolchain is unavailable.
+- Swift/iOS: `swiftformat` / `swiftlint` are preferred when available on macOS; `mobile/.swiftlint.yml` carries the complexity, size, line-length, and naming policies. On Linux the iOS steps remain a no-op when the Apple toolchain is unavailable.
 
 Deprecated/manual scripts:
 
