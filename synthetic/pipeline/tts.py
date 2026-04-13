@@ -20,6 +20,16 @@ from typing import Dict, List
 # Helper write_wav: use soundfile if available, otherwise fall back to
 # stdlib wave.
 def write_wav(path: str, samples: List[float], sr: int = 16000) -> None:
+    """Write PCM audio samples to a WAV file.
+
+    Uses `soundfile`/`numpy` if available, otherwise falls back to the
+    standard library `wave` module writing 16-bit PCM.
+
+    Args:
+        path: Output WAV file path.
+        samples: Iterable of float samples in range [-1.0, 1.0].
+        sr: Sample rate (default 16000).
+    """
     try:
         import soundfile as sf
         import numpy as np
@@ -45,6 +55,16 @@ def write_wav(path: str, samples: List[float], sr: int = 16000) -> None:
 
 
 def fallback_tone(text: str, out_path: str, sr: int = 16000) -> None:
+    """Generate a deterministic low-volume tone WAV from input text.
+
+    This is a lightweight deterministic fallback used when a TTS engine
+    is not available; it encodes text length/content into tone frequency.
+
+    Args:
+        text: Input text to represent as a tone.
+        out_path: Output WAV path.
+        sr: Sample rate for the generated audio.
+    """
     duration = max(0.5, min(6.0, len(text.split()) * 0.25))
     nsamples = int(sr * duration)
     f = 220 + (sum(ord(c) for c in text) % 400)
@@ -56,6 +76,12 @@ def fallback_tone(text: str, out_path: str, sr: int = 16000) -> None:
 
 
 def generate_with_coqui(text: str, out_path: str) -> None:
+    """Generate audio using the Coqui TTS library.
+
+    Args:
+        text: Input text to synthesize.
+        out_path: Path to write the synthesized WAV file.
+    """
     from TTS.api import TTS
 
     tts = TTS()
@@ -63,6 +89,11 @@ def generate_with_coqui(text: str, out_path: str) -> None:
 
 
 def coqui_available() -> bool:
+    """Return True if the Coqui TTS API appears importable.
+
+    This is a lightweight capability check used to decide whether to
+    attempt real TTS or use the fallback tone generator.
+    """
     try:
         from TTS.api import TTS
 
@@ -73,6 +104,14 @@ def coqui_available() -> bool:
 
 
 def resample_output_to_16k(out_path: str) -> None:
+    """Resample an existing audio file to 16 kHz if needed.
+
+    Uses `soundfile` to read and `librosa` to resample when available; if
+    `librosa` is missing a best-effort write is performed without resampling.
+
+    Args:
+        out_path: Path to an audio file to possibly resample in-place.
+    """
     try:
         import soundfile as sf
 
@@ -97,6 +136,13 @@ def resample_output_to_16k(out_path: str) -> None:
 
 
 def generate_audio(text: str, out_path: str, use_coqui: bool) -> None:
+    """Produce audio for `text` either via Coqui or the fallback tone.
+
+    Args:
+        text: Text to synthesize.
+        out_path: Output WAV path.
+        use_coqui: If True, attempt Coqui TTS first, otherwise fallback.
+    """
     if use_coqui:
         try:
             generate_with_coqui(text, out_path)
@@ -113,6 +159,19 @@ def run_tts(
     out_dir: str = "testData/synthetic/audio",
     force_fallback: bool = False,
 ) -> List[Dict[str, str]]:
+    """Synthesize audio for each row in a manifest CSV.
+
+    Reads the manifest (CSV with `id` and `text`) and writes WAV files into
+    `out_dir`. Returns a list of dicts with `id` and `audio` path.
+
+    Args:
+        manifest: Path to the manifest CSV to read.
+        out_dir: Directory to write output WAV files into.
+        force_fallback: If True, skip Coqui and use the deterministic tone.
+
+    Returns:
+        List of dicts: {"id": <id>, "audio": <path>}.
+    """
     rows: list[dict[str, str | None]] = []
     if not os.path.exists(manifest):
         raise FileNotFoundError(manifest)
@@ -131,12 +190,17 @@ def run_tts(
         if not record_id:
             continue
         out_path = os.path.join(out_dir, f"{record_id}.wav")
+        os.makedirs(out_dir, exist_ok=True)
         generate_audio(text, out_path, use_coqui)
         out_rows.append({"id": record_id, "audio": out_path})
     return out_rows
 
 
 def main(argv: list[str] | None = None) -> None:
+    """CLI entrypoint for the TTS component.
+
+    Parses CLI args and invokes `run_tts`.
+    """
     p = argparse.ArgumentParser()
     p.add_argument(
         "--manifest",

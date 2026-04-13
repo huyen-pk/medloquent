@@ -7,6 +7,7 @@ recall/precision and writes a JSON metrics file.
 
 import argparse
 import csv
+import glob
 import json
 import os
 from collections import Counter
@@ -23,6 +24,15 @@ except Exception:
 
 
 def load_manifest(manifest: str) -> Dict[str, str]:
+    """Load a CSV manifest mapping ids to reference text.
+
+    Args:
+        manifest: Path to the CSV manifest file.
+
+    Returns:
+        Dict mapping record id to reference text. Missing files return
+        an empty dict.
+    """
     m: Dict[str, str] = {}
     if not os.path.exists(manifest):
         return m
@@ -34,6 +44,14 @@ def load_manifest(manifest: str) -> Dict[str, str]:
 
 
 def load_predictions(preds_path: str) -> List[Dict[str, Any]]:
+    """Load predictions from a JSONL file.
+
+    Args:
+        preds_path: Path to a JSONL file where each line is a JSON object.
+
+    Returns:
+        List of parsed JSON objects (dictionaries).
+    """
     preds: List[Dict[str, Any]] = []
     if not os.path.exists(preds_path):
         return preds
@@ -45,7 +63,31 @@ def load_predictions(preds_path: str) -> List[Dict[str, Any]]:
     return preds
 
 
+def resolve_prediction_files(preds_dir: str, preds_file: str) -> List[str]:
+    """Resolve prediction files from either a flat or per-sample layout.
+
+    Args:
+        preds_dir: Predictions directory passed to the evaluator.
+        preds_file: Predictions filename to look for.
+
+    Returns:
+        A list of matching prediction file paths.
+    """
+    direct_path = os.path.join(preds_dir, preds_file)
+    if os.path.exists(direct_path):
+        return [direct_path]
+
+    root_dir = os.path.dirname(preds_dir)
+    step_dir = os.path.basename(preds_dir)
+    pattern = os.path.join(root_dir, "*", step_dir, preds_file)
+    return sorted(glob.glob(pattern))
+
+
 def load_terms(terms_path: str) -> List[str]:
+    """Load medical terms from a text file, one term per line.
+
+    Returns a list of lowercase terms. Missing files return an empty list.
+    """
     if not os.path.exists(terms_path):
         return []
 
@@ -59,6 +101,17 @@ def load_terms(terms_path: str) -> List[str]:
 
 
 def simple_wer(ref: str, hyp: str) -> float:
+    """Compute a simple word error rate (WER) between reference and hypo.
+
+    This implements a basic Levenshtein edit-distance based WER.
+
+    Args:
+        ref: Reference string.
+        hyp: Hypothesis string.
+
+    Returns:
+        WER as edits / max(1, number of reference words).
+    """
     a = ref.split()
     b = hyp.split()
     n = len(a)
@@ -79,6 +132,15 @@ def simple_wer(ref: str, hyp: str) -> float:
 
 
 def score_prediction(ref: str, hyp: str) -> float:
+    """Score a single prediction using jiwer.wer if available, else fallback.
+
+    Args:
+        ref: Reference string.
+        hyp: Hypothesis string.
+
+    Returns:
+        WER score as a float.
+    """
     if wer is not None:
         return wer(ref, hyp)
     return simple_wer(ref, hyp)
@@ -92,6 +154,16 @@ def update_term_counts(
     term_fn: Counter[str],
     term_fp: Counter[str],
 ) -> None:
+    """Update per-term true/false positive/negative counters.
+
+    Args:
+        terms: List of lowercase terms to check.
+        ref_low: Lowercased reference text.
+        hyp_low: Lowercased hypothesis text.
+        term_tp: Counter for true positives.
+        term_fn: Counter for false negatives.
+        term_fp: Counter for false positives.
+    """
     for term in terms:
         in_ref = term in ref_low
         in_hyp = term in hyp_low
@@ -109,6 +181,17 @@ def build_metrics(
     term_fn: Counter[str],
     term_fp: Counter[str],
 ) -> Dict[str, Any]:
+    """Aggregate WER scores and term counts into a metrics dict.
+
+    Args:
+        wer_scores: List of per-sample WER floats.
+        term_tp: Counter of true positives per term.
+        term_fn: Counter of false negatives per term.
+        term_fp: Counter of false positives per term.
+
+    Returns:
+        A dictionary containing overall and per-term metrics.
+    """
     metrics: Dict[str, Any] = {
         "samples": len(wer_scores),
         "avg_wer": sum(wer_scores) / max(1, len(wer_scores)),
@@ -142,34 +225,47 @@ def run_eval(
     preds_dir: str,
     preds_file: str = "predictions.jsonl",
     terms: str = "synthetic/terms/medical_terms.txt",
-    out_file: str = "testData/synthetic/metrics.json",
+    out_file: str = "testData/synthetic/eval_metrics.json",
 ) -> str:
+    """Compute evaluation metrics (WER and term precision/recall).
+
+    Args:
+        manifest: Path to CSV manifest mapping ids to reference text.
+        preds_dir: Directory containing the predictions file.
+        preds_file: Filename of the predictions JSONL inside `preds_dir`.
+        terms: Path to a file containing medical terms (one per line).
+        out_file: Path to write the JSON metrics file to.
+
+    Returns:
+        Path to the written metrics JSON file.
+    """
     manifest_map = load_manifest(manifest)
-    preds_path = os.path.join(preds_dir, preds_file)
-    preds = load_predictions(preds_path)
     term_list = load_terms(terms)
+    pred_paths = resolve_prediction_files(preds_dir, preds_file)
 
     wer_scores: List[float] = []
     term_tp: Counter[str] = Counter()
     term_fn: Counter[str] = Counter()
     term_fp: Counter[str] = Counter()
 
-    for r in preds:
-        record_id = r.get("id")
-        if not isinstance(record_id, str):
-            continue
-        ref = manifest_map.get(record_id, "")
-        prediction = r.get("prediction")
-        hyp = prediction if isinstance(prediction, str) else ""
-        wer_scores.append(score_prediction(ref, hyp))
-        update_term_counts(
-            term_list,
-            ref.lower(),
-            hyp.lower(),
-            term_tp,
-            term_fn,
-            term_fp,
-        )
+    for preds_path in pred_paths:
+        preds = load_predictions(preds_path)
+        for r in preds:
+            record_id = r.get("id")
+            if not isinstance(record_id, str):
+                continue
+            ref = manifest_map.get(record_id, "")
+            prediction = r.get("prediction")
+            hyp = prediction if isinstance(prediction, str) else ""
+            wer_scores.append(score_prediction(ref, hyp))
+            update_term_counts(
+                term_list,
+                ref.lower(),
+                hyp.lower(),
+                term_tp,
+                term_fn,
+                term_fp,
+            )
 
     metrics = build_metrics(wer_scores, term_tp, term_fn, term_fp)
 
@@ -180,6 +276,10 @@ def run_eval(
 
 
 def main(argv: list[str] | None = None) -> None:
+    """CLI entrypoint for the evaluator component.
+
+    Parses CLI args and invokes `run_eval`.
+    """
     p = argparse.ArgumentParser()
     p.add_argument("--manifest", required=True)
     p.add_argument("--preds-dir", required=True)
@@ -195,7 +295,7 @@ def main(argv: list[str] | None = None) -> None:
     )
     p.add_argument(
         "--out-file",
-        default="testData/synthetic/metrics.json",
+        default="testData/synthetic/eval_metrics.json",
         help="metrics output path",
     )
     args = p.parse_args(argv)

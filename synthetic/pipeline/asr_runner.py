@@ -37,6 +37,17 @@ except Exception:
 
 
 def load_manifest(manifest_path: str) -> Dict[str, str]:
+    """Load a CSV manifest mapping record id to reference text.
+
+    The manifest should be a CSV with at least an `id` column and an
+    optional `text` column. Missing files return an empty mapping.
+
+    Args:
+        manifest_path: Path to the CSV manifest.
+
+    Returns:
+        A dict mapping record id to text.
+    """
     d: Dict[str, str] = {}
     if not os.path.exists(manifest_path):
         return d
@@ -48,6 +59,14 @@ def load_manifest(manifest_path: str) -> Dict[str, str]:
 
 
 def find_audio_files(in_dir: str) -> List[str]:
+    """Find .wav audio files under a directory (recursive).
+
+    Args:
+        in_dir: Root directory to search for .wav files.
+
+    Returns:
+        Sorted list of file paths to .wav files.
+    """
     paths: List[str] = glob.glob(
         os.path.join(in_dir, "**", "*.wav"), recursive=True
     )
@@ -55,6 +74,12 @@ def find_audio_files(in_dir: str) -> List[str]:
 
 
 def download_and_extract_vosk(model_url: str, dest_dir: str) -> None:
+    """Download a zipped Vosk model and extract it to a destination.
+
+    Args:
+        model_url: URL to the zipped model.
+        dest_dir: Directory to extract the model into.
+    """
     os.makedirs(dest_dir, exist_ok=True)
     with tempfile.TemporaryDirectory() as td:
         zpath = os.path.join(td, "model.zip")
@@ -66,8 +91,17 @@ def download_and_extract_vosk(model_url: str, dest_dir: str) -> None:
 
 
 def ensure_16k_mono(src: str) -> str:
-    # If the file is already 16k mono PCM WAV, return it unchanged.
-    # Otherwise use ffmpeg to convert it.
+    """Ensure a WAV file is 16 kHz mono PCM, converting with ffmpeg if needed.
+
+    If conversion succeeds this returns the path to the converted file;
+    otherwise the original path is returned.
+
+    Args:
+        src: Path to the source WAV file.
+
+    Returns:
+        Path to a 16 kHz mono WAV file (may be the original file).
+    """
     try:
         with wave.open(src, "rb") as wf:
             channels = wf.getnchannels()
@@ -106,6 +140,11 @@ def ensure_16k_mono(src: str) -> str:
 
 
 def resolve_engine() -> Optional[str]:
+    """Pick a default ASR engine available in the environment.
+
+    Returns "vosk" if Vosk is importable, "whisper" if Whisper is
+    importable, otherwise `None`.
+    """
     if _HAS_VOSK:
         return "vosk"
     if _HAS_WHISPER:
@@ -114,6 +153,12 @@ def resolve_engine() -> Optional[str]:
 
 
 def ensure_vosk_model_available(model_path: str, model_url: str) -> None:
+    """Ensure the Vosk model directory exists, downloading if missing.
+
+    Args:
+        model_path: Expected path to the model directory.
+        model_url: URL to download the model zip if not present.
+    """
     if os.path.exists(model_path):
         return
     print("Vosk model not found, downloading to:", model_path)
@@ -121,12 +166,25 @@ def ensure_vosk_model_available(model_path: str, model_url: str) -> None:
 
 
 def load_whisper_model(engine: Optional[str]) -> Any | None:
+    """Load a Whisper model instance if the requested engine is 'whisper'.
+
+    Returns the loaded model or `None` if not applicable.
+    """
     if engine != "whisper":
         return None
     return whisper.load_model("tiny")
 
 
 def transcribe_with_vosk(audio_path: str, model_path: str) -> str:
+    """Transcribe an audio file using a Vosk model.
+
+    Args:
+        audio_path: Path to the audio file to transcribe.
+        model_path: Path to the Vosk model directory.
+
+    Returns:
+        The transcribed text, or an empty string on failure.
+    """
     try:
         wav_path = ensure_16k_mono(audio_path)
         model = vosk.Model(model_path)
@@ -146,6 +204,15 @@ def transcribe_with_vosk(audio_path: str, model_path: str) -> str:
 
 
 def transcribe_with_whisper(whisper_model: Any, audio_path: str) -> str:
+    """Transcribe an audio file using a loaded Whisper model.
+
+    Args:
+        whisper_model: A loaded Whisper model instance.
+        audio_path: Path to the audio file to transcribe.
+
+    Returns:
+        The transcribed text, or an empty string on failure.
+    """
     try:
         result = whisper_model.transcribe(audio_path)
         text = result.get("text", "")
@@ -162,6 +229,11 @@ def prediction_for_file(
     audio_path: str,
     fallback: str,
 ) -> str:
+    """Return a transcription for a single audio file using the selected engine.
+
+    If transcription fails or no engine is available, the provided fallback
+    (typically the reference) is returned.
+    """
     if engine == "vosk":
         return transcribe_with_vosk(audio_path, vosk_model_path) or fallback
     if engine == "whisper" and whisper_model is not None:
@@ -172,6 +244,16 @@ def prediction_for_file(
 def run_asr(
     in_dir: str, out_dir: str, manifest: str = "testData/synthetic/manifest.csv"
 ) -> str:
+    """Run a simple ASR pass over .wav files and write predictions.
+
+    Args:
+        in_dir: Directory containing .wav files to transcribe.
+        out_dir: Directory to write `predictions.jsonl` into.
+        manifest: Path to a CSV manifest mapping ids to reference text.
+
+    Returns:
+        Path to the written predictions file.
+    """
     os.makedirs(out_dir, exist_ok=True)
     manifest_map = load_manifest(manifest)
 
@@ -211,6 +293,10 @@ def run_asr(
 
 
 def main(argv: List[str] | None = None) -> None:
+    """CLI entrypoint for ad-hoc ASR runs.
+
+    Parses CLI arguments and invokes `run_asr`.
+    """
     p = argparse.ArgumentParser()
     p.add_argument(
         "--in-dir",
