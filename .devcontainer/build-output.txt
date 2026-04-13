@@ -1,0 +1,2191 @@
+
+Welcome to Gradle 8.10.2!
+
+Here are the highlights of this release:
+ - Support for Java 23
+ - Faster configuration cache
+ - Better configuration cache reports
+
+For more details see https://docs.gradle.org/8.10.2/release-notes.html
+
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.10.2/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+WARNING: The following problems were found when resolving the SDK location:
+Where: sdk.dir property in local.properties file. Problem: Directory does not exist
+
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+
+> Task :harnessCheckKotlin
+Starting a Gradle Daemon, 1 busy Daemon could not be reused, use --status for details
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+> Task :spotlessInternalRegisterDependencies UP-TO-DATE
+> Task :androidApp:spotlessKotlin
+> Task :androidApp:spotlessKotlinCheck
+> Task :androidApp:spotlessMisc
+> Task :androidApp:spotlessMiscCheck
+> Task :androidApp:spotlessCheck
+> Task :shared:spotlessKotlin
+> Task :shared:spotlessKotlinCheck
+> Task :shared:spotlessMisc
+> Task :shared:spotlessMiscCheck
+> Task :shared:spotlessCheck
+> Task :shared:app:spotlessKotlin
+> Task :shared:app:spotlessKotlinCheck
+> Task :shared:app:spotlessMisc
+> Task :shared:app:spotlessMiscCheck
+> Task :shared:app:spotlessCheck
+> Task :shared:asr:spotlessKotlin
+> Task :shared:asr:spotlessKotlinCheck
+> Task :shared:asr:spotlessMisc
+> Task :shared:asr:spotlessMiscCheck
+> Task :shared:asr:spotlessCheck
+> Task :shared:audio:spotlessKotlin
+> Task :shared:audio:spotlessKotlinCheck
+> Task :shared:audio:spotlessMisc
+> Task :shared:audio:spotlessMiscCheck
+> Task :shared:audio:spotlessCheck
+> Task :shared:core:spotlessKotlin
+> Task :shared:core:spotlessKotlinCheck
+> Task :shared:core:spotlessMisc
+> Task :shared:core:spotlessMiscCheck
+> Task :shared:core:spotlessCheck
+> Task :shared:crypto:spotlessKotlin
+> Task :shared:crypto:spotlessKotlinCheck
+> Task :shared:crypto:spotlessMisc
+> Task :shared:crypto:spotlessMiscCheck
+> Task :shared:crypto:spotlessCheck
+> Task :shared:ehr:spotlessKotlin
+> Task :shared:ehr:spotlessKotlinCheck
+> Task :shared:ehr:spotlessMisc
+> Task :shared:ehr:spotlessMiscCheck
+> Task :shared:ehr:spotlessCheck
+> Task :shared:fl:spotlessKotlin
+> Task :shared:fl:spotlessKotlinCheck
+> Task :shared:fl:spotlessMisc
+> Task :shared:fl:spotlessMiscCheck
+> Task :shared:fl:spotlessCheck
+> Task :shared:lora:spotlessKotlin
+> Task :shared:lora:spotlessKotlinCheck
+> Task :shared:lora:spotlessMisc
+> Task :shared:lora:spotlessMiscCheck
+> Task :shared:lora:spotlessCheck
+> Task :shared:nlp:spotlessKotlin
+> Task :shared:nlp:spotlessKotlinCheck
+> Task :shared:nlp:spotlessMisc
+> Task :shared:nlp:spotlessMiscCheck
+> Task :shared:nlp:spotlessCheck
+> Task :shared:storage:spotlessKotlin
+> Task :shared:storage:spotlessKotlinCheck
+> Task :shared:storage:spotlessMisc
+> Task :shared:storage:spotlessMiscCheck
+> Task :shared:storage:spotlessCheck
+> Task :androidApp:detekt
+> Task :shared:detekt NO-SOURCE
+> Task :shared:app:detekt NO-SOURCE
+> Task :shared:asr:detekt NO-SOURCE
+> Task :shared:audio:detekt NO-SOURCE
+> Task :shared:core:detekt NO-SOURCE
+> Task :shared:crypto:detekt NO-SOURCE
+> Task :shared:ehr:detekt NO-SOURCE
+> Task :shared:fl:detekt NO-SOURCE
+> Task :shared:lora:detekt NO-SOURCE
+> Task :shared:nlp:detekt NO-SOURCE
+> Task :shared:storage:detekt NO-SOURCE
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.10.2/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 57s
+50 actionable tasks: 49 executed, 1 up-to-date
+
+> Task :harnessFormatKotlin
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'spotless-1972451482' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+> Task :spotlessInternalRegisterDependencies UP-TO-DATE
+> Task :androidApp:spotlessKotlin UP-TO-DATE
+> Task :androidApp:spotlessKotlinApply UP-TO-DATE
+> Task :androidApp:spotlessMisc UP-TO-DATE
+> Task :androidApp:spotlessMiscApply UP-TO-DATE
+> Task :androidApp:spotlessApply UP-TO-DATE
+> Task :shared:spotlessKotlin UP-TO-DATE
+> Task :shared:spotlessKotlinApply UP-TO-DATE
+> Task :shared:spotlessMisc UP-TO-DATE
+> Task :shared:spotlessMiscApply UP-TO-DATE
+> Task :shared:spotlessApply UP-TO-DATE
+> Task :shared:app:spotlessKotlin UP-TO-DATE
+> Task :shared:app:spotlessKotlinApply UP-TO-DATE
+> Task :shared:app:spotlessMisc UP-TO-DATE
+> Task :shared:app:spotlessMiscApply UP-TO-DATE
+> Task :shared:app:spotlessApply UP-TO-DATE
+> Task :shared:asr:spotlessKotlin UP-TO-DATE
+> Task :shared:asr:spotlessKotlinApply UP-TO-DATE
+> Task :shared:asr:spotlessMisc UP-TO-DATE
+> Task :shared:asr:spotlessMiscApply UP-TO-DATE
+> Task :shared:asr:spotlessApply UP-TO-DATE
+> Task :shared:audio:spotlessKotlin UP-TO-DATE
+> Task :shared:audio:spotlessKotlinApply UP-TO-DATE
+> Task :shared:audio:spotlessMisc UP-TO-DATE
+> Task :shared:audio:spotlessMiscApply UP-TO-DATE
+> Task :shared:audio:spotlessApply UP-TO-DATE
+> Task :shared:core:spotlessKotlin UP-TO-DATE
+> Task :shared:core:spotlessKotlinApply UP-TO-DATE
+> Task :shared:core:spotlessMisc UP-TO-DATE
+> Task :shared:core:spotlessMiscApply UP-TO-DATE
+> Task :shared:core:spotlessApply UP-TO-DATE
+> Task :shared:crypto:spotlessKotlin UP-TO-DATE
+> Task :shared:crypto:spotlessKotlinApply UP-TO-DATE
+> Task :shared:crypto:spotlessMisc UP-TO-DATE
+> Task :shared:crypto:spotlessMiscApply UP-TO-DATE
+> Task :shared:crypto:spotlessApply UP-TO-DATE
+> Task :shared:ehr:spotlessKotlin UP-TO-DATE
+> Task :shared:ehr:spotlessKotlinApply UP-TO-DATE
+> Task :shared:ehr:spotlessMisc UP-TO-DATE
+> Task :shared:ehr:spotlessMiscApply UP-TO-DATE
+> Task :shared:ehr:spotlessApply UP-TO-DATE
+> Task :shared:fl:spotlessKotlin UP-TO-DATE
+> Task :shared:fl:spotlessKotlinApply UP-TO-DATE
+> Task :shared:fl:spotlessMisc UP-TO-DATE
+> Task :shared:fl:spotlessMiscApply UP-TO-DATE
+> Task :shared:fl:spotlessApply UP-TO-DATE
+> Task :shared:lora:spotlessKotlin UP-TO-DATE
+> Task :shared:lora:spotlessKotlinApply UP-TO-DATE
+> Task :shared:lora:spotlessMisc UP-TO-DATE
+> Task :shared:lora:spotlessMiscApply UP-TO-DATE
+> Task :shared:lora:spotlessApply UP-TO-DATE
+> Task :shared:nlp:spotlessKotlin UP-TO-DATE
+> Task :shared:nlp:spotlessKotlinApply UP-TO-DATE
+> Task :shared:nlp:spotlessMisc UP-TO-DATE
+> Task :shared:nlp:spotlessMiscApply UP-TO-DATE
+> Task :shared:nlp:spotlessApply UP-TO-DATE
+> Task :shared:storage:spotlessKotlin UP-TO-DATE
+> Task :shared:storage:spotlessKotlinApply UP-TO-DATE
+> Task :shared:storage:spotlessMisc UP-TO-DATE
+> Task :shared:storage:spotlessMiscApply UP-TO-DATE
+> Task :shared:storage:spotlessApply UP-TO-DATE
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.10.2/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 3s
+49 actionable tasks: 49 up-to-date
+
+> Task :harnessAndroid
+
+> Task :harnessCheckIOS
+"swiftlint not found"
+
+> Task :harnessFormatIOS
+"swiftformat not found"
+"swiftlint not found"
+
+> Task :harnessIOS
+> Task :harnessCheck
+> Task :androidApp:preBuild UP-TO-DATE
+> Task :androidApp:preDebugBuild UP-TO-DATE
+> Task :androidApp:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :androidApp:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :shared:app:preBuild UP-TO-DATE
+> Task :shared:app:preDebugBuild UP-TO-DATE
+> Task :shared:asr:preBuild UP-TO-DATE
+> Task :shared:asr:preDebugBuild UP-TO-DATE
+> Task :shared:audio:preBuild UP-TO-DATE
+> Task :shared:audio:preDebugBuild UP-TO-DATE
+> Task :shared:core:preBuild UP-TO-DATE
+> Task :shared:core:preDebugBuild UP-TO-DATE
+> Task :shared:crypto:preBuild UP-TO-DATE
+> Task :shared:crypto:preDebugBuild UP-TO-DATE
+> Task :shared:ehr:preBuild UP-TO-DATE
+> Task :shared:ehr:preDebugBuild UP-TO-DATE
+> Task :shared:asr:writeDebugAarMetadata
+> Task :shared:app:writeDebugAarMetadata
+> Task :shared:core:writeDebugAarMetadata
+> Task :shared:audio:writeDebugAarMetadata
+> Task :shared:crypto:writeDebugAarMetadata
+> Task :shared:fl:preBuild UP-TO-DATE
+> Task :shared:ehr:writeDebugAarMetadata
+> Task :shared:fl:preDebugBuild UP-TO-DATE
+> Task :shared:lora:preBuild UP-TO-DATE
+> Task :shared:fl:writeDebugAarMetadata
+> Task :shared:lora:preDebugBuild UP-TO-DATE
+> Task :shared:lora:writeDebugAarMetadata
+> Task :shared:nlp:preBuild UP-TO-DATE
+> Task :shared:nlp:preDebugBuild UP-TO-DATE
+> Task :shared:storage:preBuild UP-TO-DATE
+> Task :shared:nlp:writeDebugAarMetadata
+> Task :shared:storage:preDebugBuild UP-TO-DATE
+> Task :shared:storage:writeDebugAarMetadata
+> Task :androidApp:generateDebugResValues
+> Task :androidApp:checkDebugAarMetadata
+> Task :shared:app:generateDebugResValues
+> Task :shared:app:generateDebugResources
+> Task :shared:app:packageDebugResources
+> Task :shared:asr:generateDebugResValues
+> Task :shared:asr:generateDebugResources
+> Task :shared:asr:packageDebugResources
+> Task :shared:audio:generateDebugResValues
+> Task :shared:audio:generateDebugResources
+> Task :shared:audio:packageDebugResources
+> Task :shared:core:generateDebugResValues
+> Task :shared:core:generateDebugResources
+> Task :shared:core:packageDebugResources
+> Task :shared:crypto:generateDebugResValues
+> Task :shared:crypto:generateDebugResources
+> Task :shared:crypto:packageDebugResources
+> Task :shared:ehr:generateDebugResValues
+> Task :shared:ehr:generateDebugResources
+> Task :shared:ehr:packageDebugResources
+> Task :shared:fl:generateDebugResValues
+> Task :shared:fl:generateDebugResources
+> Task :shared:fl:packageDebugResources
+> Task :shared:lora:generateDebugResValues
+> Task :shared:lora:generateDebugResources
+> Task :shared:lora:packageDebugResources
+> Task :shared:nlp:generateDebugResValues
+> Task :shared:nlp:generateDebugResources
+> Task :shared:nlp:packageDebugResources
+> Task :shared:storage:generateDebugResValues
+> Task :shared:storage:generateDebugResources
+> Task :shared:storage:packageDebugResources
+> Task :androidApp:mapDebugSourceSetPaths
+> Task :androidApp:generateDebugResources
+> Task :androidApp:packageDebugResources
+> Task :androidApp:createDebugCompatibleScreenManifests
+> Task :androidApp:extractDeepLinksDebug
+> Task :shared:app:extractDeepLinksDebug
+> Task :shared:asr:extractDeepLinksDebug
+> Task :shared:audio:extractDeepLinksDebug
+> Task :shared:core:extractDeepLinksDebug
+> Task :shared:crypto:extractDeepLinksDebug
+> Task :shared:ehr:extractDeepLinksDebug
+> Task :androidApp:parseDebugLocalResources
+> Task :shared:fl:extractDeepLinksDebug
+> Task :shared:core:processDebugManifest
+> Task :shared:ehr:processDebugManifest
+> Task :shared:crypto:processDebugManifest
+> Task :shared:asr:processDebugManifest
+> Task :shared:app:processDebugManifest
+> Task :shared:fl:processDebugManifest
+> Task :shared:audio:processDebugManifest
+> Task :shared:lora:extractDeepLinksDebug
+> Task :shared:nlp:extractDeepLinksDebug
+> Task :androidApp:mergeDebugResources
+> Task :shared:lora:processDebugManifest
+> Task :shared:storage:extractDeepLinksDebug
+> Task :shared:nlp:processDebugManifest
+> Task :shared:storage:processDebugManifest
+> Task :shared:app:compileDebugLibraryResources
+> Task :androidApp:processDebugMainManifest
+> Task :androidApp:processDebugManifest
+> Task :shared:asr:compileDebugLibraryResources
+> Task :shared:audio:compileDebugLibraryResources
+> Task :shared:asr:parseDebugLocalResources
+> Task :androidApp:processDebugManifestForPackage
+> Task :shared:app:parseDebugLocalResources
+> Task :shared:audio:parseDebugLocalResources
+> Task :shared:core:compileDebugLibraryResources
+> Task :shared:core:parseDebugLocalResources
+> Task :shared:crypto:compileDebugLibraryResources
+> Task :shared:ehr:compileDebugLibraryResources
+> Task :shared:crypto:parseDebugLocalResources
+> Task :shared:audio:generateDebugRFile
+> Task :shared:core:generateDebugRFile
+> Task :shared:app:generateDebugRFile
+> Task :shared:asr:generateDebugRFile
+> Task :shared:ehr:parseDebugLocalResources
+> Task :shared:fl:compileDebugLibraryResources
+> Task :shared:crypto:generateDebugRFile
+> Task :shared:ehr:generateDebugRFile
+> Task :shared:lora:compileDebugLibraryResources
+> Task :shared:fl:parseDebugLocalResources
+> Task :shared:lora:parseDebugLocalResources
+> Task :shared:nlp:compileDebugLibraryResources
+> Task :shared:fl:generateDebugRFile
+> Task :shared:lora:generateDebugRFile
+> Task :shared:nlp:parseDebugLocalResources
+> Task :shared:storage:compileDebugLibraryResources
+> Task :shared:app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :shared:storage:parseDebugLocalResources
+> Task :shared:nlp:generateDebugRFile
+> Task :shared:storage:generateDebugRFile
+> Task :shared:app:convertXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :shared:app:copyNonXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :shared:app:prepareComposeResourcesTaskForAndroidMain NO-SOURCE
+> Task :shared:app:generateResourceAccessorsForAndroidMain SKIPPED
+> Task :shared:app:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :shared:app:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+> Task :shared:app:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+> Task :shared:app:generateResourceAccessorsForCommonMain SKIPPED
+> Task :shared:app:generateActualResourceCollectorsForAndroidMain SKIPPED
+> Task :shared:app:generateComposeResClass SKIPPED
+> Task :shared:app:generateExpectResourceCollectorsForCommonMain SKIPPED
+> Task :shared:app:convertXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :shared:app:copyNonXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :shared:app:prepareComposeResourcesTaskForAndroidDebug NO-SOURCE
+> Task :shared:app:generateResourceAccessorsForAndroidDebug SKIPPED
+> Task :shared:asr:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :shared:audio:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :shared:core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :androidApp:processDebugResources
+> Task :shared:crypto:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :shared:audio:javaPreCompileDebug
+> Task :shared:core:javaPreCompileDebug
+> Task :shared:asr:javaPreCompileDebug
+> Task :shared:ehr:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :shared:crypto:javaPreCompileDebug
+> Task :shared:fl:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :shared:ehr:javaPreCompileDebug
+> Task :shared:lora:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :shared:fl:javaPreCompileDebug
+> Task :shared:nlp:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :shared:lora:javaPreCompileDebug
+> Task :shared:storage:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :shared:nlp:javaPreCompileDebug
+> Task :shared:storage:javaPreCompileDebug
+> Task :shared:app:javaPreCompileDebug
+> Task :androidApp:javaPreCompileDebug
+> Task :androidApp:mergeDebugShaders
+> Task :androidApp:compileDebugShaders NO-SOURCE
+> Task :androidApp:generateDebugAssets UP-TO-DATE
+> Task :shared:app:mergeDebugShaders
+> Task :shared:app:compileDebugShaders NO-SOURCE
+> Task :shared:app:copyDebugComposeResourcesToAndroidAssets
+> Task :shared:app:debugAssetsCopyForAGP NO-SOURCE
+> Task :shared:app:generateDebugAssets UP-TO-DATE
+> Task :shared:app:packageDebugAssets
+> Task :shared:asr:mergeDebugShaders
+> Task :shared:asr:compileDebugShaders NO-SOURCE
+> Task :shared:asr:debugAssetsCopyForAGP NO-SOURCE
+> Task :shared:asr:generateDebugAssets UP-TO-DATE
+> Task :shared:asr:packageDebugAssets
+> Task :shared:audio:mergeDebugShaders
+> Task :shared:audio:compileDebugShaders NO-SOURCE
+> Task :shared:audio:debugAssetsCopyForAGP NO-SOURCE
+> Task :shared:audio:generateDebugAssets UP-TO-DATE
+> Task :shared:audio:packageDebugAssets
+> Task :shared:core:mergeDebugShaders
+> Task :shared:core:compileDebugShaders NO-SOURCE
+> Task :shared:core:debugAssetsCopyForAGP NO-SOURCE
+> Task :shared:core:generateDebugAssets UP-TO-DATE
+> Task :shared:core:packageDebugAssets
+> Task :shared:crypto:mergeDebugShaders
+> Task :shared:crypto:compileDebugShaders NO-SOURCE
+> Task :shared:crypto:debugAssetsCopyForAGP NO-SOURCE
+> Task :shared:crypto:generateDebugAssets UP-TO-DATE
+> Task :shared:crypto:packageDebugAssets
+> Task :shared:ehr:mergeDebugShaders
+> Task :shared:ehr:compileDebugShaders NO-SOURCE
+> Task :shared:ehr:debugAssetsCopyForAGP NO-SOURCE
+> Task :shared:ehr:generateDebugAssets UP-TO-DATE
+> Task :shared:ehr:packageDebugAssets
+> Task :shared:fl:mergeDebugShaders
+> Task :shared:fl:compileDebugShaders NO-SOURCE
+> Task :shared:fl:debugAssetsCopyForAGP NO-SOURCE
+> Task :shared:fl:generateDebugAssets UP-TO-DATE
+> Task :shared:fl:packageDebugAssets
+> Task :shared:lora:mergeDebugShaders
+> Task :shared:lora:compileDebugShaders NO-SOURCE
+> Task :shared:lora:debugAssetsCopyForAGP NO-SOURCE
+> Task :shared:lora:generateDebugAssets UP-TO-DATE
+> Task :shared:lora:packageDebugAssets
+> Task :shared:nlp:mergeDebugShaders
+> Task :shared:nlp:compileDebugShaders NO-SOURCE
+> Task :shared:nlp:debugAssetsCopyForAGP NO-SOURCE
+> Task :shared:nlp:generateDebugAssets UP-TO-DATE
+> Task :shared:nlp:packageDebugAssets
+> Task :shared:storage:mergeDebugShaders
+> Task :shared:storage:compileDebugShaders NO-SOURCE
+> Task :shared:storage:debugAssetsCopyForAGP NO-SOURCE
+> Task :shared:storage:generateDebugAssets UP-TO-DATE
+> Task :shared:storage:packageDebugAssets
+> Task :androidApp:mergeDebugAssets
+> Task :androidApp:compressDebugAssets
+> Task :androidApp:desugarDebugFileDependencies
+> Task :androidApp:mergeDebugJniLibFolders
+> Task :shared:app:mergeDebugJniLibFolders
+> Task :shared:app:mergeDebugNativeLibs NO-SOURCE
+> Task :shared:app:copyDebugJniLibsProjectOnly
+> Task :shared:asr:mergeDebugJniLibFolders
+> Task :shared:asr:mergeDebugNativeLibs NO-SOURCE
+> Task :androidApp:checkDebugDuplicateClasses
+> Task :shared:asr:copyDebugJniLibsProjectOnly
+> Task :shared:core:compileDebugKotlinAndroid
+> Task :androidApp:mergeExtDexDebug
+> Task :shared:core:compileDebugJavaWithJavac NO-SOURCE
+> Task :shared:core:processDebugJavaRes
+> Task :shared:core:bundleLibRuntimeToJarDebug
+> Task :shared:core:bundleLibCompileToJarDebug
+> Task :shared:core:bundleLibRuntimeToDirDebug
+> Task :shared:audio:mergeDebugJniLibFolders
+> Task :shared:audio:mergeDebugNativeLibs NO-SOURCE
+> Task :shared:audio:copyDebugJniLibsProjectOnly
+> Task :shared:core:mergeDebugJniLibFolders
+> Task :shared:core:mergeDebugNativeLibs NO-SOURCE
+> Task :shared:crypto:compileDebugKotlinAndroid
+> Task :shared:crypto:compileDebugJavaWithJavac NO-SOURCE
+> Task :shared:crypto:bundleLibCompileToJarDebug
+> Task :shared:crypto:bundleLibRuntimeToJarDebug
+> Task :shared:crypto:processDebugJavaRes
+> Task :shared:audio:compileDebugKotlinAndroid
+> Task :shared:audio:compileDebugJavaWithJavac NO-SOURCE
+> Task :shared:crypto:bundleLibRuntimeToDirDebug
+> Task :shared:audio:bundleLibCompileToJarDebug
+> Task :shared:audio:bundleLibRuntimeToJarDebug
+> Task :shared:audio:processDebugJavaRes
+> Task :shared:audio:bundleLibRuntimeToDirDebug
+> Task :shared:core:copyDebugJniLibsProjectOnly
+> Task :shared:crypto:mergeDebugJniLibFolders
+> Task :shared:crypto:mergeDebugNativeLibs NO-SOURCE
+> Task :shared:crypto:copyDebugJniLibsProjectOnly
+> Task :shared:ehr:mergeDebugJniLibFolders
+> Task :shared:ehr:mergeDebugNativeLibs NO-SOURCE
+> Task :shared:ehr:copyDebugJniLibsProjectOnly
+> Task :shared:fl:mergeDebugJniLibFolders
+> Task :shared:fl:mergeDebugNativeLibs NO-SOURCE
+> Task :shared:fl:copyDebugJniLibsProjectOnly
+> Task :shared:lora:mergeDebugJniLibFolders
+> Task :shared:lora:mergeDebugNativeLibs NO-SOURCE
+> Task :shared:lora:copyDebugJniLibsProjectOnly
+> Task :shared:nlp:mergeDebugJniLibFolders
+> Task :shared:nlp:mergeDebugNativeLibs NO-SOURCE
+> Task :shared:nlp:copyDebugJniLibsProjectOnly
+> Task :shared:storage:mergeDebugJniLibFolders
+> Task :shared:storage:mergeDebugNativeLibs NO-SOURCE
+> Task :shared:storage:copyDebugJniLibsProjectOnly
+> Task :shared:fl:compileDebugKotlinAndroid
+> Task :shared:lora:compileDebugKotlinAndroid
+> Task :shared:asr:compileDebugKotlinAndroid
+> Task :shared:nlp:compileDebugKotlinAndroid
+> Task :androidApp:validateSigningDebug
+> Task :shared:asr:compileDebugJavaWithJavac NO-SOURCE
+> Task :shared:asr:bundleLibCompileToJarDebug
+> Task :shared:fl:compileDebugJavaWithJavac NO-SOURCE
+> Task :shared:ehr:compileDebugKotlinAndroid
+> Task :shared:fl:bundleLibCompileToJarDebug
+> Task :shared:ehr:compileDebugJavaWithJavac NO-SOURCE
+> Task :shared:lora:compileDebugJavaWithJavac NO-SOURCE
+> Task :shared:ehr:bundleLibCompileToJarDebug
+> Task :shared:nlp:compileDebugJavaWithJavac NO-SOURCE
+> Task :shared:lora:bundleLibCompileToJarDebug
+> Task :shared:nlp:bundleLibCompileToJarDebug
+> Task :shared:asr:bundleLibRuntimeToJarDebug
+> Task :shared:ehr:bundleLibRuntimeToJarDebug
+> Task :shared:fl:bundleLibRuntimeToJarDebug
+> Task :shared:lora:bundleLibRuntimeToJarDebug
+> Task :shared:nlp:bundleLibRuntimeToJarDebug
+> Task :shared:asr:processDebugJavaRes
+> Task :shared:ehr:processDebugJavaRes
+> Task :shared:fl:processDebugJavaRes
+> Task :shared:lora:processDebugJavaRes
+> Task :shared:nlp:processDebugJavaRes
+> Task :shared:asr:bundleLibRuntimeToDirDebug
+> Task :shared:fl:bundleLibRuntimeToDirDebug
+> Task :shared:ehr:bundleLibRuntimeToDirDebug
+> Task :shared:lora:bundleLibRuntimeToDirDebug
+> Task :shared:nlp:bundleLibRuntimeToDirDebug
+> Task :androidApp:writeDebugAppMetadata
+> Task :androidApp:mergeDebugNativeLibs
+> Task :androidApp:writeDebugSigningConfigVersions
+
+> Task :androidApp:stripDebugDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libandroidx.graphics.path.so.
+
+> Task :androidApp:buildKotlinToolingMetadata
+> Task :androidApp:preReleaseBuild UP-TO-DATE
+> Task :shared:app:preReleaseBuild UP-TO-DATE
+> Task :shared:asr:preReleaseBuild UP-TO-DATE
+> Task :shared:app:writeReleaseAarMetadata
+> Task :shared:audio:preReleaseBuild UP-TO-DATE
+> Task :shared:asr:writeReleaseAarMetadata
+> Task :shared:core:preReleaseBuild UP-TO-DATE
+> Task :shared:audio:writeReleaseAarMetadata
+> Task :shared:crypto:preReleaseBuild UP-TO-DATE
+> Task :shared:core:writeReleaseAarMetadata
+> Task :shared:ehr:preReleaseBuild UP-TO-DATE
+> Task :shared:crypto:writeReleaseAarMetadata
+> Task :shared:fl:preReleaseBuild UP-TO-DATE
+> Task :shared:ehr:writeReleaseAarMetadata
+> Task :shared:lora:preReleaseBuild UP-TO-DATE
+> Task :shared:fl:writeReleaseAarMetadata
+> Task :shared:lora:writeReleaseAarMetadata
+> Task :shared:nlp:preReleaseBuild UP-TO-DATE
+> Task :shared:storage:preReleaseBuild UP-TO-DATE
+> Task :shared:nlp:writeReleaseAarMetadata
+> Task :androidApp:generateReleaseResValues
+> Task :shared:storage:writeReleaseAarMetadata
+> Task :shared:app:generateReleaseResValues
+> Task :androidApp:checkReleaseAarMetadata
+> Task :shared:app:generateReleaseResources
+> Task :shared:app:packageReleaseResources
+> Task :shared:asr:generateReleaseResValues
+> Task :shared:asr:generateReleaseResources
+> Task :shared:asr:packageReleaseResources
+> Task :shared:audio:generateReleaseResValues
+> Task :shared:audio:generateReleaseResources
+> Task :shared:audio:packageReleaseResources
+> Task :shared:core:generateReleaseResValues
+> Task :shared:core:generateReleaseResources
+> Task :shared:core:packageReleaseResources
+> Task :shared:crypto:generateReleaseResValues
+> Task :shared:crypto:generateReleaseResources
+> Task :shared:crypto:packageReleaseResources
+> Task :shared:ehr:generateReleaseResValues
+> Task :shared:ehr:generateReleaseResources
+> Task :shared:ehr:packageReleaseResources
+> Task :shared:fl:generateReleaseResValues
+> Task :shared:fl:generateReleaseResources
+> Task :shared:fl:packageReleaseResources
+> Task :shared:lora:generateReleaseResValues
+> Task :shared:lora:generateReleaseResources
+> Task :shared:lora:packageReleaseResources
+> Task :shared:nlp:generateReleaseResValues
+> Task :shared:nlp:generateReleaseResources
+> Task :shared:nlp:packageReleaseResources
+> Task :shared:storage:generateReleaseResValues
+> Task :shared:storage:generateReleaseResources
+> Task :shared:storage:packageReleaseResources
+> Task :androidApp:mapReleaseSourceSetPaths
+> Task :androidApp:generateReleaseResources
+> Task :shared:storage:compileDebugKotlinAndroid
+> Task :shared:storage:compileDebugJavaWithJavac NO-SOURCE
+> Task :shared:storage:processDebugJavaRes
+> Task :androidApp:packageReleaseResources
+> Task :androidApp:createReleaseCompatibleScreenManifests
+> Task :androidApp:extractDeepLinksRelease
+> Task :shared:app:extractDeepLinksRelease
+> Task :shared:asr:extractDeepLinksRelease
+> Task :shared:audio:extractDeepLinksRelease
+> Task :shared:storage:bundleLibCompileToJarDebug
+> Task :shared:storage:bundleLibRuntimeToDirDebug
+> Task :shared:app:processReleaseManifest
+> Task :shared:storage:bundleLibRuntimeToJarDebug
+> Task :shared:asr:processReleaseManifest
+> Task :shared:audio:processReleaseManifest
+> Task :androidApp:parseReleaseLocalResources
+> Task :androidApp:mergeReleaseResources
+> Task :shared:core:extractDeepLinksRelease
+> Task :shared:crypto:extractDeepLinksRelease
+> Task :shared:core:processReleaseManifest
+> Task :shared:crypto:processReleaseManifest
+> Task :shared:ehr:extractDeepLinksRelease
+> Task :shared:fl:extractDeepLinksRelease
+> Task :shared:ehr:processReleaseManifest
+> Task :shared:lora:extractDeepLinksRelease
+> Task :shared:fl:processReleaseManifest
+> Task :shared:nlp:extractDeepLinksRelease
+> Task :shared:lora:processReleaseManifest
+> Task :shared:storage:extractDeepLinksRelease
+> Task :shared:nlp:processReleaseManifest
+> Task :shared:app:compileReleaseLibraryResources
+> Task :shared:storage:processReleaseManifest
+> Task :shared:app:parseReleaseLocalResources
+> Task :androidApp:processReleaseMainManifest
+> Task :androidApp:processReleaseManifest
+> Task :shared:asr:compileReleaseLibraryResources
+> Task :shared:app:generateReleaseRFile
+> Task :shared:asr:parseReleaseLocalResources
+> Task :shared:audio:compileReleaseLibraryResources
+> Task :shared:audio:parseReleaseLocalResources
+> Task :shared:asr:generateReleaseRFile
+> Task :androidApp:processReleaseManifestForPackage
+> Task :shared:core:compileReleaseLibraryResources
+> Task :shared:audio:generateReleaseRFile
+> Task :shared:crypto:compileReleaseLibraryResources
+> Task :shared:core:parseReleaseLocalResources
+> Task :shared:crypto:parseReleaseLocalResources
+> Task :shared:ehr:compileReleaseLibraryResources
+> Task :shared:core:generateReleaseRFile
+> Task :shared:ehr:parseReleaseLocalResources
+> Task :shared:fl:compileReleaseLibraryResources
+> Task :shared:crypto:generateReleaseRFile
+> Task :shared:ehr:generateReleaseRFile
+> Task :shared:lora:compileReleaseLibraryResources
+> Task :shared:fl:parseReleaseLocalResources
+> Task :shared:lora:parseReleaseLocalResources
+> Task :shared:fl:generateReleaseRFile
+> Task :shared:lora:generateReleaseRFile
+> Task :shared:nlp:compileReleaseLibraryResources
+> Task :shared:nlp:parseReleaseLocalResources
+> Task :shared:storage:compileReleaseLibraryResources
+> Task :shared:app:convertXmlValueResourcesForAndroidRelease NO-SOURCE
+> Task :shared:app:copyNonXmlValueResourcesForAndroidRelease NO-SOURCE
+> Task :shared:storage:parseReleaseLocalResources
+> Task :shared:nlp:generateReleaseRFile
+> Task :shared:app:prepareComposeResourcesTaskForAndroidRelease NO-SOURCE
+> Task :shared:app:generateResourceAccessorsForAndroidRelease SKIPPED
+> Task :shared:storage:generateReleaseRFile
+> Task :shared:core:javaPreCompileRelease
+> Task :shared:audio:javaPreCompileRelease
+> Task :shared:asr:javaPreCompileRelease
+> Task :shared:crypto:javaPreCompileRelease
+> Task :shared:ehr:javaPreCompileRelease
+> Task :shared:fl:javaPreCompileRelease
+> Task :shared:nlp:javaPreCompileRelease
+> Task :shared:lora:javaPreCompileRelease
+> Task :shared:storage:javaPreCompileRelease
+> Task :shared:app:javaPreCompileRelease
+> Task :androidApp:javaPreCompileRelease
+> Task :androidApp:extractProguardFiles
+> Task :shared:app:copyReleaseComposeResourcesToAndroidAssets
+> Task :shared:app:convertXmlValueResourcesForAndroidUnitTest NO-SOURCE
+> Task :shared:app:copyNonXmlValueResourcesForAndroidUnitTest NO-SOURCE
+> Task :shared:app:prepareComposeResourcesTaskForAndroidUnitTest NO-SOURCE
+> Task :shared:app:generateResourceAccessorsForAndroidUnitTest SKIPPED
+> Task :shared:app:convertXmlValueResourcesForAndroidUnitTestDebug NO-SOURCE
+> Task :shared:app:copyNonXmlValueResourcesForAndroidUnitTestDebug NO-SOURCE
+> Task :shared:app:prepareComposeResourcesTaskForAndroidUnitTestDebug NO-SOURCE
+> Task :shared:app:generateResourceAccessorsForAndroidUnitTestDebug SKIPPED
+> Task :shared:app:convertXmlValueResourcesForAndroidUnitTestRelease NO-SOURCE
+> Task :shared:app:copyNonXmlValueResourcesForAndroidUnitTestRelease NO-SOURCE
+> Task :shared:app:prepareComposeResourcesTaskForAndroidUnitTestRelease NO-SOURCE
+> Task :shared:app:generateResourceAccessorsForAndroidUnitTestRelease SKIPPED
+> Task :shared:app:convertXmlValueResourcesForAppleMain NO-SOURCE
+> Task :shared:app:copyNonXmlValueResourcesForAppleMain NO-SOURCE
+> Task :shared:app:prepareComposeResourcesTaskForAppleMain NO-SOURCE
+> Task :shared:app:generateResourceAccessorsForAppleMain SKIPPED
+> Task :shared:app:convertXmlValueResourcesForAppleTest NO-SOURCE
+> Task :shared:app:copyNonXmlValueResourcesForAppleTest NO-SOURCE
+> Task :shared:app:prepareComposeResourcesTaskForAppleTest NO-SOURCE
+> Task :shared:app:generateResourceAccessorsForAppleTest SKIPPED
+> Task :shared:app:convertXmlValueResourcesForCommonTest NO-SOURCE
+> Task :shared:app:copyNonXmlValueResourcesForCommonTest NO-SOURCE
+> Task :shared:app:prepareComposeResourcesTaskForCommonTest NO-SOURCE
+> Task :shared:app:generateResourceAccessorsForCommonTest SKIPPED
+> Task :shared:app:convertXmlValueResourcesForIosArm64Main NO-SOURCE
+> Task :shared:app:copyNonXmlValueResourcesForIosArm64Main NO-SOURCE
+> Task :shared:app:prepareComposeResourcesTaskForIosArm64Main NO-SOURCE
+> Task :shared:app:generateResourceAccessorsForIosArm64Main SKIPPED
+> Task :shared:app:convertXmlValueResourcesForIosArm64Test NO-SOURCE
+> Task :shared:app:copyNonXmlValueResourcesForIosArm64Test NO-SOURCE
+> Task :shared:app:prepareComposeResourcesTaskForIosArm64Test NO-SOURCE
+> Task :shared:app:generateResourceAccessorsForIosArm64Test SKIPPED
+> Task :shared:app:convertXmlValueResourcesForIosMain NO-SOURCE
+> Task :shared:app:copyNonXmlValueResourcesForIosMain NO-SOURCE
+> Task :shared:app:prepareComposeResourcesTaskForIosMain NO-SOURCE
+> Task :shared:app:generateResourceAccessorsForIosMain SKIPPED
+> Task :shared:app:convertXmlValueResourcesForIosSimulatorArm64Main NO-SOURCE
+> Task :shared:app:copyNonXmlValueResourcesForIosSimulatorArm64Main NO-SOURCE
+> Task :shared:app:prepareComposeResourcesTaskForIosSimulatorArm64Main NO-SOURCE
+> Task :shared:app:generateResourceAccessorsForIosSimulatorArm64Main SKIPPED
+> Task :shared:app:convertXmlValueResourcesForIosSimulatorArm64Test NO-SOURCE
+> Task :shared:app:copyNonXmlValueResourcesForIosSimulatorArm64Test NO-SOURCE
+> Task :shared:app:prepareComposeResourcesTaskForIosSimulatorArm64Test NO-SOURCE
+> Task :shared:app:generateResourceAccessorsForIosSimulatorArm64Test SKIPPED
+> Task :shared:app:convertXmlValueResourcesForIosTest NO-SOURCE
+> Task :shared:app:copyNonXmlValueResourcesForIosTest NO-SOURCE
+> Task :shared:app:prepareComposeResourcesTaskForIosTest NO-SOURCE
+> Task :shared:app:generateResourceAccessorsForIosTest SKIPPED
+> Task :shared:app:convertXmlValueResourcesForIosX64Main NO-SOURCE
+> Task :shared:app:copyNonXmlValueResourcesForIosX64Main NO-SOURCE
+> Task :shared:app:prepareComposeResourcesTaskForIosX64Main NO-SOURCE
+> Task :shared:app:generateResourceAccessorsForIosX64Main SKIPPED
+> Task :shared:app:convertXmlValueResourcesForIosX64Test NO-SOURCE
+> Task :shared:app:copyNonXmlValueResourcesForIosX64Test NO-SOURCE
+> Task :shared:app:prepareComposeResourcesTaskForIosX64Test NO-SOURCE
+> Task :shared:app:generateResourceAccessorsForIosX64Test SKIPPED
+> Task :shared:app:convertXmlValueResourcesForNativeMain NO-SOURCE
+> Task :shared:app:copyNonXmlValueResourcesForNativeMain NO-SOURCE
+> Task :shared:app:prepareComposeResourcesTaskForNativeMain NO-SOURCE
+> Task :shared:app:generateResourceAccessorsForNativeMain SKIPPED
+> Task :shared:app:convertXmlValueResourcesForNativeTest NO-SOURCE
+> Task :shared:app:copyNonXmlValueResourcesForNativeTest NO-SOURCE
+> Task :shared:app:prepareComposeResourcesTaskForNativeTest NO-SOURCE
+> Task :shared:app:generateResourceAccessorsForNativeTest SKIPPED
+> Task :shared:app:extractProguardFiles
+> Task :shared:asr:extractProguardFiles
+> Task :shared:audio:extractProguardFiles
+> Task :shared:core:extractProguardFiles
+> Task :shared:core:prepareLintJarForPublish UP-TO-DATE
+> Task :shared:audio:prepareLintJarForPublish UP-TO-DATE
+> Task :shared:asr:prepareLintJarForPublish UP-TO-DATE
+> Task :shared:crypto:extractProguardFiles
+> Task :shared:crypto:prepareLintJarForPublish UP-TO-DATE
+> Task :shared:ehr:extractProguardFiles
+> Task :shared:ehr:prepareLintJarForPublish UP-TO-DATE
+> Task :shared:fl:extractProguardFiles
+> Task :shared:fl:prepareLintJarForPublish UP-TO-DATE
+> Task :shared:lora:extractProguardFiles
+> Task :shared:lora:prepareLintJarForPublish UP-TO-DATE
+> Task :shared:nlp:extractProguardFiles
+> Task :shared:nlp:prepareLintJarForPublish UP-TO-DATE
+> Task :shared:storage:extractProguardFiles
+> Task :shared:storage:prepareLintJarForPublish UP-TO-DATE
+> Task :shared:app:prepareLintJarForPublish UP-TO-DATE
+> Task :shared:app:mergeReleaseJniLibFolders
+> Task :shared:app:mergeReleaseNativeLibs NO-SOURCE
+> Task :shared:app:stripReleaseDebugSymbols NO-SOURCE
+> Task :shared:app:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :shared:app:copyReleaseJniLibsProjectAndLocalJars
+> Task :shared:app:mergeReleaseShaders
+> Task :shared:app:compileReleaseShaders NO-SOURCE
+> Task :shared:app:generateReleaseAssets UP-TO-DATE
+> Task :shared:app:releaseAssetsCopyForAGP NO-SOURCE
+> Task :shared:app:packageReleaseAssets
+> Task :shared:app:prepareReleaseArtProfile UP-TO-DATE
+> Task :shared:asr:mergeReleaseJniLibFolders
+> Task :shared:asr:mergeReleaseNativeLibs NO-SOURCE
+> Task :shared:asr:stripReleaseDebugSymbols NO-SOURCE
+> Task :shared:asr:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :shared:asr:copyReleaseJniLibsProjectAndLocalJars
+> Task :shared:asr:mergeReleaseShaders
+> Task :shared:asr:compileReleaseShaders NO-SOURCE
+> Task :shared:asr:generateReleaseAssets UP-TO-DATE
+> Task :shared:asr:releaseAssetsCopyForAGP NO-SOURCE
+> Task :shared:asr:packageReleaseAssets
+> Task :shared:asr:prepareReleaseArtProfile UP-TO-DATE
+> Task :shared:audio:mergeReleaseJniLibFolders
+> Task :shared:audio:mergeReleaseNativeLibs NO-SOURCE
+> Task :shared:audio:stripReleaseDebugSymbols NO-SOURCE
+> Task :androidApp:processReleaseResources
+> Task :shared:audio:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :shared:audio:copyReleaseJniLibsProjectAndLocalJars
+> Task :shared:audio:mergeReleaseShaders
+> Task :shared:audio:compileReleaseShaders NO-SOURCE
+> Task :shared:audio:generateReleaseAssets UP-TO-DATE
+> Task :shared:audio:releaseAssetsCopyForAGP NO-SOURCE
+> Task :shared:audio:packageReleaseAssets
+> Task :shared:audio:prepareReleaseArtProfile UP-TO-DATE
+> Task :shared:storage:mergeReleaseJniLibFolders
+> Task :shared:storage:mergeReleaseNativeLibs NO-SOURCE
+> Task :shared:storage:stripReleaseDebugSymbols NO-SOURCE
+> Task :shared:storage:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :shared:storage:copyReleaseJniLibsProjectAndLocalJars
+> Task :shared:storage:mergeReleaseShaders
+> Task :shared:storage:compileReleaseShaders NO-SOURCE
+> Task :shared:storage:generateReleaseAssets UP-TO-DATE
+> Task :shared:storage:releaseAssetsCopyForAGP NO-SOURCE
+> Task :shared:storage:packageReleaseAssets
+> Task :shared:storage:prepareReleaseArtProfile UP-TO-DATE
+> Task :shared:crypto:mergeReleaseJniLibFolders
+> Task :shared:crypto:mergeReleaseNativeLibs NO-SOURCE
+> Task :shared:crypto:stripReleaseDebugSymbols NO-SOURCE
+> Task :shared:crypto:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :shared:crypto:copyReleaseJniLibsProjectAndLocalJars
+> Task :shared:crypto:mergeReleaseShaders
+> Task :shared:crypto:compileReleaseShaders NO-SOURCE
+> Task :shared:crypto:generateReleaseAssets UP-TO-DATE
+> Task :shared:crypto:releaseAssetsCopyForAGP NO-SOURCE
+> Task :shared:crypto:packageReleaseAssets
+> Task :shared:crypto:prepareReleaseArtProfile UP-TO-DATE
+> Task :shared:ehr:mergeReleaseJniLibFolders
+> Task :shared:ehr:mergeReleaseNativeLibs NO-SOURCE
+> Task :shared:ehr:stripReleaseDebugSymbols NO-SOURCE
+> Task :shared:ehr:copyReleaseJniLibsProjectAndLocalJars
+> Task :shared:ehr:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :shared:ehr:mergeReleaseShaders
+> Task :shared:ehr:compileReleaseShaders NO-SOURCE
+> Task :shared:ehr:generateReleaseAssets UP-TO-DATE
+> Task :shared:ehr:releaseAssetsCopyForAGP NO-SOURCE
+> Task :shared:ehr:packageReleaseAssets
+> Task :shared:ehr:prepareReleaseArtProfile UP-TO-DATE
+> Task :shared:fl:mergeReleaseJniLibFolders
+> Task :shared:fl:mergeReleaseNativeLibs NO-SOURCE
+> Task :shared:fl:stripReleaseDebugSymbols NO-SOURCE
+> Task :shared:fl:copyReleaseJniLibsProjectAndLocalJars
+> Task :shared:fl:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :shared:fl:mergeReleaseShaders
+> Task :shared:fl:compileReleaseShaders NO-SOURCE
+> Task :shared:fl:generateReleaseAssets UP-TO-DATE
+> Task :shared:fl:releaseAssetsCopyForAGP NO-SOURCE
+> Task :shared:fl:packageReleaseAssets
+> Task :shared:fl:prepareReleaseArtProfile UP-TO-DATE
+> Task :shared:lora:mergeReleaseJniLibFolders
+> Task :shared:lora:mergeReleaseNativeLibs NO-SOURCE
+> Task :shared:lora:stripReleaseDebugSymbols NO-SOURCE
+> Task :shared:lora:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :shared:lora:copyReleaseJniLibsProjectAndLocalJars
+> Task :shared:lora:mergeReleaseShaders
+> Task :shared:lora:compileReleaseShaders NO-SOURCE
+> Task :shared:lora:generateReleaseAssets UP-TO-DATE
+> Task :shared:lora:releaseAssetsCopyForAGP NO-SOURCE
+> Task :shared:lora:packageReleaseAssets
+> Task :shared:lora:prepareReleaseArtProfile UP-TO-DATE
+> Task :shared:nlp:mergeReleaseJniLibFolders
+> Task :shared:nlp:mergeReleaseNativeLibs NO-SOURCE
+> Task :shared:nlp:stripReleaseDebugSymbols NO-SOURCE
+> Task :shared:nlp:copyReleaseJniLibsProjectAndLocalJars
+> Task :shared:nlp:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :shared:nlp:mergeReleaseShaders
+> Task :shared:nlp:compileReleaseShaders NO-SOURCE
+> Task :shared:nlp:generateReleaseAssets UP-TO-DATE
+> Task :shared:nlp:releaseAssetsCopyForAGP NO-SOURCE
+> Task :shared:nlp:packageReleaseAssets
+> Task :shared:nlp:prepareReleaseArtProfile UP-TO-DATE
+> Task :shared:core:mergeReleaseJniLibFolders
+> Task :shared:core:mergeReleaseNativeLibs NO-SOURCE
+> Task :shared:core:stripReleaseDebugSymbols NO-SOURCE
+> Task :shared:core:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :shared:core:copyReleaseJniLibsProjectAndLocalJars
+> Task :shared:core:mergeReleaseShaders
+> Task :shared:core:compileReleaseShaders NO-SOURCE
+> Task :shared:core:generateReleaseAssets UP-TO-DATE
+> Task :shared:core:releaseAssetsCopyForAGP NO-SOURCE
+> Task :shared:core:packageReleaseAssets
+> Task :shared:core:prepareReleaseArtProfile UP-TO-DATE
+> Task :shared:asr:writeReleaseLintModelMetadata
+> Task :shared:audio:writeReleaseLintModelMetadata
+> Task :shared:core:writeReleaseLintModelMetadata
+> Task :shared:crypto:writeReleaseLintModelMetadata
+> Task :shared:ehr:writeReleaseLintModelMetadata
+> Task :shared:fl:writeReleaseLintModelMetadata
+> Task :shared:lora:writeReleaseLintModelMetadata
+> Task :shared:nlp:writeReleaseLintModelMetadata
+> Task :shared:storage:writeReleaseLintModelMetadata
+> Task :shared:app:writeReleaseLintModelMetadata
+> Task :androidApp:mergeReleaseJniLibFolders
+> Task :shared:app:copyReleaseJniLibsProjectOnly
+> Task :shared:asr:copyReleaseJniLibsProjectOnly
+> Task :shared:audio:copyReleaseJniLibsProjectOnly
+> Task :shared:core:copyReleaseJniLibsProjectOnly
+> Task :shared:crypto:copyReleaseJniLibsProjectOnly
+> Task :shared:ehr:copyReleaseJniLibsProjectOnly
+> Task :shared:fl:copyReleaseJniLibsProjectOnly
+> Task :shared:lora:copyReleaseJniLibsProjectOnly
+> Task :shared:nlp:copyReleaseJniLibsProjectOnly
+> Task :shared:storage:copyReleaseJniLibsProjectOnly
+> Task :androidApp:mergeReleaseNativeLibs
+> Task :androidApp:desugarReleaseFileDependencies
+> Task :androidApp:mergeReleaseStartupProfile UP-TO-DATE
+> Task :androidApp:checkReleaseDuplicateClasses
+
+> Task :androidApp:stripReleaseDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libandroidx.graphics.path.so.
+
+> Task :androidApp:mergeReleaseArtProfile
+> Task :androidApp:extractReleaseNativeSymbolTables
+> Task :shared:core:compileReleaseKotlinAndroid
+> Task :shared:app:compileDebugKotlinAndroid
+> Task :shared:app:compileDebugJavaWithJavac NO-SOURCE
+> Task :shared:app:bundleLibCompileToJarDebug
+> Task :shared:app:bundleLibRuntimeToJarDebug
+> Task :shared:app:processDebugJavaRes
+> Task :shared:core:compileReleaseJavaWithJavac NO-SOURCE
+> Task :shared:app:bundleLibRuntimeToDirDebug
+> Task :shared:core:bundleLibCompileToJarRelease
+> Task :shared:core:bundleLibRuntimeToJarRelease
+> Task :shared:core:processReleaseJavaRes
+> Task :androidApp:mergeLibDexDebug
+> Task :shared:audio:compileReleaseKotlinAndroid
+> Task :shared:audio:compileReleaseJavaWithJavac NO-SOURCE
+> Task :shared:audio:bundleLibCompileToJarRelease
+> Task :shared:crypto:compileReleaseKotlinAndroid
+> Task :shared:fl:compileReleaseKotlinAndroid
+> Task :shared:crypto:compileReleaseJavaWithJavac NO-SOURCE
+> Task :shared:fl:compileReleaseJavaWithJavac NO-SOURCE
+> Task :shared:crypto:bundleLibCompileToJarRelease
+> Task :shared:fl:bundleLibCompileToJarRelease
+> Task :shared:audio:bundleLibRuntimeToJarRelease
+> Task :shared:audio:processReleaseJavaRes
+> Task :shared:audio:createFullJarRelease
+> Task :shared:core:createFullJarRelease
+> Task :shared:core:generateReleaseLintModel
+> Task :shared:audio:generateReleaseLintModel
+> Task :shared:crypto:bundleLibRuntimeToJarRelease
+> Task :shared:crypto:processReleaseJavaRes
+> Task :shared:crypto:createFullJarRelease
+> Task :shared:lora:compileReleaseKotlinAndroid
+> Task :shared:crypto:generateReleaseLintModel
+> Task :shared:lora:compileReleaseJavaWithJavac NO-SOURCE
+> Task :shared:lora:bundleLibCompileToJarRelease
+> Task :shared:fl:bundleLibRuntimeToJarRelease
+> Task :shared:fl:processReleaseJavaRes
+> Task :shared:fl:createFullJarRelease
+> Task :shared:fl:generateReleaseLintModel
+> Task :shared:lora:bundleLibRuntimeToJarRelease
+> Task :shared:lora:processReleaseJavaRes
+> Task :shared:lora:createFullJarRelease
+> Task :shared:lora:generateReleaseLintModel
+> Task :shared:asr:compileReleaseKotlinAndroid
+> Task :shared:ehr:compileReleaseKotlinAndroid
+> Task :shared:nlp:compileReleaseKotlinAndroid
+> Task :androidApp:compileDebugKotlin
+> Task :androidApp:mergeExtDexRelease
+> Task :shared:audio:extractReleaseAnnotations
+> Task :androidApp:compileDebugJavaWithJavac NO-SOURCE
+> Task :androidApp:dexBuilderDebug
+> Task :androidApp:mergeDebugGlobalSynthetics
+> Task :androidApp:processDebugJavaRes
+> Task :shared:asr:compileReleaseJavaWithJavac NO-SOURCE
+> Task :shared:ehr:compileReleaseJavaWithJavac NO-SOURCE
+> Task :shared:asr:bundleLibCompileToJarRelease
+> Task :shared:nlp:compileReleaseJavaWithJavac NO-SOURCE
+> Task :shared:ehr:bundleLibCompileToJarRelease
+> Task :androidApp:mergeProjectDexDebug
+> Task :shared:nlp:bundleLibCompileToJarRelease
+> Task :shared:asr:bundleLibRuntimeToJarRelease
+> Task :shared:asr:processReleaseJavaRes
+> Task :shared:asr:createFullJarRelease
+> Task :shared:asr:generateReleaseLintModel
+> Task :shared:ehr:bundleLibRuntimeToJarRelease
+> Task :shared:ehr:processReleaseJavaRes
+> Task :shared:ehr:createFullJarRelease
+> Task :shared:ehr:generateReleaseLintModel
+> Task :shared:nlp:bundleLibRuntimeToJarRelease
+> Task :shared:nlp:processReleaseJavaRes
+> Task :shared:nlp:createFullJarRelease
+> Task :shared:nlp:generateReleaseLintModel
+> Task :shared:asr:extractReleaseAnnotations
+> Task :shared:asr:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :shared:asr:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :shared:audio:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :shared:audio:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :shared:crypto:extractReleaseAnnotations
+> Task :shared:crypto:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :shared:crypto:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :shared:crypto:mergeReleaseJavaResource
+> Task :shared:ehr:extractReleaseAnnotations
+> Task :shared:asr:mergeReleaseJavaResource
+> Task :shared:audio:mergeReleaseJavaResource
+> Task :shared:crypto:syncReleaseLibJars
+> Task :shared:asr:syncReleaseLibJars
+> Task :shared:asr:bundleReleaseLocalLintAar
+> Task :shared:audio:syncReleaseLibJars
+> Task :shared:audio:bundleReleaseLocalLintAar
+> Task :shared:crypto:bundleReleaseLocalLintAar
+> Task :shared:ehr:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :shared:ehr:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :shared:ehr:mergeReleaseJavaResource
+> Task :shared:fl:extractReleaseAnnotations
+> Task :shared:ehr:syncReleaseLibJars
+> Task :shared:ehr:bundleReleaseLocalLintAar
+> Task :shared:fl:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :shared:fl:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :shared:fl:mergeReleaseJavaResource
+> Task :shared:lora:extractReleaseAnnotations
+> Task :shared:fl:syncReleaseLibJars
+> Task :shared:fl:bundleReleaseLocalLintAar
+> Task :shared:lora:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :shared:lora:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :shared:lora:mergeReleaseJavaResource
+> Task :shared:nlp:extractReleaseAnnotations
+> Task :shared:lora:syncReleaseLibJars
+> Task :shared:lora:bundleReleaseLocalLintAar
+> Task :shared:nlp:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :shared:nlp:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :shared:nlp:mergeReleaseJavaResource
+> Task :shared:core:extractReleaseAnnotations
+> Task :shared:nlp:syncReleaseLibJars
+> Task :shared:nlp:bundleReleaseLocalLintAar
+> Task :shared:core:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :shared:core:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :shared:core:mergeReleaseJavaResource
+> Task :shared:core:syncReleaseLibJars
+> Task :shared:core:bundleReleaseLocalLintAar
+> Task :androidApp:mergeDebugJavaResource
+> Task :shared:storage:compileReleaseKotlinAndroid
+> Task :shared:storage:compileReleaseJavaWithJavac NO-SOURCE
+> Task :shared:storage:bundleLibCompileToJarRelease
+> Task :androidApp:packageDebug
+> Task :androidApp:createDebugApkListingFileRedirect
+> Task :androidApp:assembleDebug
+> Task :shared:storage:bundleLibRuntimeToJarRelease
+> Task :shared:storage:processReleaseJavaRes
+> Task :shared:storage:createFullJarRelease
+> Task :shared:storage:generateReleaseLintModel
+> Task :shared:storage:extractReleaseAnnotations
+> Task :shared:storage:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :shared:storage:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :shared:storage:mergeReleaseJavaResource
+> Task :shared:storage:syncReleaseLibJars
+> Task :shared:storage:bundleReleaseLocalLintAar
+> Task :shared:asr:generateReleaseLintVitalModel
+> Task :shared:audio:generateReleaseLintVitalModel
+> Task :shared:core:generateReleaseLintVitalModel
+> Task :shared:crypto:generateReleaseLintVitalModel
+> Task :shared:ehr:generateReleaseLintVitalModel
+> Task :shared:fl:generateReleaseLintVitalModel
+> Task :shared:lora:generateReleaseLintVitalModel
+> Task :shared:nlp:generateReleaseLintVitalModel
+> Task :shared:storage:generateReleaseLintVitalModel
+> Task :androidApp:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :shared:asr:bundleLibRuntimeToDirRelease
+> Task :shared:audio:bundleLibRuntimeToDirRelease
+> Task :shared:storage:bundleLibRuntimeToDirRelease
+> Task :shared:crypto:bundleLibRuntimeToDirRelease
+> Task :shared:ehr:bundleLibRuntimeToDirRelease
+> Task :shared:fl:bundleLibRuntimeToDirRelease
+> Task :shared:lora:bundleLibRuntimeToDirRelease
+> Task :shared:nlp:bundleLibRuntimeToDirRelease
+> Task :shared:core:bundleLibRuntimeToDirRelease
+> Task :androidApp:mergeReleaseShaders
+> Task :androidApp:compileReleaseShaders NO-SOURCE
+> Task :androidApp:generateReleaseAssets UP-TO-DATE
+> Task :androidApp:mergeReleaseAssets
+> Task :androidApp:compressReleaseAssets
+> Task :androidApp:extractReleaseVersionControlInfo
+> Task :androidApp:optimizeReleaseResources
+> Task :androidApp:collectReleaseDependencies
+> Task :androidApp:sdkReleaseDependencyData
+> Task :androidApp:writeReleaseAppMetadata
+> Task :androidApp:writeReleaseSigningConfigVersions
+> Task :androidApp:detekt UP-TO-DATE
+> Task :shared:app:stripDebugDebugSymbols NO-SOURCE
+> Task :shared:app:copyDebugJniLibsProjectAndLocalJars
+> Task :shared:app:extractDebugAnnotations
+> Task :shared:app:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :shared:app:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :shared:app:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :shared:app:prepareDebugArtProfile UP-TO-DATE
+> Task :shared:app:mergeDebugJavaResource
+> Task :shared:app:syncDebugLibJars
+> Task :shared:app:bundleDebugLocalLintAar
+> Task :androidApp:bundleDebugClassesToCompileJar
+> Task :androidApp:preDebugAndroidTestBuild SKIPPED
+> Task :androidApp:generateDebugAndroidTestResValues
+> Task :shared:app:createFullJarDebug
+> Task :shared:app:writeDebugLintModelMetadata
+> Task :shared:app:compileReleaseKotlinAndroid
+> Task :shared:fl:lintVitalAnalyzeRelease
+> Task :shared:asr:lintVitalAnalyzeRelease
+> Task :shared:core:lintVitalAnalyzeRelease
+> Task :shared:ehr:lintVitalAnalyzeRelease
+> Task :shared:audio:lintVitalAnalyzeRelease
+> Task :shared:crypto:lintVitalAnalyzeRelease
+> Task :androidApp:generateDebugAndroidTestLintModel
+> Task :shared:app:compileReleaseJavaWithJavac NO-SOURCE
+> Task :shared:app:bundleLibCompileToJarRelease
+> Task :shared:app:bundleLibRuntimeToJarRelease
+> Task :shared:app:processReleaseJavaRes
+> Task :shared:app:createFullJarRelease
+> Task :androidApp:compileReleaseKotlin
+> Task :shared:app:generateReleaseLintModel
+> Task :androidApp:compileReleaseJavaWithJavac NO-SOURCE
+> Task :androidApp:generateReleaseLintVitalReportModel
+> Task :shared:app:extractReleaseAnnotations
+> Task :shared:app:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :shared:app:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :shared:app:mergeReleaseJavaResource
+> Task :shared:app:syncReleaseLibJars
+> Task :shared:app:bundleReleaseLocalLintAar
+> Task :shared:app:generateReleaseLintVitalModel
+> Task :shared:app:bundleLibRuntimeToDirRelease
+> Task :androidApp:dexBuilderRelease
+> Task :androidApp:mergeReleaseGlobalSynthetics
+> Task :androidApp:processReleaseJavaRes
+> Task :shared:asr:createFullJarDebug
+> Task :shared:audio:createFullJarDebug
+> Task :shared:core:createFullJarDebug
+> Task :shared:core:generateDebugLintModel
+> Task :shared:audio:generateDebugLintModel
+> Task :shared:asr:generateDebugLintModel
+> Task :shared:crypto:createFullJarDebug
+> Task :shared:crypto:generateDebugLintModel
+> Task :shared:ehr:createFullJarDebug
+> Task :shared:ehr:generateDebugLintModel
+> Task :shared:fl:createFullJarDebug
+> Task :shared:fl:generateDebugLintModel
+> Task :shared:lora:createFullJarDebug
+> Task :shared:lora:generateDebugLintModel
+> Task :shared:nlp:createFullJarDebug
+> Task :shared:nlp:generateDebugLintModel
+> Task :shared:storage:createFullJarDebug
+> Task :shared:storage:generateDebugLintModel
+> Task :shared:nlp:lintVitalAnalyzeRelease
+> Task :shared:app:generateDebugLintModel
+> Task :androidApp:generateDebugLintReportModel
+> Task :shared:asr:stripDebugDebugSymbols NO-SOURCE
+> Task :shared:asr:copyDebugJniLibsProjectAndLocalJars
+> Task :shared:lora:lintVitalAnalyzeRelease
+> Task :shared:asr:extractDebugAnnotations
+> Task :shared:asr:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :shared:asr:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :shared:asr:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :shared:asr:prepareDebugArtProfile UP-TO-DATE
+> Task :shared:audio:stripDebugDebugSymbols NO-SOURCE
+> Task :shared:asr:mergeDebugJavaResource
+> Task :shared:audio:copyDebugJniLibsProjectAndLocalJars
+> Task :shared:asr:syncDebugLibJars
+> Task :shared:asr:bundleDebugLocalLintAar
+> Task :shared:audio:extractDebugAnnotations
+> Task :shared:audio:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :shared:audio:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :shared:audio:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :shared:audio:prepareDebugArtProfile UP-TO-DATE
+> Task :shared:storage:stripDebugDebugSymbols NO-SOURCE
+> Task :shared:storage:copyDebugJniLibsProjectAndLocalJars
+> Task :shared:audio:mergeDebugJavaResource
+> Task :shared:storage:extractDebugAnnotations
+> Task :shared:audio:syncDebugLibJars
+> Task :shared:audio:bundleDebugLocalLintAar
+> Task :shared:storage:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :shared:storage:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :shared:storage:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :shared:storage:prepareDebugArtProfile UP-TO-DATE
+> Task :androidApp:mergeReleaseJavaResource
+> Task :shared:crypto:stripDebugDebugSymbols NO-SOURCE
+> Task :shared:storage:mergeDebugJavaResource
+> Task :shared:crypto:copyDebugJniLibsProjectAndLocalJars
+> Task :shared:storage:syncDebugLibJars
+> Task :shared:storage:lintVitalAnalyzeRelease
+> Task :shared:storage:bundleDebugLocalLintAar
+> Task :shared:crypto:extractDebugAnnotations
+> Task :shared:crypto:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :shared:crypto:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :shared:crypto:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :shared:crypto:prepareDebugArtProfile UP-TO-DATE
+> Task :shared:ehr:stripDebugDebugSymbols NO-SOURCE
+> Task :shared:crypto:mergeDebugJavaResource
+> Task :shared:ehr:copyDebugJniLibsProjectAndLocalJars
+> Task :shared:crypto:syncDebugLibJars
+> Task :shared:crypto:bundleDebugLocalLintAar
+> Task :shared:ehr:extractDebugAnnotations
+> Task :shared:ehr:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :shared:ehr:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :shared:ehr:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :shared:ehr:prepareDebugArtProfile UP-TO-DATE
+> Task :shared:fl:stripDebugDebugSymbols NO-SOURCE
+> Task :shared:ehr:mergeDebugJavaResource
+> Task :shared:fl:copyDebugJniLibsProjectAndLocalJars
+> Task :shared:fl:extractDebugAnnotations
+> Task :shared:ehr:syncDebugLibJars
+> Task :shared:ehr:bundleDebugLocalLintAar
+> Task :shared:fl:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :shared:fl:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :shared:fl:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :shared:fl:prepareDebugArtProfile UP-TO-DATE
+> Task :shared:lora:stripDebugDebugSymbols NO-SOURCE
+> Task :shared:fl:mergeDebugJavaResource
+> Task :shared:lora:copyDebugJniLibsProjectAndLocalJars
+> Task :shared:lora:extractDebugAnnotations
+> Task :shared:fl:syncDebugLibJars
+> Task :shared:fl:bundleDebugLocalLintAar
+> Task :shared:lora:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :shared:lora:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :shared:lora:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :shared:lora:prepareDebugArtProfile UP-TO-DATE
+> Task :shared:nlp:stripDebugDebugSymbols NO-SOURCE
+> Task :shared:nlp:copyDebugJniLibsProjectAndLocalJars
+> Task :shared:lora:mergeDebugJavaResource
+> Task :shared:nlp:extractDebugAnnotations
+> Task :shared:lora:syncDebugLibJars
+> Task :shared:lora:bundleDebugLocalLintAar
+> Task :shared:nlp:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :shared:nlp:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :shared:nlp:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :shared:nlp:prepareDebugArtProfile UP-TO-DATE
+> Task :shared:core:stripDebugDebugSymbols NO-SOURCE
+> Task :shared:nlp:mergeDebugJavaResource
+> Task :shared:core:copyDebugJniLibsProjectAndLocalJars
+> Task :shared:nlp:syncDebugLibJars
+> Task :shared:nlp:bundleDebugLocalLintAar
+> Task :shared:core:extractDebugAnnotations
+> Task :shared:core:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :shared:core:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :shared:core:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :shared:core:prepareDebugArtProfile UP-TO-DATE
+> Task :androidApp:preDebugUnitTestBuild UP-TO-DATE
+> Task :shared:core:mergeDebugJavaResource
+> Task :shared:asr:writeDebugLintModelMetadata
+> Task :shared:core:syncDebugLibJars
+> Task :shared:core:bundleDebugLocalLintAar
+> Task :shared:audio:writeDebugLintModelMetadata
+> Task :shared:core:writeDebugLintModelMetadata
+> Task :shared:crypto:writeDebugLintModelMetadata
+> Task :shared:ehr:writeDebugLintModelMetadata
+> Task :shared:fl:writeDebugLintModelMetadata
+> Task :shared:lora:writeDebugLintModelMetadata
+> Task :shared:nlp:writeDebugLintModelMetadata
+> Task :shared:storage:writeDebugLintModelMetadata
+> Task :androidApp:generateDebugUnitTestLintModel
+> Task :shared:app:preDebugAndroidTestBuild UP-TO-DATE
+> Task :shared:app:generateDebugAndroidTestResValues
+> Task :shared:app:generateDebugAndroidTestLintModel
+> Task :shared:app:preDebugUnitTestBuild UP-TO-DATE
+> Task :shared:app:lintVitalAnalyzeRelease
+> Task :shared:core:lintAnalyzeDebug
+> Task :androidApp:mergeDexRelease
+> Task :shared:app:generateDebugUnitTestLintModel
+> Task :shared:asr:preDebugAndroidTestBuild UP-TO-DATE
+> Task :shared:asr:generateDebugAndroidTestResValues
+> Task :shared:asr:generateDebugAndroidTestLintModel
+> Task :shared:asr:preDebugUnitTestBuild UP-TO-DATE
+> Task :shared:asr:generateDebugUnitTestLintModel
+> Task :shared:audio:preDebugAndroidTestBuild UP-TO-DATE
+> Task :shared:audio:generateDebugAndroidTestResValues
+> Task :shared:audio:generateDebugAndroidTestLintModel
+> Task :shared:audio:preDebugUnitTestBuild UP-TO-DATE
+> Task :shared:audio:generateDebugUnitTestLintModel
+> Task :shared:core:preDebugAndroidTestBuild UP-TO-DATE
+> Task :shared:core:generateDebugAndroidTestResValues
+> Task :shared:core:generateDebugAndroidTestLintModel
+> Task :shared:core:preDebugUnitTestBuild UP-TO-DATE
+> Task :shared:core:generateDebugUnitTestLintModel
+> Task :shared:crypto:preDebugAndroidTestBuild UP-TO-DATE
+> Task :shared:crypto:generateDebugAndroidTestResValues
+> Task :shared:crypto:generateDebugAndroidTestLintModel
+> Task :shared:crypto:preDebugUnitTestBuild UP-TO-DATE
+> Task :shared:crypto:generateDebugUnitTestLintModel
+> Task :shared:ehr:preDebugAndroidTestBuild UP-TO-DATE
+> Task :shared:ehr:generateDebugAndroidTestResValues
+> Task :shared:ehr:generateDebugAndroidTestLintModel
+> Task :shared:ehr:preDebugUnitTestBuild UP-TO-DATE
+> Task :shared:ehr:generateDebugUnitTestLintModel
+> Task :shared:fl:preDebugAndroidTestBuild UP-TO-DATE
+> Task :shared:fl:generateDebugAndroidTestResValues
+> Task :shared:fl:generateDebugAndroidTestLintModel
+> Task :shared:fl:preDebugUnitTestBuild UP-TO-DATE
+> Task :shared:fl:generateDebugUnitTestLintModel
+> Task :shared:lora:preDebugAndroidTestBuild UP-TO-DATE
+> Task :shared:lora:generateDebugAndroidTestResValues
+> Task :shared:lora:generateDebugAndroidTestLintModel
+> Task :shared:lora:preDebugUnitTestBuild UP-TO-DATE
+> Task :shared:lora:generateDebugUnitTestLintModel
+> Task :shared:nlp:preDebugAndroidTestBuild UP-TO-DATE
+> Task :shared:nlp:generateDebugAndroidTestResValues
+> Task :shared:nlp:generateDebugAndroidTestLintModel
+> Task :shared:nlp:preDebugUnitTestBuild UP-TO-DATE
+> Task :shared:nlp:generateDebugUnitTestLintModel
+> Task :shared:storage:preDebugAndroidTestBuild UP-TO-DATE
+> Task :shared:storage:generateDebugAndroidTestResValues
+> Task :shared:storage:generateDebugAndroidTestLintModel
+> Task :shared:storage:preDebugUnitTestBuild UP-TO-DATE
+> Task :shared:storage:generateDebugUnitTestLintModel
+> Task :spotlessInternalRegisterDependencies UP-TO-DATE
+> Task :androidApp:spotlessKotlin UP-TO-DATE
+> Task :androidApp:spotlessKotlinCheck UP-TO-DATE
+> Task :androidApp:spotlessMisc UP-TO-DATE
+> Task :androidApp:spotlessMiscCheck UP-TO-DATE
+> Task :androidApp:spotlessCheck UP-TO-DATE
+> Task :androidApp:bundleDebugClassesToRuntimeJar
+> Task :androidApp:compileDebugUnitTestKotlin NO-SOURCE
+> Task :androidApp:javaPreCompileDebugUnitTest
+> Task :androidApp:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :androidApp:processDebugUnitTestJavaRes NO-SOURCE
+> Task :androidApp:testDebugUnitTest NO-SOURCE
+> Task :androidApp:bundleReleaseClassesToRuntimeJar
+> Task :androidApp:bundleReleaseClassesToCompileJar
+> Task :androidApp:compileReleaseUnitTestKotlin NO-SOURCE
+> Task :androidApp:preReleaseUnitTestBuild UP-TO-DATE
+> Task :androidApp:javaPreCompileReleaseUnitTest
+> Task :androidApp:compileReleaseUnitTestJavaWithJavac NO-SOURCE
+> Task :androidApp:processReleaseUnitTestJavaRes NO-SOURCE
+> Task :androidApp:testReleaseUnitTest NO-SOURCE
+> Task :androidApp:test UP-TO-DATE
+> Task :shared:assemble
+> Task :shared:detekt NO-SOURCE
+> Task :shared:spotlessKotlin UP-TO-DATE
+> Task :shared:spotlessKotlinCheck UP-TO-DATE
+> Task :shared:crypto:lintAnalyzeDebug
+> Task :shared:spotlessMisc UP-TO-DATE
+> Task :shared:spotlessMiscCheck UP-TO-DATE
+> Task :shared:spotlessCheck UP-TO-DATE
+> Task :shared:check UP-TO-DATE
+> Task :shared:build
+> Task :shared:ehr:lintAnalyzeDebug
+> Task :shared:audio:lintAnalyzeDebug
+> Task :androidApp:compileReleaseArtProfile
+> Task :shared:fl:lintAnalyzeDebug
+> Task :androidApp:lintAnalyzeDebugUnitTest
+> Task :androidApp:lintAnalyzeDebugAndroidTest
+> Task :androidApp:lintVitalAnalyzeRelease
+> Task :shared:core:transformCommonMainDependenciesMetadata
+> Task :androidApp:lintVitalReportRelease SKIPPED
+> Task :androidApp:lintVitalRelease SKIPPED
+> Task :androidApp:packageRelease
+> Task :androidApp:createReleaseApkListingFileRedirect
+> Task :androidApp:assembleRelease
+> Task :androidApp:assemble
+> Task :shared:core:generateProjectStructureMetadata
+> Task :shared:core:metadataCommonMainProcessResources NO-SOURCE
+> Task :shared:audio:generateProjectStructureMetadata
+> Task :shared:audio:metadataCommonMainProcessResources NO-SOURCE
+> Task :shared:asr:generateProjectStructureMetadata
+> Task :shared:asr:metadataCommonMainProcessResources NO-SOURCE
+> Task :shared:crypto:generateProjectStructureMetadata
+> Task :shared:crypto:metadataCommonMainProcessResources NO-SOURCE
+> Task :shared:ehr:generateProjectStructureMetadata
+> Task :shared:ehr:metadataCommonMainProcessResources NO-SOURCE
+> Task :shared:fl:generateProjectStructureMetadata
+> Task :shared:fl:metadataCommonMainProcessResources NO-SOURCE
+> Task :shared:lora:generateProjectStructureMetadata
+> Task :shared:lora:metadataCommonMainProcessResources NO-SOURCE
+> Task :shared:nlp:generateProjectStructureMetadata
+> Task :shared:nlp:metadataCommonMainProcessResources NO-SOURCE
+> Task :shared:storage:generateProjectStructureMetadata
+> Task :shared:storage:metadataCommonMainProcessResources NO-SOURCE
+> Task :shared:app:generateProjectStructureMetadata
+> Task :shared:app:metadataCommonMainProcessResources NO-SOURCE
+> Task :shared:app:bundleDebugAar
+> Task :shared:app:assembleDebug
+> Task :shared:app:bundleReleaseAar
+> Task :shared:app:mapReleaseSourceSetPaths
+> Task :shared:core:compileCommonMainKotlinMetadata
+> Task :shared:nlp:lintAnalyzeDebug
+> Task :shared:app:lintAnalyzeDebugAndroidTest
+> Task :shared:asr:lintAnalyzeDebug
+> Task :shared:app:lintAnalyzeDebugUnitTest
+> Task :shared:lora:lintAnalyzeDebug
+> Task :shared:storage:lintAnalyzeDebug
+> Task :shared:app:mergeReleaseResources
+> Task :shared:core:metadataCommonMainClasses
+> Task :shared:core:allMetadataJar
+> Task :shared:audio:lintAnalyzeDebugUnitTest
+> Task :shared:asr:lintAnalyzeDebugUnitTest
+> Task :shared:asr:lintAnalyzeDebugAndroidTest
+> Task :shared:core:lintAnalyzeDebugAndroidTest
+> Task :shared:audio:lintAnalyzeDebugAndroidTest
+> Task :shared:app:lintAnalyzeDebug
+> Task :shared:audio:transformCommonMainDependenciesMetadata
+> Task :shared:crypto:transformCommonMainDependenciesMetadata
+> Task :shared:audio:compileCommonMainKotlinMetadata
+> Task :shared:audio:metadataCommonMainClasses
+> Task :shared:audio:allMetadataJar
+> Task :shared:crypto:lintAnalyzeDebugUnitTest
+> Task :shared:crypto:lintAnalyzeDebugAndroidTest
+> Task :shared:asr:transformCommonMainDependenciesMetadata
+> Task :shared:crypto:compileCommonMainKotlinMetadata
+> Task :shared:crypto:metadataCommonMainClasses
+> Task :shared:ehr:lintAnalyzeDebugUnitTest
+> Task :shared:crypto:allMetadataJar
+> Task :shared:ehr:lintAnalyzeDebugAndroidTest
+> Task :shared:core:lintAnalyzeDebugUnitTest
+> Task :shared:ehr:transformCommonMainDependenciesMetadata
+> Task :shared:asr:compileCommonMainKotlinMetadata
+> Task :shared:asr:metadataCommonMainClasses
+> Task :shared:asr:allMetadataJar
+> Task :shared:lora:lintAnalyzeDebugAndroidTest
+> Task :shared:fl:lintAnalyzeDebugAndroidTest
+> Task :shared:fl:transformCommonMainDependenciesMetadata
+> Task :shared:nlp:lintAnalyzeDebugAndroidTest
+> Task :shared:lora:lintAnalyzeDebugUnitTest
+> Task :shared:fl:lintAnalyzeDebugUnitTest
+> Task :shared:ehr:compileCommonMainKotlinMetadata
+> Task :shared:lora:transformCommonMainDependenciesMetadata
+> Task :shared:ehr:metadataCommonMainClasses
+> Task :shared:ehr:allMetadataJar
+> Task :shared:fl:compileCommonMainKotlinMetadata
+> Task :shared:fl:metadataCommonMainClasses
+> Task :shared:fl:allMetadataJar
+> Task :shared:storage:lintAnalyzeDebugAndroidTest
+> Task :shared:nlp:transformCommonMainDependenciesMetadata
+> Task :shared:storage:lintAnalyzeDebugUnitTest
+> Task :shared:nlp:lintAnalyzeDebugUnitTest
+> Task :shared:lora:compileCommonMainKotlinMetadata
+> Task :shared:nlp:compileCommonMainKotlinMetadata
+> Task :shared:storage:transformCommonMainDependenciesMetadata
+> Task :shared:lora:metadataCommonMainClasses
+> Task :shared:lora:allMetadataJar
+> Task :shared:nlp:metadataCommonMainClasses
+> Task :shared:nlp:allMetadataJar
+> Task :shared:app:metadataNativeMainProcessResources NO-SOURCE
+> Task :shared:app:metadataAppleMainProcessResources NO-SOURCE
+> Task :shared:app:generateActualResourceCollectorsForIosArm64Main SKIPPED
+> Task :shared:app:compileKotlinIosArm64 SKIPPED
+> Task :shared:app:generateActualResourceCollectorsForIosSimulatorArm64Main SKIPPED
+> Task :shared:app:compileKotlinIosSimulatorArm64 SKIPPED
+> Task :shared:app:generateActualResourceCollectorsForIosX64Main SKIPPED
+> Task :shared:app:compileKotlinIosX64 SKIPPED
+> Task :shared:storage:compileCommonMainKotlinMetadata
+> Task :shared:app:verifyReleaseResources
+> Task :androidApp:lintAnalyzeDebug
+> Task :shared:app:iosArm64ResolveResourcesFromDependencies
+> Task :shared:storage:metadataCommonMainClasses
+> Task :shared:storage:allMetadataJar
+
+> Task :androidApp:lintReportDebug
+Wrote HTML report to file:///workspaces/medloquent/mobile/androidApp/build/reports/lint-results-debug.html
+
+> Task :shared:app:transformCommonMainDependenciesMetadata
+> Task :androidApp:lintDebug
+> Task :androidApp:lint
+> Task :androidApp:check
+> Task :androidApp:build
+> Task :shared:app:assembleRelease
+> Task :shared:app:assembleIosArm64MainResources
+> Task :shared:app:iosArm64ResolveSelfResourcesCopyHierarchicalMultiplatformResources
+> Task :shared:app:iosArm64AggregateResources
+> Task :shared:app:iosArm64ProcessResources
+> Task :shared:app:iosArm64MainKlibrary
+> Task :shared:app:compileTestKotlinIosArm64 SKIPPED
+> Task :shared:app:iosSimulatorArm64ResolveResourcesFromDependencies
+> Task :shared:app:assembleIosSimulatorArm64MainResources
+> Task :shared:app:iosSimulatorArm64ResolveSelfResourcesCopyHierarchicalMultiplatformResources
+> Task :shared:app:iosSimulatorArm64AggregateResources
+> Task :shared:app:iosSimulatorArm64ProcessResources
+> Task :shared:app:iosSimulatorArm64MainKlibrary
+> Task :shared:app:compileTestKotlinIosSimulatorArm64 SKIPPED
+> Task :shared:app:iosX64ResolveResourcesFromDependencies
+> Task :shared:app:assembleIosX64MainResources
+> Task :shared:app:iosX64ResolveSelfResourcesCopyHierarchicalMultiplatformResources
+> Task :shared:app:iosX64AggregateResources
+> Task :shared:app:iosX64ProcessResources
+> Task :shared:app:iosX64MainKlibrary
+> Task :shared:app:compileTestKotlinIosX64 SKIPPED
+> Task :shared:app:metadataIosMainProcessResources NO-SOURCE
+> Task :shared:app:xcodeVersion SKIPPED
+> Task :shared:app:linkDebugFrameworkIosArm64 SKIPPED
+> Task :shared:app:linkDebugFrameworkIosX64 SKIPPED
+> Task :shared:app:linkDebugFrameworkIosFat SKIPPED
+> Task :shared:app:linkDebugFrameworkIosSimulatorArm64 SKIPPED
+> Task :shared:app:linkReleaseFrameworkIosArm64 SKIPPED
+> Task :shared:app:linkReleaseFrameworkIosX64 SKIPPED
+> Task :shared:app:linkReleaseFrameworkIosFat SKIPPED
+> Task :shared:app:linkReleaseFrameworkIosSimulatorArm64 SKIPPED
+> Task :shared:app:assembleIosSimulatorArm64TestResources
+> Task :shared:app:copyTestComposeResourcesForIosSimulatorArm64
+> Task :shared:app:linkDebugTestIosSimulatorArm64 SKIPPED
+> Task :shared:app:iosSimulatorArm64Test SKIPPED
+> Task :shared:app:assembleIosX64TestResources
+> Task :shared:app:copyTestComposeResourcesForIosX64
+> Task :shared:app:linkDebugTestIosX64 SKIPPED
+> Task :shared:app:iosX64Test SKIPPED
+> Task :shared:app:preReleaseUnitTestBuild UP-TO-DATE
+> Task :shared:app:javaPreCompileDebugUnitTest
+> Task :shared:app:javaPreCompileReleaseUnitTest
+> Task :shared:app:detekt NO-SOURCE
+> Task :shared:app:generateDebugUnitTestStubRFile
+> Task :shared:app:generateReleaseUnitTestStubRFile
+> Task :shared:app:generateDebugLintReportModel
+> Task :shared:app:compileDebugUnitTestKotlinAndroid NO-SOURCE
+> Task :shared:app:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :shared:app:processDebugUnitTestJavaRes NO-SOURCE
+> Task :shared:app:testDebugUnitTest NO-SOURCE
+> Task :shared:app:compileReleaseUnitTestKotlinAndroid NO-SOURCE
+> Task :shared:app:compileReleaseUnitTestJavaWithJavac NO-SOURCE
+> Task :shared:app:processReleaseUnitTestJavaRes NO-SOURCE
+> Task :shared:app:testReleaseUnitTest NO-SOURCE
+> Task :shared:app:allTests NO-SOURCE
+> Task :shared:app:spotlessKotlin UP-TO-DATE
+> Task :shared:app:spotlessKotlinCheck UP-TO-DATE
+> Task :shared:app:spotlessMisc UP-TO-DATE
+> Task :shared:app:spotlessMiscCheck UP-TO-DATE
+> Task :shared:app:spotlessCheck UP-TO-DATE
+> Task :shared:app:test UP-TO-DATE
+> Task :shared:asr:bundleDebugAar
+> Task :shared:asr:assembleDebug
+> Task :shared:asr:bundleReleaseAar
+> Task :shared:asr:mapReleaseSourceSetPaths
+> Task :shared:asr:mergeReleaseResources
+> Task :shared:asr:compileNativeMainKotlinMetadata SKIPPED
+> Task :shared:asr:metadataNativeMainProcessResources NO-SOURCE
+> Task :shared:asr:metadataNativeMainClasses UP-TO-DATE
+> Task :shared:asr:compileAppleMainKotlinMetadata SKIPPED
+> Task :shared:asr:metadataAppleMainProcessResources NO-SOURCE
+> Task :shared:asr:metadataAppleMainClasses UP-TO-DATE
+> Task :shared:asr:compileIosMainKotlinMetadata SKIPPED
+> Task :shared:asr:compileKotlinIosArm64 SKIPPED
+> Task :shared:asr:compileKotlinIosSimulatorArm64 SKIPPED
+> Task :shared:asr:compileKotlinIosX64 SKIPPED
+> Task :shared:asr:iosArm64ProcessResources NO-SOURCE
+> Task :shared:asr:iosArm64MainKlibrary UP-TO-DATE
+> Task :shared:asr:compileTestKotlinIosArm64 SKIPPED
+> Task :shared:asr:iosSimulatorArm64ProcessResources NO-SOURCE
+> Task :shared:asr:iosSimulatorArm64MainKlibrary UP-TO-DATE
+> Task :shared:asr:compileTestKotlinIosSimulatorArm64 SKIPPED
+> Task :shared:app:lintReportDebug
+> Task :shared:asr:iosX64ProcessResources NO-SOURCE
+> Task :shared:app:lintDebug
+> Task :shared:app:lint
+> Task :shared:app:check
+> Task :shared:asr:iosX64MainKlibrary UP-TO-DATE
+> Task :shared:asr:compileTestKotlinIosX64 SKIPPED
+> Task :shared:asr:metadataIosMainProcessResources NO-SOURCE
+> Task :shared:asr:metadataIosMainClasses UP-TO-DATE
+> Task :shared:asr:iosArm64MetadataElements SKIPPED
+> Task :shared:asr:iosSimulatorArm64MetadataElements SKIPPED
+> Task :shared:asr:iosX64MetadataElements SKIPPED
+> Task :shared:asr:xcodeVersion SKIPPED
+> Task :shared:asr:linkDebugTestIosSimulatorArm64 SKIPPED
+> Task :shared:asr:iosSimulatorArm64Test SKIPPED
+> Task :shared:asr:linkDebugTestIosX64 SKIPPED
+> Task :shared:asr:iosX64Test SKIPPED
+> Task :shared:asr:preReleaseUnitTestBuild UP-TO-DATE
+> Task :shared:asr:javaPreCompileDebugUnitTest
+> Task :shared:asr:generateDebugUnitTestStubRFile
+> Task :shared:asr:compileDebugUnitTestKotlinAndroid NO-SOURCE
+> Task :shared:asr:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :shared:asr:generateReleaseUnitTestStubRFile
+> Task :shared:asr:processDebugUnitTestJavaRes NO-SOURCE
+> Task :shared:asr:testDebugUnitTest NO-SOURCE
+> Task :shared:asr:compileReleaseUnitTestKotlinAndroid NO-SOURCE
+> Task :shared:asr:processReleaseUnitTestJavaRes NO-SOURCE
+> Task :shared:asr:javaPreCompileReleaseUnitTest
+> Task :shared:asr:detekt NO-SOURCE
+> Task :shared:asr:generateDebugLintReportModel
+> Task :shared:asr:compileReleaseUnitTestJavaWithJavac NO-SOURCE
+> Task :shared:asr:testReleaseUnitTest NO-SOURCE
+> Task :shared:asr:allTests NO-SOURCE
+> Task :shared:asr:spotlessKotlin UP-TO-DATE
+> Task :shared:asr:spotlessKotlinCheck UP-TO-DATE
+> Task :shared:asr:spotlessMisc UP-TO-DATE
+> Task :shared:asr:spotlessMiscCheck UP-TO-DATE
+> Task :shared:asr:spotlessCheck UP-TO-DATE
+> Task :shared:asr:test UP-TO-DATE
+> Task :shared:audio:bundleDebugAar
+> Task :shared:audio:assembleDebug
+> Task :shared:asr:lintReportDebug
+> Task :shared:audio:bundleReleaseAar
+> Task :shared:asr:lintDebug
+> Task :shared:asr:lint
+> Task :shared:asr:check
+> Task :shared:audio:mapReleaseSourceSetPaths
+> Task :shared:asr:verifyReleaseResources
+> Task :shared:asr:assembleRelease
+> Task :shared:asr:assemble
+> Task :shared:asr:build
+> Task :shared:audio:mergeReleaseResources
+> Task :shared:audio:compileNativeMainKotlinMetadata SKIPPED
+> Task :shared:audio:metadataNativeMainProcessResources NO-SOURCE
+> Task :shared:audio:metadataNativeMainClasses UP-TO-DATE
+> Task :shared:audio:compileAppleMainKotlinMetadata SKIPPED
+> Task :shared:audio:metadataAppleMainProcessResources NO-SOURCE
+> Task :shared:audio:metadataAppleMainClasses UP-TO-DATE
+> Task :shared:audio:compileIosMainKotlinMetadata SKIPPED
+> Task :shared:audio:compileKotlinIosArm64 SKIPPED
+> Task :shared:audio:compileKotlinIosSimulatorArm64 SKIPPED
+> Task :shared:audio:compileKotlinIosX64 SKIPPED
+> Task :shared:audio:iosArm64ProcessResources NO-SOURCE
+> Task :shared:audio:iosArm64MainKlibrary UP-TO-DATE
+> Task :shared:audio:compileTestKotlinIosArm64 SKIPPED
+> Task :shared:audio:iosSimulatorArm64ProcessResources NO-SOURCE
+> Task :shared:audio:iosSimulatorArm64MainKlibrary UP-TO-DATE
+> Task :shared:audio:compileTestKotlinIosSimulatorArm64 SKIPPED
+> Task :shared:audio:iosX64ProcessResources NO-SOURCE
+> Task :shared:audio:iosX64MainKlibrary UP-TO-DATE
+> Task :shared:audio:compileTestKotlinIosX64 SKIPPED
+> Task :shared:audio:metadataIosMainProcessResources NO-SOURCE
+> Task :shared:audio:metadataIosMainClasses UP-TO-DATE
+> Task :shared:audio:iosArm64MetadataElements SKIPPED
+> Task :shared:audio:iosSimulatorArm64MetadataElements SKIPPED
+> Task :shared:audio:iosX64MetadataElements SKIPPED
+> Task :shared:audio:xcodeVersion SKIPPED
+> Task :shared:audio:linkDebugTestIosSimulatorArm64 SKIPPED
+> Task :shared:audio:iosSimulatorArm64Test SKIPPED
+> Task :shared:audio:linkDebugTestIosX64 SKIPPED
+> Task :shared:audio:iosX64Test SKIPPED
+> Task :shared:audio:preReleaseUnitTestBuild UP-TO-DATE
+> Task :shared:audio:javaPreCompileDebugUnitTest
+> Task :shared:audio:generateDebugUnitTestStubRFile
+> Task :shared:audio:compileDebugUnitTestKotlinAndroid NO-SOURCE
+> Task :shared:audio:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :shared:audio:generateReleaseUnitTestStubRFile
+> Task :shared:audio:processDebugUnitTestJavaRes NO-SOURCE
+> Task :shared:audio:testDebugUnitTest NO-SOURCE
+> Task :shared:audio:compileReleaseUnitTestKotlinAndroid NO-SOURCE
+> Task :shared:audio:processReleaseUnitTestJavaRes NO-SOURCE
+> Task :shared:audio:detekt NO-SOURCE
+> Task :shared:audio:javaPreCompileReleaseUnitTest
+> Task :shared:audio:generateDebugLintReportModel
+> Task :shared:audio:compileReleaseUnitTestJavaWithJavac NO-SOURCE
+> Task :shared:audio:testReleaseUnitTest NO-SOURCE
+> Task :shared:audio:allTests NO-SOURCE
+> Task :shared:audio:spotlessKotlin UP-TO-DATE
+> Task :shared:audio:spotlessKotlinCheck UP-TO-DATE
+> Task :shared:audio:spotlessMisc UP-TO-DATE
+> Task :shared:audio:spotlessMiscCheck UP-TO-DATE
+> Task :shared:audio:spotlessCheck UP-TO-DATE
+> Task :shared:audio:test UP-TO-DATE
+> Task :shared:core:bundleDebugAar
+> Task :shared:core:assembleDebug
+> Task :shared:audio:lintReportDebug
+> Task :shared:core:bundleReleaseAar
+> Task :shared:audio:lintDebug
+> Task :shared:audio:lint
+> Task :shared:audio:check
+> Task :shared:core:mapReleaseSourceSetPaths
+> Task :shared:core:mergeReleaseResources
+> Task :shared:core:compileNativeMainKotlinMetadata SKIPPED
+> Task :shared:core:metadataNativeMainProcessResources NO-SOURCE
+> Task :shared:core:metadataNativeMainClasses UP-TO-DATE
+> Task :shared:core:compileAppleMainKotlinMetadata SKIPPED
+> Task :shared:core:metadataAppleMainProcessResources NO-SOURCE
+> Task :shared:core:metadataAppleMainClasses UP-TO-DATE
+> Task :shared:core:compileIosMainKotlinMetadata SKIPPED
+> Task :shared:core:compileKotlinIosArm64 SKIPPED
+> Task :shared:core:compileKotlinIosSimulatorArm64 SKIPPED
+> Task :shared:core:compileKotlinIosX64 SKIPPED
+> Task :shared:core:iosArm64ProcessResources NO-SOURCE
+> Task :shared:core:iosArm64MainKlibrary UP-TO-DATE
+> Task :shared:audio:verifyReleaseResources
+> Task :shared:audio:assembleRelease
+> Task :shared:audio:assemble
+> Task :shared:audio:build
+> Task :shared:core:compileTestKotlinIosArm64 SKIPPED
+> Task :shared:core:iosSimulatorArm64ProcessResources NO-SOURCE
+> Task :shared:core:iosSimulatorArm64MainKlibrary UP-TO-DATE
+> Task :shared:core:compileTestKotlinIosSimulatorArm64 SKIPPED
+> Task :shared:core:iosX64ProcessResources NO-SOURCE
+> Task :shared:core:iosX64MainKlibrary UP-TO-DATE
+> Task :shared:core:compileTestKotlinIosX64 SKIPPED
+> Task :shared:core:metadataIosMainProcessResources NO-SOURCE
+> Task :shared:core:metadataIosMainClasses UP-TO-DATE
+> Task :shared:core:iosArm64MetadataElements SKIPPED
+> Task :shared:core:iosSimulatorArm64MetadataElements SKIPPED
+> Task :shared:core:iosX64MetadataElements SKIPPED
+> Task :shared:core:xcodeVersion SKIPPED
+> Task :shared:core:linkDebugTestIosSimulatorArm64 SKIPPED
+> Task :shared:core:iosSimulatorArm64Test SKIPPED
+> Task :shared:core:linkDebugTestIosX64 SKIPPED
+> Task :shared:core:iosX64Test SKIPPED
+> Task :shared:core:preReleaseUnitTestBuild UP-TO-DATE
+> Task :shared:core:generateDebugUnitTestStubRFile
+> Task :shared:core:javaPreCompileDebugUnitTest
+> Task :shared:core:generateReleaseUnitTestStubRFile
+> Task :shared:core:compileDebugUnitTestKotlinAndroid NO-SOURCE
+> Task :shared:core:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :shared:core:processDebugUnitTestJavaRes NO-SOURCE
+> Task :shared:core:testDebugUnitTest NO-SOURCE
+> Task :shared:core:compileReleaseUnitTestKotlinAndroid NO-SOURCE
+> Task :shared:core:javaPreCompileReleaseUnitTest
+> Task :shared:core:processReleaseUnitTestJavaRes NO-SOURCE
+> Task :shared:core:compileReleaseUnitTestJavaWithJavac NO-SOURCE
+> Task :shared:core:testReleaseUnitTest NO-SOURCE
+> Task :shared:core:allTests NO-SOURCE
+> Task :shared:core:detekt NO-SOURCE
+> Task :shared:core:generateDebugLintReportModel
+> Task :shared:core:spotlessKotlin UP-TO-DATE
+> Task :shared:core:spotlessKotlinCheck UP-TO-DATE
+> Task :shared:core:spotlessMisc UP-TO-DATE
+> Task :shared:core:spotlessMiscCheck UP-TO-DATE
+> Task :shared:core:spotlessCheck UP-TO-DATE
+> Task :shared:core:test UP-TO-DATE
+> Task :shared:core:lintReportDebug
+> Task :shared:crypto:bundleDebugAar
+> Task :shared:core:lintDebug
+> Task :shared:core:lint
+> Task :shared:core:check
+> Task :shared:crypto:assembleDebug
+> Task :shared:crypto:bundleReleaseAar
+> Task :shared:crypto:mapReleaseSourceSetPaths
+> Task :shared:crypto:mergeReleaseResources
+> Task :shared:crypto:compileNativeMainKotlinMetadata SKIPPED
+> Task :shared:crypto:metadataNativeMainProcessResources NO-SOURCE
+> Task :shared:crypto:metadataNativeMainClasses UP-TO-DATE
+> Task :shared:crypto:compileAppleMainKotlinMetadata SKIPPED
+> Task :shared:crypto:metadataAppleMainProcessResources NO-SOURCE
+> Task :shared:crypto:metadataAppleMainClasses UP-TO-DATE
+> Task :shared:crypto:compileIosMainKotlinMetadata SKIPPED
+> Task :shared:crypto:compileKotlinIosArm64 SKIPPED
+> Task :shared:crypto:compileKotlinIosSimulatorArm64 SKIPPED
+> Task :shared:crypto:compileKotlinIosX64 SKIPPED
+> Task :shared:crypto:iosArm64ProcessResources NO-SOURCE
+> Task :shared:crypto:iosArm64MainKlibrary UP-TO-DATE
+> Task :shared:crypto:compileTestKotlinIosArm64 SKIPPED
+> Task :shared:crypto:iosSimulatorArm64ProcessResources NO-SOURCE
+> Task :shared:crypto:iosSimulatorArm64MainKlibrary UP-TO-DATE
+> Task :shared:crypto:compileTestKotlinIosSimulatorArm64 SKIPPED
+> Task :shared:crypto:iosX64ProcessResources NO-SOURCE
+> Task :shared:crypto:iosX64MainKlibrary UP-TO-DATE
+> Task :shared:crypto:compileTestKotlinIosX64 SKIPPED
+> Task :shared:crypto:metadataIosMainProcessResources NO-SOURCE
+> Task :shared:crypto:metadataIosMainClasses UP-TO-DATE
+> Task :shared:crypto:iosArm64MetadataElements SKIPPED
+> Task :shared:crypto:iosSimulatorArm64MetadataElements SKIPPED
+> Task :shared:crypto:iosX64MetadataElements SKIPPED
+> Task :shared:crypto:xcodeVersion SKIPPED
+> Task :shared:crypto:linkDebugTestIosSimulatorArm64 SKIPPED
+> Task :shared:crypto:iosSimulatorArm64Test SKIPPED
+> Task :shared:crypto:linkDebugTestIosX64 SKIPPED
+> Task :shared:crypto:iosX64Test SKIPPED
+> Task :shared:crypto:preReleaseUnitTestBuild UP-TO-DATE
+> Task :shared:crypto:javaPreCompileDebugUnitTest
+> Task :shared:crypto:generateDebugUnitTestStubRFile
+> Task :shared:crypto:compileDebugUnitTestKotlinAndroid NO-SOURCE
+> Task :shared:crypto:generateReleaseUnitTestStubRFile
+> Task :shared:crypto:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :shared:crypto:processDebugUnitTestJavaRes NO-SOURCE
+> Task :shared:crypto:testDebugUnitTest NO-SOURCE
+> Task :shared:crypto:compileReleaseUnitTestKotlinAndroid NO-SOURCE
+> Task :shared:crypto:processReleaseUnitTestJavaRes NO-SOURCE
+> Task :shared:crypto:javaPreCompileReleaseUnitTest
+> Task :shared:crypto:compileReleaseUnitTestJavaWithJavac NO-SOURCE
+> Task :shared:crypto:testReleaseUnitTest NO-SOURCE
+> Task :shared:crypto:allTests NO-SOURCE
+> Task :shared:crypto:detekt NO-SOURCE
+> Task :shared:core:verifyReleaseResources
+> Task :shared:crypto:generateDebugLintReportModel
+> Task :shared:core:assembleRelease
+> Task :shared:core:assemble
+> Task :shared:core:build
+> Task :shared:crypto:spotlessKotlin UP-TO-DATE
+> Task :shared:crypto:spotlessKotlinCheck UP-TO-DATE
+> Task :shared:app:compileCommonMainKotlinMetadata
+> Task :shared:crypto:spotlessMisc UP-TO-DATE
+> Task :shared:app:metadataCommonMainClasses
+> Task :shared:crypto:lintReportDebug
+> Task :shared:app:allMetadataJar
+> Task :shared:app:compileNativeMainKotlinMetadata SKIPPED
+> Task :shared:app:metadataNativeMainClasses UP-TO-DATE
+> Task :shared:app:compileAppleMainKotlinMetadata SKIPPED
+> Task :shared:app:metadataAppleMainClasses UP-TO-DATE
+> Task :shared:app:compileIosMainKotlinMetadata SKIPPED
+> Task :shared:app:metadataIosMainClasses UP-TO-DATE
+> Task :shared:app:iosArm64MetadataElements SKIPPED
+> Task :shared:app:iosSimulatorArm64MetadataElements SKIPPED
+> Task :shared:app:iosX64MetadataElements SKIPPED
+> Task :shared:app:assemble
+> Task :shared:app:build
+> Task :shared:crypto:lintDebug
+> Task :shared:crypto:lint
+> Task :shared:crypto:spotlessMiscCheck UP-TO-DATE
+> Task :shared:crypto:spotlessCheck UP-TO-DATE
+> Task :shared:crypto:test UP-TO-DATE
+> Task :shared:crypto:check
+> Task :shared:crypto:verifyReleaseResources
+> Task :shared:ehr:bundleDebugAar
+> Task :shared:crypto:assembleRelease
+> Task :shared:crypto:assemble
+> Task :shared:crypto:build
+> Task :shared:ehr:assembleDebug
+> Task :shared:ehr:bundleReleaseAar
+> Task :shared:ehr:mapReleaseSourceSetPaths
+> Task :shared:ehr:mergeReleaseResources
+> Task :shared:ehr:compileNativeMainKotlinMetadata SKIPPED
+> Task :shared:ehr:metadataNativeMainProcessResources NO-SOURCE
+> Task :shared:ehr:metadataNativeMainClasses UP-TO-DATE
+> Task :shared:ehr:compileAppleMainKotlinMetadata SKIPPED
+> Task :shared:ehr:metadataAppleMainProcessResources NO-SOURCE
+> Task :shared:ehr:metadataAppleMainClasses UP-TO-DATE
+> Task :shared:ehr:compileIosMainKotlinMetadata SKIPPED
+> Task :shared:ehr:compileKotlinIosArm64 SKIPPED
+> Task :shared:ehr:compileKotlinIosSimulatorArm64 SKIPPED
+> Task :shared:ehr:compileKotlinIosX64 SKIPPED
+> Task :shared:ehr:iosArm64ProcessResources NO-SOURCE
+> Task :shared:ehr:iosArm64MainKlibrary UP-TO-DATE
+> Task :shared:ehr:compileTestKotlinIosArm64 SKIPPED
+> Task :shared:ehr:iosSimulatorArm64ProcessResources NO-SOURCE
+> Task :shared:ehr:iosSimulatorArm64MainKlibrary UP-TO-DATE
+> Task :shared:ehr:compileTestKotlinIosSimulatorArm64 SKIPPED
+> Task :shared:ehr:iosX64ProcessResources NO-SOURCE
+> Task :shared:ehr:iosX64MainKlibrary UP-TO-DATE
+> Task :shared:ehr:compileTestKotlinIosX64 SKIPPED
+> Task :shared:ehr:metadataIosMainProcessResources NO-SOURCE
+> Task :shared:ehr:metadataIosMainClasses UP-TO-DATE
+> Task :shared:ehr:iosArm64MetadataElements SKIPPED
+> Task :shared:ehr:iosSimulatorArm64MetadataElements SKIPPED
+> Task :shared:ehr:iosX64MetadataElements SKIPPED
+> Task :shared:ehr:xcodeVersion SKIPPED
+> Task :shared:ehr:linkDebugTestIosSimulatorArm64 SKIPPED
+> Task :shared:ehr:iosSimulatorArm64Test SKIPPED
+> Task :shared:ehr:linkDebugTestIosX64 SKIPPED
+> Task :shared:ehr:iosX64Test SKIPPED
+> Task :shared:ehr:preReleaseUnitTestBuild UP-TO-DATE
+> Task :shared:ehr:javaPreCompileDebugUnitTest
+> Task :shared:ehr:generateDebugUnitTestStubRFile
+> Task :shared:ehr:compileDebugUnitTestKotlinAndroid NO-SOURCE
+> Task :shared:ehr:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :shared:ehr:generateReleaseUnitTestStubRFile
+> Task :shared:ehr:processDebugUnitTestJavaRes NO-SOURCE
+> Task :shared:ehr:testDebugUnitTest NO-SOURCE
+> Task :shared:ehr:compileReleaseUnitTestKotlinAndroid NO-SOURCE
+> Task :shared:ehr:javaPreCompileReleaseUnitTest
+> Task :shared:ehr:processReleaseUnitTestJavaRes NO-SOURCE
+> Task :shared:ehr:compileReleaseUnitTestJavaWithJavac NO-SOURCE
+> Task :shared:ehr:testReleaseUnitTest NO-SOURCE
+> Task :shared:ehr:allTests NO-SOURCE
+> Task :shared:ehr:detekt NO-SOURCE
+> Task :shared:ehr:generateDebugLintReportModel
+> Task :shared:ehr:spotlessKotlin UP-TO-DATE
+> Task :shared:ehr:spotlessKotlinCheck UP-TO-DATE
+> Task :shared:ehr:spotlessMisc UP-TO-DATE
+> Task :shared:ehr:spotlessMiscCheck UP-TO-DATE
+> Task :shared:ehr:spotlessCheck UP-TO-DATE
+> Task :shared:ehr:test UP-TO-DATE
+> Task :shared:fl:bundleDebugAar
+> Task :shared:fl:assembleDebug
+> Task :shared:ehr:lintReportDebug
+> Task :shared:fl:bundleReleaseAar
+> Task :shared:ehr:lintDebug
+> Task :shared:ehr:lint
+> Task :shared:ehr:check
+> Task :shared:fl:mapReleaseSourceSetPaths
+> Task :shared:fl:mergeReleaseResources
+> Task :shared:fl:compileNativeMainKotlinMetadata SKIPPED
+> Task :shared:fl:metadataNativeMainProcessResources NO-SOURCE
+> Task :shared:fl:metadataNativeMainClasses UP-TO-DATE
+> Task :shared:fl:compileAppleMainKotlinMetadata SKIPPED
+> Task :shared:fl:metadataAppleMainProcessResources NO-SOURCE
+> Task :shared:fl:metadataAppleMainClasses UP-TO-DATE
+> Task :shared:fl:compileIosMainKotlinMetadata SKIPPED
+> Task :shared:fl:compileKotlinIosArm64 SKIPPED
+> Task :shared:fl:compileKotlinIosSimulatorArm64 SKIPPED
+> Task :shared:fl:compileKotlinIosX64 SKIPPED
+> Task :shared:fl:iosArm64ProcessResources NO-SOURCE
+> Task :shared:fl:iosArm64MainKlibrary UP-TO-DATE
+> Task :shared:fl:compileTestKotlinIosArm64 SKIPPED
+> Task :shared:fl:iosSimulatorArm64ProcessResources NO-SOURCE
+> Task :shared:fl:iosSimulatorArm64MainKlibrary UP-TO-DATE
+> Task :shared:fl:compileTestKotlinIosSimulatorArm64 SKIPPED
+> Task :shared:fl:iosX64ProcessResources NO-SOURCE
+> Task :shared:fl:iosX64MainKlibrary UP-TO-DATE
+> Task :shared:fl:compileTestKotlinIosX64 SKIPPED
+> Task :shared:fl:metadataIosMainProcessResources NO-SOURCE
+> Task :shared:fl:metadataIosMainClasses UP-TO-DATE
+> Task :shared:fl:iosArm64MetadataElements SKIPPED
+> Task :shared:fl:iosSimulatorArm64MetadataElements SKIPPED
+> Task :shared:fl:iosX64MetadataElements SKIPPED
+> Task :shared:fl:xcodeVersion SKIPPED
+> Task :shared:fl:linkDebugTestIosSimulatorArm64 SKIPPED
+> Task :shared:fl:iosSimulatorArm64Test SKIPPED
+> Task :shared:fl:linkDebugTestIosX64 SKIPPED
+> Task :shared:fl:iosX64Test SKIPPED
+> Task :shared:fl:preReleaseUnitTestBuild UP-TO-DATE
+> Task :shared:fl:javaPreCompileDebugUnitTest
+> Task :shared:ehr:verifyReleaseResources
+> Task :shared:fl:generateDebugUnitTestStubRFile
+> Task :shared:ehr:assembleRelease
+> Task :shared:ehr:assemble
+> Task :shared:ehr:build
+> Task :shared:fl:generateReleaseUnitTestStubRFile
+> Task :shared:fl:javaPreCompileReleaseUnitTest
+> Task :shared:fl:compileDebugUnitTestKotlinAndroid NO-SOURCE
+> Task :shared:fl:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :shared:fl:processDebugUnitTestJavaRes NO-SOURCE
+> Task :shared:fl:testDebugUnitTest NO-SOURCE
+> Task :shared:fl:compileReleaseUnitTestKotlinAndroid NO-SOURCE
+> Task :shared:fl:compileReleaseUnitTestJavaWithJavac NO-SOURCE
+> Task :shared:fl:processReleaseUnitTestJavaRes NO-SOURCE
+> Task :shared:fl:testReleaseUnitTest NO-SOURCE
+> Task :shared:fl:allTests NO-SOURCE
+> Task :shared:fl:detekt NO-SOURCE
+> Task :shared:fl:generateDebugLintReportModel
+> Task :shared:fl:spotlessKotlin UP-TO-DATE
+> Task :shared:fl:spotlessKotlinCheck UP-TO-DATE
+> Task :shared:fl:spotlessMisc UP-TO-DATE
+> Task :shared:fl:spotlessMiscCheck UP-TO-DATE
+> Task :shared:fl:spotlessCheck UP-TO-DATE
+> Task :shared:fl:test UP-TO-DATE
+> Task :shared:fl:lintReportDebug
+> Task :shared:lora:bundleDebugAar
+> Task :shared:fl:lintDebug
+> Task :shared:fl:lint
+> Task :shared:fl:check
+> Task :shared:lora:assembleDebug
+> Task :shared:fl:verifyReleaseResources
+> Task :shared:lora:bundleReleaseAar
+> Task :shared:fl:assembleRelease
+> Task :shared:fl:assemble
+> Task :shared:fl:build
+> Task :shared:lora:mapReleaseSourceSetPaths
+> Task :shared:lora:mergeReleaseResources
+> Task :shared:lora:compileNativeMainKotlinMetadata SKIPPED
+> Task :shared:lora:metadataNativeMainProcessResources NO-SOURCE
+> Task :shared:lora:metadataNativeMainClasses UP-TO-DATE
+> Task :shared:lora:compileAppleMainKotlinMetadata SKIPPED
+> Task :shared:lora:metadataAppleMainProcessResources NO-SOURCE
+> Task :shared:lora:metadataAppleMainClasses UP-TO-DATE
+> Task :shared:lora:compileIosMainKotlinMetadata SKIPPED
+> Task :shared:lora:compileKotlinIosArm64 SKIPPED
+> Task :shared:lora:compileKotlinIosSimulatorArm64 SKIPPED
+> Task :shared:lora:compileKotlinIosX64 SKIPPED
+> Task :shared:lora:iosArm64ProcessResources NO-SOURCE
+> Task :shared:lora:iosArm64MainKlibrary UP-TO-DATE
+> Task :shared:lora:compileTestKotlinIosArm64 SKIPPED
+> Task :shared:lora:iosSimulatorArm64ProcessResources NO-SOURCE
+> Task :shared:lora:iosSimulatorArm64MainKlibrary UP-TO-DATE
+> Task :shared:lora:compileTestKotlinIosSimulatorArm64 SKIPPED
+> Task :shared:lora:iosX64ProcessResources NO-SOURCE
+> Task :shared:lora:iosX64MainKlibrary UP-TO-DATE
+> Task :shared:lora:compileTestKotlinIosX64 SKIPPED
+> Task :shared:lora:metadataIosMainProcessResources NO-SOURCE
+> Task :shared:lora:metadataIosMainClasses UP-TO-DATE
+> Task :shared:lora:iosArm64MetadataElements SKIPPED
+> Task :shared:lora:iosSimulatorArm64MetadataElements SKIPPED
+> Task :shared:lora:iosX64MetadataElements SKIPPED
+> Task :shared:lora:xcodeVersion SKIPPED
+> Task :shared:lora:linkDebugTestIosSimulatorArm64 SKIPPED
+> Task :shared:lora:iosSimulatorArm64Test SKIPPED
+> Task :shared:lora:linkDebugTestIosX64 SKIPPED
+> Task :shared:lora:iosX64Test SKIPPED
+> Task :shared:lora:preReleaseUnitTestBuild UP-TO-DATE
+> Task :shared:lora:javaPreCompileDebugUnitTest
+> Task :shared:lora:generateDebugUnitTestStubRFile
+> Task :shared:lora:compileDebugUnitTestKotlinAndroid NO-SOURCE
+> Task :shared:lora:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :shared:lora:processDebugUnitTestJavaRes NO-SOURCE
+> Task :shared:lora:generateReleaseUnitTestStubRFile
+> Task :shared:lora:testDebugUnitTest NO-SOURCE
+> Task :shared:lora:compileReleaseUnitTestKotlinAndroid NO-SOURCE
+> Task :shared:lora:processReleaseUnitTestJavaRes NO-SOURCE
+> Task :shared:lora:javaPreCompileReleaseUnitTest
+> Task :shared:lora:compileReleaseUnitTestJavaWithJavac NO-SOURCE
+> Task :shared:lora:testReleaseUnitTest NO-SOURCE
+> Task :shared:lora:allTests NO-SOURCE
+> Task :shared:lora:detekt NO-SOURCE
+> Task :shared:lora:generateDebugLintReportModel
+> Task :shared:lora:spotlessKotlin UP-TO-DATE
+> Task :shared:lora:spotlessKotlinCheck UP-TO-DATE
+> Task :shared:lora:spotlessMisc UP-TO-DATE
+> Task :shared:lora:lintReportDebug
+> Task :shared:lora:spotlessMiscCheck UP-TO-DATE
+> Task :shared:lora:lintDebug
+> Task :shared:lora:lint
+> Task :shared:lora:spotlessCheck UP-TO-DATE
+> Task :shared:lora:test UP-TO-DATE
+> Task :shared:lora:check
+> Task :shared:nlp:bundleDebugAar
+> Task :shared:nlp:assembleDebug
+> Task :shared:nlp:bundleReleaseAar
+> Task :shared:nlp:mapReleaseSourceSetPaths
+> Task :shared:nlp:mergeReleaseResources
+> Task :shared:nlp:compileNativeMainKotlinMetadata SKIPPED
+> Task :shared:nlp:metadataNativeMainProcessResources NO-SOURCE
+> Task :shared:nlp:metadataNativeMainClasses UP-TO-DATE
+> Task :shared:nlp:compileAppleMainKotlinMetadata SKIPPED
+> Task :shared:nlp:metadataAppleMainProcessResources NO-SOURCE
+> Task :shared:nlp:metadataAppleMainClasses UP-TO-DATE
+> Task :shared:nlp:compileIosMainKotlinMetadata SKIPPED
+> Task :shared:nlp:compileKotlinIosArm64 SKIPPED
+> Task :shared:nlp:compileKotlinIosSimulatorArm64 SKIPPED
+> Task :shared:nlp:compileKotlinIosX64 SKIPPED
+> Task :shared:nlp:iosArm64ProcessResources NO-SOURCE
+> Task :shared:nlp:iosArm64MainKlibrary UP-TO-DATE
+> Task :shared:nlp:compileTestKotlinIosArm64 SKIPPED
+> Task :shared:nlp:iosSimulatorArm64ProcessResources NO-SOURCE
+> Task :shared:nlp:iosSimulatorArm64MainKlibrary UP-TO-DATE
+> Task :shared:nlp:compileTestKotlinIosSimulatorArm64 SKIPPED
+> Task :shared:nlp:iosX64ProcessResources NO-SOURCE
+> Task :shared:nlp:iosX64MainKlibrary UP-TO-DATE
+> Task :shared:nlp:compileTestKotlinIosX64 SKIPPED
+> Task :shared:nlp:metadataIosMainProcessResources NO-SOURCE
+> Task :shared:nlp:metadataIosMainClasses UP-TO-DATE
+> Task :shared:nlp:iosArm64MetadataElements SKIPPED
+> Task :shared:nlp:iosSimulatorArm64MetadataElements SKIPPED
+> Task :shared:nlp:iosX64MetadataElements SKIPPED
+> Task :shared:nlp:xcodeVersion SKIPPED
+> Task :shared:nlp:linkDebugTestIosSimulatorArm64 SKIPPED
+> Task :shared:nlp:iosSimulatorArm64Test SKIPPED
+> Task :shared:nlp:linkDebugTestIosX64 SKIPPED
+> Task :shared:nlp:iosX64Test SKIPPED
+> Task :shared:nlp:preReleaseUnitTestBuild UP-TO-DATE
+> Task :shared:nlp:generateDebugUnitTestStubRFile
+> Task :shared:nlp:javaPreCompileDebugUnitTest
+> Task :shared:lora:verifyReleaseResources
+> Task :shared:lora:assembleRelease
+> Task :shared:lora:assemble
+> Task :shared:lora:build
+> Task :shared:nlp:generateReleaseUnitTestStubRFile
+> Task :shared:nlp:compileDebugUnitTestKotlinAndroid NO-SOURCE
+> Task :shared:nlp:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :shared:nlp:processDebugUnitTestJavaRes NO-SOURCE
+> Task :shared:nlp:testDebugUnitTest NO-SOURCE
+> Task :shared:nlp:compileReleaseUnitTestKotlinAndroid NO-SOURCE
+> Task :shared:nlp:processReleaseUnitTestJavaRes NO-SOURCE
+> Task :shared:nlp:javaPreCompileReleaseUnitTest
+> Task :shared:nlp:detekt NO-SOURCE
+> Task :shared:nlp:compileReleaseUnitTestJavaWithJavac NO-SOURCE
+> Task :shared:nlp:testReleaseUnitTest NO-SOURCE
+> Task :shared:nlp:allTests NO-SOURCE
+> Task :shared:nlp:generateDebugLintReportModel
+> Task :shared:nlp:spotlessKotlin UP-TO-DATE
+> Task :shared:nlp:spotlessKotlinCheck UP-TO-DATE
+> Task :shared:nlp:spotlessMisc UP-TO-DATE
+> Task :shared:nlp:spotlessMiscCheck UP-TO-DATE
+> Task :shared:nlp:spotlessCheck UP-TO-DATE
+> Task :shared:nlp:test UP-TO-DATE
+> Task :shared:storage:bundleDebugAar
+> Task :shared:storage:assembleDebug
+> Task :shared:nlp:lintReportDebug
+> Task :shared:storage:bundleReleaseAar
+> Task :shared:nlp:lintDebug
+> Task :shared:nlp:lint
+> Task :shared:nlp:check
+> Task :shared:storage:mapReleaseSourceSetPaths
+> Task :shared:storage:mergeReleaseResources
+> Task :shared:storage:compileNativeMainKotlinMetadata SKIPPED
+> Task :shared:storage:metadataNativeMainProcessResources NO-SOURCE
+> Task :shared:storage:metadataNativeMainClasses UP-TO-DATE
+> Task :shared:storage:compileAppleMainKotlinMetadata SKIPPED
+> Task :shared:storage:metadataAppleMainProcessResources NO-SOURCE
+> Task :shared:storage:metadataAppleMainClasses UP-TO-DATE
+> Task :shared:storage:compileIosMainKotlinMetadata SKIPPED
+> Task :shared:storage:compileKotlinIosArm64 SKIPPED
+> Task :shared:storage:compileKotlinIosSimulatorArm64 SKIPPED
+> Task :shared:storage:compileKotlinIosX64 SKIPPED
+> Task :shared:storage:iosArm64ProcessResources NO-SOURCE
+> Task :shared:storage:iosArm64MainKlibrary UP-TO-DATE
+> Task :shared:storage:compileTestKotlinIosArm64 SKIPPED
+> Task :shared:storage:iosSimulatorArm64ProcessResources NO-SOURCE
+> Task :shared:storage:iosSimulatorArm64MainKlibrary UP-TO-DATE
+> Task :shared:storage:compileTestKotlinIosSimulatorArm64 SKIPPED
+> Task :shared:storage:iosX64ProcessResources NO-SOURCE
+> Task :shared:storage:iosX64MainKlibrary UP-TO-DATE
+> Task :shared:storage:compileTestKotlinIosX64 SKIPPED
+> Task :shared:storage:metadataIosMainProcessResources NO-SOURCE
+> Task :shared:storage:metadataIosMainClasses UP-TO-DATE
+> Task :shared:storage:iosArm64MetadataElements SKIPPED
+> Task :shared:storage:iosSimulatorArm64MetadataElements SKIPPED
+> Task :shared:storage:iosX64MetadataElements SKIPPED
+> Task :shared:storage:xcodeVersion SKIPPED
+> Task :shared:storage:linkDebugTestIosSimulatorArm64 SKIPPED
+> Task :shared:storage:iosSimulatorArm64Test SKIPPED
+> Task :shared:storage:linkDebugTestIosX64 SKIPPED
+> Task :shared:storage:iosX64Test SKIPPED
+> Task :shared:storage:preReleaseUnitTestBuild UP-TO-DATE
+> Task :shared:storage:javaPreCompileDebugUnitTest
+> Task :shared:nlp:verifyReleaseResources
+> Task :shared:storage:generateDebugUnitTestStubRFile
+> Task :shared:nlp:assembleRelease
+> Task :shared:nlp:assemble
+> Task :shared:nlp:build
+> Task :shared:storage:compileDebugUnitTestKotlinAndroid NO-SOURCE
+> Task :shared:storage:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :shared:storage:processDebugUnitTestJavaRes NO-SOURCE
+> Task :shared:storage:testDebugUnitTest NO-SOURCE
+> Task :shared:storage:generateReleaseUnitTestStubRFile
+> Task :shared:storage:javaPreCompileReleaseUnitTest
+> Task :shared:storage:compileReleaseUnitTestKotlinAndroid NO-SOURCE
+> Task :shared:storage:compileReleaseUnitTestJavaWithJavac NO-SOURCE
+> Task :shared:storage:processReleaseUnitTestJavaRes NO-SOURCE
+> Task :shared:storage:testReleaseUnitTest NO-SOURCE
+> Task :shared:storage:allTests NO-SOURCE
+> Task :shared:storage:detekt NO-SOURCE
+> Task :shared:storage:generateDebugLintReportModel
+> Task :shared:storage:spotlessKotlin UP-TO-DATE
+> Task :shared:storage:spotlessKotlinCheck UP-TO-DATE
+> Task :shared:storage:spotlessMisc UP-TO-DATE
+> Task :shared:storage:spotlessMiscCheck UP-TO-DATE
+> Task :shared:storage:spotlessCheck UP-TO-DATE
+> Task :shared:storage:test UP-TO-DATE
+> Task :shared:storage:lintReportDebug
+> Task :shared:storage:lintDebug
+> Task :shared:storage:lint
+> Task :shared:storage:check
+> Task :shared:storage:verifyReleaseResources
+> Task :shared:storage:assembleRelease
+> Task :shared:storage:assemble
+> Task :shared:storage:build
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.10.2/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 15m 25s
+1050 actionable tasks: 909 executed, 141 up-to-date
+synthetic: running harness checks
+synthetic: no build steps defined; skipping
