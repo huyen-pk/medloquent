@@ -4,16 +4,18 @@
 Usage examples:
   python synthetic/cli.py extract --outdir testData/synthetic
   python synthetic/cli.py tts --manifest testData/synthetic/manifest.csv
-  python synthetic/cli.py augment --in-dir testData/synthetic/audio --out-dir testData/synthetic/audio_aug
-  python synthetic/cli.py asr --in-dir testData/synthetic/audio_aug --out-dir testData/synthetic/predictions
-  python synthetic/cli.py eval --manifest testData/synthetic/manifest.csv --preds-dir testData/synthetic/predictions
+    python synthetic/cli.py augment --in-dir testData/synthetic/audio \
+            --out-dir testData/synthetic/audio_aug
+    python synthetic/cli.py asr --in-dir testData/synthetic/audio_aug \
+            --out-dir testData/synthetic/predictions
+    python synthetic/cli.py eval --manifest testData/synthetic/manifest.csv \
+            --preds-dir testData/synthetic/predictions
   python synthetic/cli.py run-all
 """
 
 from __future__ import annotations
 
 import argparse
-import sys
 from typing import List
 
 
@@ -53,7 +55,9 @@ def build_parser() -> argparse.ArgumentParser:
     v.add_argument("--out-file", default="testData/synthetic/metrics.json")
 
     # run-all
-    ra = subs.add_parser("run-all", help="Run end-to-end pipeline using sensible defaults")
+    ra = subs.add_parser(
+        "run-all", help="Run end-to-end pipeline using sensible defaults"
+    )
     ra.add_argument("--out-root", default="testData/synthetic")
 
     return p
@@ -100,9 +104,17 @@ def main(argv: List[str] | None = None) -> int:
         root = args.out_root
         run_extract(None, root)
         run_tts(f"{root}/manifest.csv", f"{root}/audio")
-        run_augment(f"{root}/audio", f"{root}/audio_aug", [20.0, 10.0, 0.0], [1.0])
-        run_asr(f"{root}/audio_aug", f"{root}/predictions", f"{root}/manifest.csv")
-        run_eval(f"{root}/manifest.csv", f"{root}/predictions", out_file=f"{root}/metrics.json")
+        run_augment(
+            f"{root}/audio", f"{root}/audio_aug", [20.0, 10.0, 0.0], [1.0]
+        )
+        run_asr(
+            f"{root}/audio_aug", f"{root}/predictions", f"{root}/manifest.csv"
+        )
+        run_eval(
+            f"{root}/manifest.csv",
+            f"{root}/predictions",
+            out_file=f"{root}/metrics.json",
+        )
         return 0
 
     p.print_help()

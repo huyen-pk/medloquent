@@ -3,7 +3,6 @@ package com.medloquent.shared.audio
 import com.medloquent.shared.core.AudioChunk
 import com.medloquent.shared.core.SpeechSession
 
-
 data class AudioCaptureRequest(
     val seedTranscript: String,
     val sampleRateHz: Int = 16_000,

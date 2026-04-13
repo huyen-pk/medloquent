@@ -4,7 +4,6 @@ import com.medloquent.shared.core.ClinicalEntity
 import com.medloquent.shared.core.ClinicalEntityType
 import com.medloquent.shared.core.PatientContext
 import com.medloquent.shared.core.StructuredClinicalNote
-import com.medloquent.shared.core.VitalSign
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json

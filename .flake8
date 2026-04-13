@@ -1,0 +1,4 @@
+[flake8]
+exclude = .git,__pycache__,.gradle,build,hf_env,androidApp/build,.agents
+select = CFQ001
+max-function-length = 100

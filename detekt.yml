@@ -1,3 +1,18 @@
+style:
+  complexity:
+    ComplexMethod:
+      active: true
+      threshold: 7
+    LongMethod:
+      active: true
+      threshold: 100
+    LargeClass:
+      active: true
+      threshold: 800
+
+rules:
+  naming:
+    active: true
 build:
   maxIssues: 0
 

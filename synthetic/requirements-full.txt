@@ -1,0 +1,15 @@
+TTS
+audiomentations
+jiwer
+soundfile
+librosa
+numpy
+scipy
+# ASR
+vosk
+# Optional / heavier libs (install as needed):
+# openai-whisper
+# onnxruntime
+# Optional / heavier libs (install as needed):
+# vosk
+# onnxruntime

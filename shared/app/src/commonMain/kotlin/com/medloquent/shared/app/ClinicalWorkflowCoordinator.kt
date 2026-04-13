@@ -6,7 +6,6 @@ import com.medloquent.shared.core.SpeechSession
 import com.medloquent.shared.core.TrainingConsent
 import kotlinx.datetime.Clock
 
-
 data class DictationDraft(
     val patientId: String,
     val encounterId: String,

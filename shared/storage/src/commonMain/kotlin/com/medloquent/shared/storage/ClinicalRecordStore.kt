@@ -9,7 +9,6 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
-import okio.FileSystem
 import okio.Path.Companion.toPath
 
 @Serializable
@@ -45,7 +44,7 @@ class JsonFileClinicalRecordStore(
             ?.resource
             ?.id
             ?: "bundle-${Clock.System.now().toEpochMilliseconds()}"
-        val bundlePath = "${bundleDirectory.toString()}/$recordId.json".toPath()
+        val bundlePath = "$bundleDirectory/$recordId.json".toPath()
         val envelope = codec.protect(
             plaintext = json.encodeToString(bundle),
             keyAlias = keyAlias,

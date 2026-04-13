@@ -9,40 +9,111 @@ smoke tests.
 
 import argparse
 import csv
+import math
 import os
+import struct
 import sys
-from typing import Dict, List, Optional
-
-try:
-    import soundfile as sf
-    import numpy as np
-except Exception:
-    print("Please install dependencies: soundfile, numpy", file=sys.stderr)
-    raise
+import wave
+from typing import Dict, List
 
 
-def write_wav(path: str, audio: "np.ndarray", sr: int = 16000) -> None:
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    sf.write(path, audio.astype("float32"), sr)
+# Helper write_wav: use soundfile if available, otherwise fall back to
+# stdlib wave.
+def write_wav(path: str, samples: List[float], sr: int = 16000) -> None:
+    try:
+        import soundfile as sf
+        import numpy as np
+
+        arr = np.array(samples, dtype="float32")
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        sf.write(path, arr, sr)
+        return
+    except Exception:
+        # fallback: write 16-bit PCM via wave
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with wave.open(path, "w") as wf:
+            wf.setnchannels(1)
+            wf.setsampwidth(2)
+            wf.setframerate(sr)
+            # convert float samples (-1.0..1.0) to int16
+            frames = bytearray()
+            for s in samples:
+                v = max(-1.0, min(1.0, float(s)))
+                iv = int(v * 32767.0)
+                frames.extend(struct.pack("<h", iv))
+            wf.writeframes(bytes(frames))
 
 
 def fallback_tone(text: str, out_path: str, sr: int = 16000) -> None:
     duration = max(0.5, min(6.0, len(text.split()) * 0.25))
-    t = np.linspace(0, duration, int(sr * duration), endpoint=False)
+    nsamples = int(sr * duration)
     f = 220 + (sum(ord(c) for c in text) % 400)
-    audio = 0.05 * np.sin(2 * np.pi * f * t)
-    write_wav(out_path, audio, sr)
+    samples: List[float] = []
+    for i in range(nsamples):
+        t = i / sr
+        samples.append(0.05 * math.sin(2 * math.pi * f * t))
+    write_wav(out_path, samples, sr)
 
 
 def generate_with_coqui(text: str, out_path: str) -> None:
-    from TTS.api import TTS  # type: ignore
+    from TTS.api import TTS
 
     tts = TTS()
     tts.tts_to_file(text=text, file_path=out_path)
 
 
-def run_tts(manifest: str = "testData/synthetic/manifest.csv", out_dir: str = "testData/synthetic/audio", force_fallback: bool = False) -> List[Dict[str, str]]:
-    rows: List[Dict[str, str]] = []
+def coqui_available() -> bool:
+    try:
+        from TTS.api import TTS
+
+        _ = TTS
+        return True
+    except Exception:
+        return False
+
+
+def resample_output_to_16k(out_path: str) -> None:
+    try:
+        import soundfile as sf
+
+        data, sample_rate = sf.read(out_path)
+    except Exception:
+        return
+
+    if sample_rate == 16000:
+        return
+
+    try:
+        import librosa
+    except Exception:
+        write_wav(out_path, data.tolist(), sample_rate)
+        return
+
+    data_mono = data.mean(axis=1) if data.ndim > 1 else data
+    data_resampled = librosa.resample(
+        data_mono, orig_sr=sample_rate, target_sr=16000
+    )
+    write_wav(out_path, data_resampled.tolist(), sr=16000)
+
+
+def generate_audio(text: str, out_path: str, use_coqui: bool) -> None:
+    if use_coqui:
+        try:
+            generate_with_coqui(text, out_path)
+            resample_output_to_16k(out_path)
+            return
+        except Exception as exc:
+            print("coqui TTS failed — falling back:", exc, file=sys.stderr)
+
+    fallback_tone(text, out_path)
+
+
+def run_tts(
+    manifest: str = "testData/synthetic/manifest.csv",
+    out_dir: str = "testData/synthetic/audio",
+    force_fallback: bool = False,
+) -> List[Dict[str, str]]:
+    rows: list[dict[str, str | None]] = []
     if not os.path.exists(manifest):
         raise FileNotFoundError(manifest)
 
@@ -51,46 +122,35 @@ def run_tts(manifest: str = "testData/synthetic/manifest.csv", out_dir: str = "t
         for r in reader:
             rows.append(r)
 
-    use_coqui = False
-    if not force_fallback:
-        try:
-            import TTS  # type: ignore
-            use_coqui = True
-        except Exception:
-            use_coqui = False
+    use_coqui = not force_fallback and coqui_available()
 
     out_rows: List[Dict[str, str]] = []
     for r in rows:
-        _id = r.get("id")
-        text = r.get("text", "")
-        out_path = os.path.join(out_dir, f"{_id}.wav")
-        if use_coqui:
-            try:
-                generate_with_coqui(text, out_path)
-                try:
-                    data, sr = sf.read(out_path)
-                    if sr != 16000:
-                        import librosa
-
-                        data_mono = data.mean(axis=1) if data.ndim > 1 else data
-                        data_res = librosa.resample(data_mono, orig_sr=sr, target_sr=16000)
-                        write_wav(out_path, data_res, sr=16000)
-                except Exception:
-                    pass
-                out_rows.append({"id": _id, "audio": out_path})
-                continue
-            except Exception as e:
-                print("coqui TTS failed — falling back:", e, file=sys.stderr)
-        fallback_tone(text, out_path)
-        out_rows.append({"id": _id, "audio": out_path})
+        record_id = r.get("id") or ""
+        text = r.get("text") or ""
+        if not record_id:
+            continue
+        out_path = os.path.join(out_dir, f"{record_id}.wav")
+        generate_audio(text, out_path, use_coqui)
+        out_rows.append({"id": record_id, "audio": out_path})
     return out_rows
 
 
-def main(argv: Optional[List[str]] = None) -> None:
+def main(argv: list[str] | None = None) -> None:
     p = argparse.ArgumentParser()
-    p.add_argument("--manifest", default="testData/synthetic/manifest.csv", help="manifest CSV")
-    p.add_argument("--out-dir", default="testData/synthetic/audio", help="output audio dir")
-    p.add_argument("--force-fallback", action="store_true", help="skip TTS and use tone fallback")
+    p.add_argument(
+        "--manifest",
+        default="testData/synthetic/manifest.csv",
+        help="manifest CSV",
+    )
+    p.add_argument(
+        "--out-dir", default="testData/synthetic/audio", help="output audio dir"
+    )
+    p.add_argument(
+        "--force-fallback",
+        action="store_true",
+        help="skip TTS and use tone fallback",
+    )
     args = p.parse_args(argv)
     run_tts(args.manifest, args.out_dir, args.force_fallback)
 

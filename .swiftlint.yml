@@ -19,6 +19,24 @@ type_body_length:
   warning: 800
   severity: error
 
+line_length:
+  warning: 80
+  error: 80
+
+custom_rules:
+  upper_camel_case_function_names:
+    included: ".*\\.swift"
+    name: "UpperCamelCase Function Names"
+    regex: "\\bfunc\\s+(?!(makeUIViewController|updateUIViewController)\\b)([a-z_][A-Za-z0-9_]*)\\s*\\("
+    message: "Function names must use CamelCaps (UpperCamelCase)."
+    severity: error
+  upper_camel_case_type_names:
+    included: ".*\\.swift"
+    name: "UpperCamelCase Type Names"
+    regex: "\\b(class|struct|enum)\\s+([a-z_][A-Za-z0-9_]*)\\b"
+    message: "Type names must use CamelCaps (UpperCamelCase)."
+    severity: error
+
 identifier_name:
   min_length: 2
-  # No direct regex support here; harness fallback also checks camelCase names
+  # SwiftLint custom rules enforce the repository's non-default CamelCaps policy.

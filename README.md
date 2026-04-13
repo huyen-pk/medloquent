@@ -65,7 +65,7 @@ The module boundaries are production-oriented, but several runtime adapters are 
 
 ## Pre-commit harness gates
 
-This repository includes a lightweight pre-commit harness to run quick gates before allowing commits. It is intentionally conservative: platform-specific checks (Android/iOS) run only when relevant files are staged.
+This repository retains a lightweight pre-commit harness for quick checks (trailing whitespace, EOF fixes, YAML checks) and the `commit-msg` hook for Conventional Commits. Heavy formatting and linting are now performed by Gradle-integrated tasks (Spotless, Detekt, swiftlint, and Python formatters/checkers) instead of the previous shell scripts.
 
 Quick setup:
 
@@ -88,15 +88,13 @@ Quick setup:
 	pre-commit run --all-files
 	```
 
-	Run harness gates automatically during Gradle builds
+The repository wires the harness checks into the Gradle lifecycle: `harnessCheck` runs before `assemble`/`build` so the gates execute during normal builds and CI runs.
 
-	The repository wires the harness checks into the Gradle lifecycle: `harnessCheck` runs before `assemble`/`build` so the gates execute during normal builds and CI runs.
+To skip the harness gates for a build, pass `-PskipHarness=true` to Gradle, for example:
 
-	To skip the harness gates for a build, pass `-PskipHarness=true` to Gradle, for example:
-
-	```bash
-	./gradlew build -PskipHarness=true
-	```
+```bash
+./gradlew build -PskipHarness=true
+```
 
 ## Pre-build harness gates
 
@@ -117,34 +115,29 @@ Run the harness locally:
 
 Notes:
 
-- The pre-commit configuration is retained for a small set of lightweight hooks (trailing whitespace, EOF fixer, YAML checks) and the `commit-msg` hook for Conventional Commits; the heavy platform and static-analysis checks are intentionally run as pre-build gates.
+- The pre-commit configuration is retained for a small set of lightweight hooks (trailing whitespace, EOF fixer, YAML checks) and the `commit-msg` hook for Conventional Commits; heavy formatting and linting are performed via Gradle now.
 - Tooling requirements:
-  - Python tools: `mypy`, `ruff`, `black` (install with `python -m pip install --user mypy ruff black`).
-  - Kotlin: `detekt` is downloaded by the detekt wrapper (requires `curl`/`wget` and `java`) or a Gradle-based lint/ktlint task should be available.
-  - iOS: `swiftlint` on macOS (install via `brew install swiftlint`) — otherwise a heuristic fallback runs.
+	- Python tools (optional locally): `mypy`, `ruff`, `black`, `flake8`, `flake8-functions`, and `pep8-naming` (install with `python -m pip install --user mypy ruff black flake8 flake8-functions pep8-naming`). The Gradle Python tasks prefer a project virtualenv at `./hf_env` when available.
+	- Kotlin: Spotless (ktlint) and Detekt are configured via Gradle plugins and run with `./gradlew spotlessApply` / `./gradlew detekt`.
+	- iOS: `swiftlint` on macOS (install via `brew install swiftlint`) — otherwise iOS formatting/linting steps are skipped on non-macOS environments.
 
 Gate constraints enforced by the harness:
 
 - Cyclomatic complexity ≤ 7 (per function/method)
 - Function/method length ≤ 100 lines
 - Class/type length ≤ 800 lines
- - Function/method names:
-	 - Python: use snake_case (lowercase with underscores)
-	 - Kotlin/Swift: use CamelCaps (UpperCamelCase)
+- Function/method names:
+	- Python: use snake_case (lowercase with underscores)
+	- Kotlin/Swift: use CamelCaps (UpperCamelCase)
+- Line length ≤ 80 characters (enforced through Black/Ruff, ktlint via Spotless, and SwiftLint where available)
 
 How they're implemented:
 
-Note: the strict Python checks (mypy and the extended complexity/naming checks) intentionally exclude developer helper scripts and synthetic data generators. The harness skips the `scripts/`, `synthetic/`, and `.agents/` directories for strict `mypy` and extended complexity checks so tooling and example scripts don't block builds.
+- Python: `pyproject.toml` configures Black and Ruff for formatting, naming, and complexity, `.flake8` enforces max function length, and Gradle tasks `harnessFormatPython` / `harnessCheckPython` run `black`, `ruff`, `flake8`, and `mypy`.
+- Kotlin: Spotless (ktlint) and Detekt are applied across subprojects via Gradle plugin configuration (`spotlessApply`, `spotlessCheck`, `detekt`).
+- Swift/iOS: `swiftformat` / `swiftlint` are preferred when available on macOS; `.swiftlint.yml` carries the complexity, size, line-length, and naming policies. On Linux the iOS steps remain a no-op when the Apple toolchain is unavailable.
 
-- Python: `scripts/harness-python-checks.py` (AST-based) and `mypy` for strong typing.
-- Kotlin: `scripts/harness-detekt.sh` (detekt CLI) preferred; fallback to `scripts/harness-kotlin-check.py` heuristics.
-- Swift/iOS: `swiftlint` with `.swiftlint.yml` in strict mode; fallback to `scripts/harness-swift-check.py`.
+Deprecated/manual scripts:
 
-Files added (high level):
+Many of the older shell and fallback scripts have been removed in favor of Gradle tasks; see Git history for reference if needed.
 
-- [.pre-commit-config.yaml](./.pre-commit-config.yaml) — lightweight pre-commit hooks (commit-msg + small fixes)
-- [scripts/harness-python.sh](scripts/harness-python.sh), [scripts/harness-python-checks.py](scripts/harness-python-checks.py)
-- [scripts/harness-android.sh](scripts/harness-android.sh), [scripts/harness-detekt.sh](scripts/harness-detekt.sh), [scripts/harness-kotlin-check.py](scripts/harness-kotlin-check.py)
-- [scripts/harness-ios.sh](scripts/harness-ios.sh), [scripts/harness-swift-check.py](scripts/harness-swift-check.py), [.swiftlint.yml](.swiftlint.yml)
-- [scripts/commit-msg.sh](scripts/commit-msg.sh)
-- Replace InMemoryLoraSyncTransport with a real LoRaWAN transport and packet retry policy.

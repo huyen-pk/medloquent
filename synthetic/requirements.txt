@@ -1,10 +1,4 @@
-TTS
-audiomentations
 jiwer
-soundfile
-librosa
 numpy
-scipy
-# Optional / heavier libs (install as needed):
-# vosk
-# onnxruntime
+# For full-featured build (Coqui TTS, Vosk ASR, augmentations), install:
+#   pip install -r requirements-full.txt
