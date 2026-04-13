@@ -19,7 +19,10 @@ setuptools==82.0.1
 stdlib-list==0.12.0
 typing_extensions==4.15.0
 wheel==0.46.3
-TTS
+huggingface-hub
+onnxruntime
+misaki[en]
+phonemizer-fork
 audiomentations
 jiwer
 soundfile
@@ -30,6 +33,5 @@ scipy
 vosk
 # Optional / heavier libs (install as needed):
 # openai-whisper
-# onnxruntime
 
 

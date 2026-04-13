@@ -4,7 +4,7 @@ This file lists acronyms and short explanations used by the synthetic data pipel
 
 - FHIR — Fast Healthcare Interoperability Resources: an HL7 standard for healthcare data (JSON/XML) used to model patients, observations, notes, etc.
 - Synthea — Open-source synthetic patient generator that produces FHIR records and realistic clinical narratives (not an acronym; product name).
-- TTS — Text-to-Speech: systems that synthesize spoken audio from text (e.g., Coqui TTS).
+- TTS — Text-to-Speech: systems that synthesize spoken audio from text (for this pipeline, Kokoro on ONNX Runtime).
 - ASR — Automatic Speech Recognition: systems that convert spoken audio back into text (e.g., Vosk, Whisper).
 - WER — Word Error Rate: a metric for ASR that measures insertions/deletions/substitutions at the word level.
 - CER — Character Error Rate: similar to WER but computed on characters (useful for short tokens/abbreviations).
@@ -16,7 +16,7 @@ This file lists acronyms and short explanations used by the synthetic data pipel
 - TFLite — TensorFlow Lite: lightweight TensorFlow runtime and model format for mobile/edge devices.
 - Vosk — Offline ASR toolkit (Kaldi-based) that runs on-device and provides real-time transcriptions.
 - whisper / whisper.cpp — OpenAI's Whisper model for ASR; `whisper.cpp` is an optimized C/C++ port for local inference.
-- Coqui TTS — Open-source Text-to-Speech Python library (`TTS`) for local/offline synthesis.
+- Kokoro — Lightweight neural text-to-speech model used here through ONNX Runtime and Hugging Face model snapshots.
 - LJSpeech — Public single-speaker speech dataset commonly used to train TTS models (not an acronym).
 - jiwer — Python package that computes WER/CER and provides common transcript normalizations.
 - MFA — Montreal Forced Aligner: tool for aligning transcripts to audio at word/phone level (used for timing/analysis).

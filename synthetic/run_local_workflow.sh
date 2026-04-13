@@ -133,7 +133,7 @@ if [[ ! -f "$MANIFEST" ]]; then
   exit 4
 fi
 
-echo "Running TTS (Coqui TTS)..."
+echo "Running TTS (Kokoro ONNX; first run may download model artifacts)..."
 (cd "$REPO_ROOT" && "$PYTHON" -m synthetic.cli tts --manifest "$MANIFEST" --out-dir "$SYNTH_OUT/audio")
 
 echo "Running augment..."

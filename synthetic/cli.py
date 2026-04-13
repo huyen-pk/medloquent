@@ -18,7 +18,28 @@ from __future__ import annotations
 import argparse
 import glob
 import os
-from typing import List
+from typing import List, TypedDict
+
+from synthetic.pipeline.tts_backends import (
+    DEFAULT_BACKEND,
+    DEFAULT_MODEL_FILE,
+    DEFAULT_MODEL_ID,
+    DEFAULT_SPEED,
+    DEFAULT_VOICE,
+    SUPPORTED_BACKENDS,
+)
+
+
+class TTSRunKwargs(TypedDict):
+    """Keyword arguments forwarded to synthetic.pipeline.tts.run_tts."""
+
+    backend: str
+    model_id: str
+    model_path: str | None
+    model_file: str
+    voice: str
+    speed: float
+    allow_download: bool
 
 
 def find_sample_manifests(root: str) -> List[str]:
@@ -48,6 +69,7 @@ def build_parser() -> argparse.ArgumentParser:
     t = subs.add_parser("tts", help="Run TTS to generate audio")
     t.add_argument("--manifest", default="testData/synthetic/manifest.csv")
     t.add_argument("--out-dir", default="testData/synthetic/audio")
+    add_tts_arguments(t)
 
     # augment
     a = subs.add_parser("augment", help="Create augmented audio variants")
@@ -74,8 +96,65 @@ def build_parser() -> argparse.ArgumentParser:
     )
     ra.add_argument("--out-root", default="testData/synthetic")
     ra.add_argument("--batch-size", type=int, default=1)
+    add_tts_arguments(ra)
 
     return p
+
+
+def add_tts_arguments(parser: argparse.ArgumentParser) -> None:
+    """Attach shared TTS backend options to a parser."""
+    parser.add_argument(
+        "--backend",
+        default=DEFAULT_BACKEND,
+        choices=SUPPORTED_BACKENDS,
+        help="TTS backend to use",
+    )
+    parser.add_argument(
+        "--model-id",
+        default=DEFAULT_MODEL_ID,
+        help="Hugging Face model id for the selected backend",
+    )
+    parser.add_argument(
+        "--model-path",
+        help="Optional local snapshot path for the selected TTS backend",
+    )
+    parser.add_argument(
+        "--model-file",
+        default=DEFAULT_MODEL_FILE,
+        help="Relative model file path inside the backend snapshot",
+    )
+    parser.add_argument(
+        "--voice",
+        default=DEFAULT_VOICE,
+        help="Voice id to use for synthesis",
+    )
+    parser.add_argument(
+        "--speed",
+        type=float,
+        default=DEFAULT_SPEED,
+        help="Speech rate multiplier",
+    )
+    parser.add_argument(
+        "--no-download",
+        action="store_true",
+        help=(
+            "Require the model to already exist in the local "
+            "Hugging Face cache"
+        ),
+    )
+
+
+def build_tts_kwargs(args: argparse.Namespace) -> TTSRunKwargs:
+    """Extract backend options from parsed CLI arguments."""
+    return {
+        "backend": args.backend,
+        "model_id": args.model_id,
+        "model_path": args.model_path,
+        "model_file": args.model_file,
+        "voice": args.voice,
+        "speed": args.speed,
+        "allow_download": not args.no_download,
+    }
 
 
 def handle_extract(args: argparse.Namespace) -> int:
@@ -95,6 +174,7 @@ def handle_tts(args: argparse.Namespace) -> int:
     """Run TTS directly or across discovered sample folders."""
     from synthetic.pipeline.tts import run_tts
 
+    tts_kwargs = build_tts_kwargs(args)
     sample_manifests = find_sample_manifests(os.path.dirname(args.manifest))
     if sample_manifests:
         step_name = os.path.basename(args.out_dir)
@@ -103,10 +183,11 @@ def handle_tts(args: argparse.Namespace) -> int:
             run_tts(
                 sample_manifest,
                 os.path.join(sample_root, step_name),
+                **tts_kwargs,
             )
         return 0
 
-    run_tts(args.manifest, args.out_dir)
+    run_tts(args.manifest, args.out_dir, **tts_kwargs)
     return 0
 
 
@@ -188,6 +269,7 @@ def handle_run_all(args: argparse.Namespace) -> int:
     from synthetic.pipeline.evaluator import run_eval
 
     root = args.out_root
+    tts_kwargs = build_tts_kwargs(args)
     rows = run_extract(None, root, batch_size=args.batch_size)
     for row in rows:
         record_id = row.get("id")
@@ -201,7 +283,7 @@ def handle_run_all(args: argparse.Namespace) -> int:
         sample_predictions = os.path.join(sample_root, "predictions")
         sample_metrics = os.path.join(sample_root, "eval_metrics.json")
 
-        run_tts(sample_manifest, sample_audio)
+        run_tts(sample_manifest, sample_audio, **tts_kwargs)
         run_augment(
             sample_audio,
             sample_audio_aug,

@@ -11,6 +11,7 @@ WORKDIR /app
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
        build-essential \
+    espeak-ng \
        git \
        wget \
        ffmpeg \
@@ -37,6 +38,8 @@ COPY synthetic /app/synthetic
 RUN useradd --create-home appuser && chown -R appuser /app
 USER appuser
 
+ENV HF_HOME=/home/appuser/.cache/huggingface
+
 WORKDIR /app/synthetic
 
-CMD ["python", "-m", "synthetic.cli", "run_all"]
+CMD ["python", "-m", "synthetic.cli", "run-all"]

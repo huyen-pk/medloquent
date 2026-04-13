@@ -1,6 +1,9 @@
-# For full-featured build (Coqui TTS, Vosk ASR, augmentations), install:
+# For Kokoro ONNX TTS, Vosk ASR, and augmentations, install:
 #   pip install -r requirements-full.txt
-TTS
+huggingface-hub
+onnxruntime
+misaki[en]
+phonemizer-fork
 audiomentations
 jiwer
 soundfile
@@ -11,4 +14,3 @@ scipy
 vosk
 # Optional / heavier libs (install as needed):
 # openai-whisper
-# onnxruntime

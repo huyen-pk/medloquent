@@ -23,6 +23,7 @@ services:
     volumes:
       - synthea_output:/data/synthea_input:ro
       - synthetic_output:/data/synthetic_output
+      - hf_cache:/home/appuser/.cache/huggingface
     working_dir: /app
     # Run extraction -> TTS -> ASR -> Eval (waits for Synthea FHIR output)
     command: >
@@ -61,3 +62,4 @@ services:
 volumes:
   synthea_output: {}
   synthetic_output: {}
+  hf_cache: {}
