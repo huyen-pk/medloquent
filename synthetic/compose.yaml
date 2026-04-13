@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  synthea:
+    build:
+      context: ..
+      dockerfile: synthetic/synthea/Dockerfile
+      args:
+        REPO_URL: "https://github.com/synthetichealth/synthea.git"
+        BRANCH: "main"
+    volumes:
+      - synthea_output:/opt/synthea/output
+    working_dir: /opt/synthea
+    command: ["./run_synthea", "-p", "1", "--exporter.fhir.export=true"]
+    restart: "no"
+
+  pipeline:
+    build:
+      context: ..
+      dockerfile: synthetic/Dockerfile
+    depends_on:
+      - synthea
+    volumes:
+      - synthea_output:/data/synthea_input:ro
+      - synthetic_output:/data/synthetic_output
+    working_dir: /app
+    # Run extraction -> TTS -> ASR -> Eval (waits for Synthea FHIR output)
+    command: >
+      /bin/bash -c "
+      echo 'Waiting up to 10 minutes for FHIR files in /data/synthea_input/fhir' &&
+      waited=0; interval=3; timeout=600;
+      while [ $$waited -lt $$timeout ]; do
+        if ls /data/synthea_input/fhir/*.json >/dev/null 2>&1; then
+          break
+        fi
+        sleep $$interval; waited=$$(( $$waited + $$interval ));
+      done
+      if ! ls /data/synthea_input/fhir/*.json >/dev/null 2>&1; then
+        echo 'No FHIR files found after waiting' >&2; exit 1
+      fi
+      python synthetic/cli.py extract --input /data/synthea_input/fhir --outdir /data/synthetic_output &&
+      python synthetic/cli.py tts --manifest /data/synthetic_output/manifest.csv --out-dir /data/synthetic_output/audio &&
+      python synthetic/cli.py asr --in-dir /data/synthetic_output/audio --out-dir /data/synthetic_output/predictions --manifest /data/synthetic_output/manifest.csv &&
+      python synthetic/cli.py eval --manifest /data/synthetic_output/manifest.csv --preds-dir /data/synthetic_output/predictions --out-file /data/synthetic_output/eval_metrics.json
+      "
+    restart: "no"
+
+  validator:
+    build:
+      context: ..
+      dockerfile: synthetic/Dockerfile
+    depends_on:
+      - pipeline
+    volumes:
+      - synthetic_output:/data/synthetic_output:ro
+      - synthea_output:/data/synthea_input:ro
+    working_dir: /app
+    command: ["/bin/bash", "-c", "python synthetic/validate_outputs.py /data/synthea_input/fhir /data/synthetic_output && echo Validation complete"]
+    restart: "no"
+
+volumes:
+  synthea_output: {}
+  synthetic_output: {}

@@ -70,6 +70,7 @@ htmlcov/
 .cache/
 hf_env/
 .ruff_cache/
+.conda-env/
 
 # Kotlin / Java / Gradle (IntelliJ / Android)
 # Kotlin and Java build outputs and IDE/Gradle files

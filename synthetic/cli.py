@@ -48,7 +48,6 @@ def build_parser() -> argparse.ArgumentParser:
     t = subs.add_parser("tts", help="Run TTS to generate audio")
     t.add_argument("--manifest", default="testData/synthetic/manifest.csv")
     t.add_argument("--out-dir", default="testData/synthetic/audio")
-    t.add_argument("--force-fallback", action="store_true")
 
     # augment
     a = subs.add_parser("augment", help="Create augmented audio variants")
@@ -104,11 +103,10 @@ def handle_tts(args: argparse.Namespace) -> int:
             run_tts(
                 sample_manifest,
                 os.path.join(sample_root, step_name),
-                args.force_fallback,
             )
         return 0
 
-    run_tts(args.manifest, args.out_dir, args.force_fallback)
+    run_tts(args.manifest, args.out_dir)
     return 0
 
 

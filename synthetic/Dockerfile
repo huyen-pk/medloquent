@@ -1,30 +1,42 @@
 FROM python:3.11-slim
 
-ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive \
+    PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONPATH=/app
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    ffmpeg \
-    wget \
-    unzip \
-    git \
-    libsndfile1 \
+WORKDIR /app
+
+# Install system deps required for audio processing and building native wheels
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+       build-essential \
+       git \
+       wget \
+       ffmpeg \
+       libsndfile1 \
+       libsndfile1-dev \
+       libasound2-dev \
+       libportaudio2 \
+       libssl-dev \
+       libffi-dev \
+       libjpeg-dev \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /workspace
+# Copy requirements first to leverage Docker layer cache
+COPY synthetic/requirements-full.txt /app/requirements-full.txt
 
-# copy only requirements first for caching
-COPY requirements.txt /workspace/requirements.txt
+# Upgrade pip and install Python deps (may be large)
+RUN python -m pip install --upgrade pip setuptools wheel \
+    && python -m pip install --no-cache-dir -r /app/requirements-full.txt
 
-RUN pip install --upgrade pip setuptools wheel
-RUN pip install -r requirements.txt
+# Copy pipeline source
+COPY synthetic /app/synthetic
 
-# copy entire repo into the container workspace
-COPY . /workspace
+# Create an unprivileged user and switch to it
+RUN useradd --create-home appuser && chown -R appuser /app
+USER appuser
 
-ENV PYTHONUNBUFFERED=1
-ENV PYTHONDONTWRITEBYTECODE=1
+WORKDIR /app/synthetic
 
-WORKDIR /workspace
-
-CMD ["python", "-m", "synthetic.cli", "--help"]
+CMD ["python", "-m", "synthetic.cli", "run_all"]

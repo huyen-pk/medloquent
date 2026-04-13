@@ -139,17 +139,19 @@ def ensure_16k_mono(src: str) -> str:
         return src
 
 
-def resolve_engine() -> Optional[str]:
+def resolve_engine() -> str:
     """Pick a default ASR engine available in the environment.
 
     Returns "vosk" if Vosk is importable, "whisper" if Whisper is
-    importable, otherwise `None`.
+    importable. Raises RuntimeError if no engine is available.
     """
     if _HAS_VOSK:
         return "vosk"
     if _HAS_WHISPER:
         return "whisper"
-    return None
+    raise RuntimeError(
+        "No ASR engine available. Install 'vosk' or 'whisper' (see requirements-full.txt)"
+    )
 
 
 def ensure_vosk_model_available(model_path: str, model_url: str) -> None:
@@ -223,7 +225,7 @@ def transcribe_with_whisper(whisper_model: Any, audio_path: str) -> str:
 
 
 def prediction_for_file(
-    engine: Optional[str],
+    engine: str,
     whisper_model: Any | None,
     vosk_model_path: str,
     audio_path: str,
@@ -231,14 +233,13 @@ def prediction_for_file(
 ) -> str:
     """Return a transcription for a single audio file using the selected engine.
 
-    If transcription fails or no engine is available, the provided fallback
-    (typically the reference) is returned.
+    If transcription fails, an empty string is returned.
     """
     if engine == "vosk":
-        return transcribe_with_vosk(audio_path, vosk_model_path) or fallback
+        return transcribe_with_vosk(audio_path, vosk_model_path) or ""
     if engine == "whisper" and whisper_model is not None:
-        return transcribe_with_whisper(whisper_model, audio_path) or fallback
-    return fallback
+        return transcribe_with_whisper(whisper_model, audio_path) or ""
+    raise RuntimeError(f"Unsupported ASR engine: {engine}")
 
 
 def run_asr(
